@@ -6,20 +6,34 @@ const t = {
     nav: { services: 'Leistungen', experience: 'Erfahrung', stack: 'Stack', contact: 'Kontakt' },
     hero: {
       headline: 'Qualität ist kein Zufall.',
-      sub: 'Ich helfe Softwareteams dabei, bessere Produkte schneller zu liefern – durch strukturierte Testanalyse und moderne Testautomatisierung.',
+      sub: 'Freiberuflicher QA-Engineer mit über 6 Jahren Erfahrung im manuellen und automatisierten Software-Testing für Web- und Mobile-Anwendungen. Als ISTQB-zertifizierter Test Analyst verbinde ich strukturierte Testanalyse mit moderner Testautomatisierung – in agilen Teams, remote und on-site.',
       cta: 'Projekt anfragen',
+      badges: ['6+ Jahre Erfahrung', 'ISTQB Foundation & Advanced', 'Remote & On-site', 'Agile / Scrum'],
     },
     services: {
       title: 'Leistungen',
       card1: {
         title: 'Testanalyse & Teststrategie',
-        desc: 'Analyse von Anforderungen, risikobasiertes Testen, Testkonzepte und umfassende Qualitätssicherung im gesamten Software Development Lifecycle.',
-        items: ['Anforderungsanalyse', 'Risikobasiertes Testen', 'Testkonzepte', 'QA im gesamten SDLC'],
+        desc: 'Analyse funktionaler & nicht-funktionaler Anforderungen, risikobasierte Teststrategie und Testkonzepte – für vollständige Qualitätssicherung im gesamten SDLC.',
+        items: [
+          'Analyse funktionaler & nicht-funktionaler Anforderungen',
+          'Risikobasierte Teststrategie & Testkonzepte',
+          'Definition von Testumfang & Abdeckung',
+          'Koordination von Testphasen im gesamten SDLC',
+          'Abstimmung zwischen Business- und Entwicklungsteams',
+        ],
       },
       card2: {
         title: 'Testautomatisierung',
-        desc: 'Aufbau und Wartung von Testframeworks, nahtlose Integration in CI/CD-Pipelines sowie End-to-End- und API-Testing.',
-        items: ['Testframework-Aufbau & -Wartung', 'CI/CD-Integration', 'End-to-End-Testing', 'API-Testing'],
+        desc: 'Aufbau & Wartung von Testautomatisierungs-Frameworks, E2E- und API-Testing sowie nahtlose CI/CD-Integration mit Allure-Reporting.',
+        items: [
+          'Aufbau & Wartung von Testautomatisierungs-Frameworks',
+          'E2E-Testing mit Cypress, Selenium & Appium',
+          'API-Testing mit Postman',
+          'BDD mit Cucumber',
+          'CI/CD-Integration mit Jenkins & GitHub',
+          'Testreporting mit Allure',
+        ],
       },
     },
     experience: {
@@ -49,20 +63,34 @@ const t = {
     nav: { services: 'Services', experience: 'Experience', stack: 'Stack', contact: 'Contact' },
     hero: {
       headline: 'Quality is no coincidence.',
-      sub: 'I help software teams ship better products faster – through structured test analysis and modern test automation.',
+      sub: 'Freelance QA Engineer with 6+ years of experience in manual and automated software testing for web and mobile applications. As an ISTQB-certified Test Analyst, I combine structured test analysis with modern test automation – in agile teams, remotely and on-site.',
       cta: 'Start a project',
+      badges: ['6+ Years Experience', 'ISTQB Foundation & Advanced', 'Remote & On-site', 'Agile / Scrum'],
     },
     services: {
       title: 'Services',
       card1: {
         title: 'Test Analysis & Test Strategy',
-        desc: 'Requirements analysis, risk-based testing, test concepts, and comprehensive quality assurance across the full software development lifecycle.',
-        items: ['Requirements analysis', 'Risk-based testing', 'Test concepts', 'QA across the full SDLC'],
+        desc: 'Analysis of functional & non-functional requirements, risk-based test strategy and test concepts – for comprehensive quality assurance across the full SDLC.',
+        items: [
+          'Analysis of functional & non-functional requirements',
+          'Risk-based test strategy & test concepts',
+          'Definition of test scope & coverage',
+          'Coordination of test phases across the full SDLC',
+          'Alignment between business and development teams',
+        ],
       },
       card2: {
         title: 'Test Automation',
-        desc: 'Building and maintaining test frameworks, seamless CI/CD pipeline integration, plus end-to-end and API testing.',
-        items: ['Test framework build & maintenance', 'CI/CD integration', 'End-to-end testing', 'API testing'],
+        desc: 'Building & maintaining test automation frameworks, E2E and API testing, plus seamless CI/CD integration with Allure reporting.',
+        items: [
+          'Building & maintaining test automation frameworks',
+          'E2E testing with Cypress, Selenium & Appium',
+          'API testing with Postman',
+          'BDD with Cucumber',
+          'CI/CD integration with Jenkins & GitHub',
+          'Test reporting with Allure',
+        ],
       },
     },
     experience: {
@@ -90,7 +118,12 @@ const t = {
   },
 };
 
-const industries = ['E-Commerce', 'Fintech', 'SaaS', 'HealthTech', 'B2B Software'];
+const industries = [
+  '🏛 Public Sector & Government',
+  '🛒 E-Commerce & Retail',
+  '🏦 Banking & Fintech',
+  '🏗 Construction Tech',
+];
 
 const techStack = [
   {
@@ -102,28 +135,44 @@ const techStack = [
     svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="56" font-family="Segoe UI,sans-serif" font-weight="700" fill="#2979FF">Se</text></svg>`,
   },
   {
-    name: 'Playwright',
-    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><polygon points="64,24 100,44 100,84 64,104 28,84 28,44" fill="none" stroke="#00E5AA" stroke-width="4"/><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="30" font-family="Segoe UI,sans-serif" font-weight="700" fill="#E8F4FF">PW</text></svg>`,
+    name: 'Appium',
+    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><rect x="34" y="20" width="60" height="88" rx="10" fill="none" stroke="#00E5AA" stroke-width="4"/><circle cx="64" cy="96" r="5" fill="#00E5AA"/><text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-size="24" font-family="Segoe UI,sans-serif" font-weight="700" fill="#00E5AA">App</text></svg>`,
+  },
+  {
+    name: 'Cucumber',
+    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><ellipse cx="64" cy="68" rx="22" ry="32" fill="#23D96C" opacity="0.9"/><path d="M64 36 C64 36 72 28 80 30" stroke="#23D96C" stroke-width="3" stroke-linecap="round" fill="none"/><line x1="50" y1="55" x2="78" y2="55" stroke="#050E1A" stroke-width="2.5" stroke-linecap="round"/><line x1="48" y1="68" x2="80" y2="68" stroke="#050E1A" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="81" x2="78" y2="81" stroke="#050E1A" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+  },
+  {
+    name: 'TestNG',
+    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><text x="50%" y="44%" dominant-baseline="middle" text-anchor="middle" font-size="28" font-family="Segoe UI,sans-serif" font-weight="800" fill="#FF6C37">Test</text><text x="50%" y="68%" dominant-baseline="middle" text-anchor="middle" font-size="28" font-family="Segoe UI,sans-serif" font-weight="800" fill="#FF6C37">NG</text></svg>`,
+  },
+  {
+    name: 'Java',
+    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><path d="M52 80 C48 72 56 60 64 56 C72 60 80 72 76 80 C70 88 58 88 52 80Z" fill="none" stroke="#E8A400" stroke-width="3"/><path d="M44 92 C52 86 76 86 84 92" stroke="#E8A400" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M64 30 C64 30 56 42 64 50 C72 42 64 30 64 30Z" fill="#E8A400"/></svg>`,
+  },
+  {
+    name: 'JS / TypeScript',
+    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><text x="50%" y="42%" dominant-baseline="middle" text-anchor="middle" font-size="26" font-family="Segoe UI,sans-serif" font-weight="700" fill="#F7DF1E">JS</text><line x1="20" y1="66" x2="108" y2="66" stroke="#ffffff" stroke-width="1" stroke-opacity="0.15"/><text x="50%" y="72%" dominant-baseline="middle" text-anchor="middle" font-size="22" font-family="Segoe UI,sans-serif" font-weight="700" fill="#3178C6">TS</text></svg>`,
   },
   {
     name: 'Postman',
     svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><circle cx="64" cy="64" r="30" fill="none" stroke="#FF6C37" stroke-width="6"/><line x1="64" y1="34" x2="94" y2="64" stroke="#FF6C37" stroke-width="4" stroke-linecap="round"/></svg>`,
   },
   {
-    name: 'Jest',
-    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" font-size="46" font-family="Segoe UI,sans-serif" font-weight="800" fill="#C21325">Jest</text></svg>`,
-  },
-  {
-    name: 'GitHub Actions',
-    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><circle cx="64" cy="64" r="28" fill="none" stroke="#2979FF" stroke-width="5"/><circle cx="64" cy="64" r="10" fill="#2979FF"/><line x1="64" y1="36" x2="64" y2="24" stroke="#2979FF" stroke-width="4" stroke-linecap="round"/><line x1="92" y1="64" x2="104" y2="64" stroke="#2979FF" stroke-width="4" stroke-linecap="round"/></svg>`,
-  },
-  {
-    name: 'REST / GraphQL',
-    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><text x="50%" y="44%" dominant-baseline="middle" text-anchor="middle" font-size="22" font-family="Segoe UI,sans-serif" font-weight="700" fill="#00E5AA">REST</text><text x="50%" y="68%" dominant-baseline="middle" text-anchor="middle" font-size="17" font-family="Segoe UI,sans-serif" fill="#E144BA">GraphQL</text></svg>`,
+    name: 'Allure',
+    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><path d="M64 24 L88 88 H40 Z" fill="none" stroke="#00E5AA" stroke-width="4" stroke-linejoin="round"/><line x1="52" y1="72" x2="76" y2="72" stroke="#00E5AA" stroke-width="3" stroke-linecap="round"/><circle cx="64" cy="60" r="4" fill="#00E5AA"/></svg>`,
   },
   {
     name: 'Jira / Confluence',
     svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="48" font-family="Segoe UI,sans-serif" font-weight="800" fill="#2979FF">J</text></svg>`,
+  },
+  {
+    name: 'Jenkins / GitHub',
+    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><circle cx="64" cy="64" r="28" fill="none" stroke="#2979FF" stroke-width="5"/><circle cx="64" cy="64" r="10" fill="#2979FF"/><line x1="64" y1="36" x2="64" y2="24" stroke="#2979FF" stroke-width="4" stroke-linecap="round"/><line x1="92" y1="64" x2="104" y2="64" stroke="#2979FF" stroke-width="4" stroke-linecap="round"/></svg>`,
+  },
+  {
+    name: 'Xray / Testlink',
+    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><text x="50%" y="42%" dominant-baseline="middle" text-anchor="middle" font-size="26" font-family="Segoe UI,sans-serif" font-weight="700" fill="#00E5AA">Xray</text><line x1="20" y1="66" x2="108" y2="66" stroke="#ffffff" stroke-width="1" stroke-opacity="0.15"/><text x="50%" y="72%" dominant-baseline="middle" text-anchor="middle" font-size="18" font-family="Segoe UI,sans-serif" fill="#E8F4FF">Testlink</text></svg>`,
   },
 ];
 ---
@@ -135,17 +184,17 @@ const techStack = [
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- DE Meta (default) -->
-  <title>LQA Consulting – QA Freelancer | Testautomatisierung & Teststrategie</title>
-  <meta name="description" content="Lirsch QA Consulting Ltd. – Experte für Testanalyse, Teststrategie und Testautomatisierung. Helfe Softwareteams, bessere Produkte schneller zu liefern." />
-  <meta name="keywords" content="QA Consulting, Testautomatisierung, Teststrategie, Cypress, Selenium, Freelancer, Zypern" />
+  <title>Mario Lirsch – Freelance QA Engineer | LQA Consulting</title>
+  <meta name="description" content="Freiberuflicher QA-Engineer mit 6+ Jahren Erfahrung. Testanalyse, Teststrategie und Testautomatisierung mit Cypress, Selenium & Appium." />
+  <meta name="keywords" content="QA Consulting, Testautomatisierung, Teststrategie, Cypress, Selenium, Appium, ISTQB, Freelancer, Mario Lirsch" />
 
   <!-- EN Meta (in JSON-LD alternate) -->
   <link rel="alternate" hreflang="en" href="?lang=en" />
   <link rel="alternate" hreflang="de" href="?lang=de" />
 
   <!-- OG -->
-  <meta property="og:title" content="LQA Consulting – QA Freelancer" />
-  <meta property="og:description" content="Testanalyse, Teststrategie und Testautomatisierung für moderne Softwareteams." />
+  <meta property="og:title" content="Mario Lirsch – Freelance QA Engineer | LQA Consulting" />
+  <meta property="og:description" content="Freiberuflicher QA-Engineer mit 6+ Jahren Erfahrung. Testanalyse, Teststrategie und Testautomatisierung mit Cypress, Selenium & Appium." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="de_DE" />
   <meta property="og:locale:alternate" content="en_GB" />
@@ -283,13 +332,20 @@ const techStack = [
       </h1>
 
       <p class="reveal text-lg md:text-xl text-text-main/70 max-w-2xl mx-auto mb-10 leading-relaxed" data-key="hero.sub">
-        Ich helfe Softwareteams dabei, bessere Produkte schneller zu liefern – durch strukturierte Testanalyse und moderne Testautomatisierung.
+        Freiberuflicher QA-Engineer mit über 6 Jahren Erfahrung im manuellen und automatisierten Software-Testing für Web- und Mobile-Anwendungen. Als ISTQB-zertifizierter Test Analyst verbinde ich strukturierte Testanalyse mit moderner Testautomatisierung – in agilen Teams, remote und on-site.
       </p>
 
       <div class="reveal">
         <a href="#contact" class="btn-cta" data-key="hero.cta">Projekt anfragen</a>
       </div>
 
+      <!-- Badges -->
+      <div class="reveal flex flex-wrap justify-center gap-3 mt-8">
+        <span class="badge" data-key="hero.badges.0">6+ Jahre Erfahrung</span>
+        <span class="badge" data-key="hero.badges.1">ISTQB Foundation & Advanced</span>
+        <span class="badge" data-key="hero.badges.2">Remote & On-site</span>
+        <span class="badge" data-key="hero.badges.3">Agile / Scrum</span>
+      </div>
     </div>
 
     <!-- Scroll indicator — anchored to section bottom -->
@@ -324,24 +380,28 @@ const techStack = [
             <h3 class="text-xl font-bold" data-key="services.card1.title">Testanalyse & Teststrategie</h3>
           </div>
           <p class="text-text-main/60 mb-6 leading-relaxed" data-key="services.card1.desc">
-            Analyse von Anforderungen, risikobasiertes Testen, Testkonzepte und umfassende Qualitätssicherung im gesamten Software Development Lifecycle.
+            Analyse funktionaler & nicht-funktionaler Anforderungen, risikobasierte Teststrategie und Testkonzepte – für vollständige Qualitätssicherung im gesamten SDLC.
           </p>
           <ul class="space-y-3" data-key-list="services.card1.items">
             <li class="flex items-center gap-3 text-sm text-text-main/75">
               <span class="w-1.5 h-1.5 rounded-full bg-blue-primary flex-shrink-0"></span>
-              Anforderungsanalyse
+              Analyse funktionaler & nicht-funktionaler Anforderungen
             </li>
             <li class="flex items-center gap-3 text-sm text-text-main/75">
               <span class="w-1.5 h-1.5 rounded-full bg-blue-primary flex-shrink-0"></span>
-              Risikobasiertes Testen
+              Risikobasierte Teststrategie & Testkonzepte
             </li>
             <li class="flex items-center gap-3 text-sm text-text-main/75">
               <span class="w-1.5 h-1.5 rounded-full bg-blue-primary flex-shrink-0"></span>
-              Testkonzepte
+              Definition von Testumfang & Abdeckung
             </li>
             <li class="flex items-center gap-3 text-sm text-text-main/75">
               <span class="w-1.5 h-1.5 rounded-full bg-blue-primary flex-shrink-0"></span>
-              QA im gesamten SDLC
+              Koordination von Testphasen im gesamten SDLC
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-main/75">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-primary flex-shrink-0"></span>
+              Abstimmung zwischen Business- und Entwicklungsteams
             </li>
           </ul>
         </div>
@@ -358,24 +418,32 @@ const techStack = [
             <h3 class="text-xl font-bold" data-key="services.card2.title">Testautomatisierung</h3>
           </div>
           <p class="text-text-main/60 mb-6 leading-relaxed" data-key="services.card2.desc">
-            Aufbau und Wartung von Testframeworks, nahtlose Integration in CI/CD-Pipelines sowie End-to-End- und API-Testing.
+            Aufbau & Wartung von Testautomatisierungs-Frameworks, E2E- und API-Testing sowie nahtlose CI/CD-Integration mit Allure-Reporting.
           </p>
           <ul class="space-y-3" data-key-list="services.card2.items">
             <li class="flex items-center gap-3 text-sm text-text-main/75">
               <span class="w-1.5 h-1.5 rounded-full bg-green-accent flex-shrink-0"></span>
-              Testframework-Aufbau & -Wartung
+              Aufbau & Wartung von Testautomatisierungs-Frameworks
             </li>
             <li class="flex items-center gap-3 text-sm text-text-main/75">
               <span class="w-1.5 h-1.5 rounded-full bg-green-accent flex-shrink-0"></span>
-              CI/CD-Integration
+              E2E-Testing mit Cypress, Selenium & Appium
             </li>
             <li class="flex items-center gap-3 text-sm text-text-main/75">
               <span class="w-1.5 h-1.5 rounded-full bg-green-accent flex-shrink-0"></span>
-              End-to-End-Testing
+              API-Testing mit Postman
             </li>
             <li class="flex items-center gap-3 text-sm text-text-main/75">
               <span class="w-1.5 h-1.5 rounded-full bg-green-accent flex-shrink-0"></span>
-              API-Testing
+              BDD mit Cucumber
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-main/75">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-accent flex-shrink-0"></span>
+              CI/CD-Integration mit Jenkins & GitHub
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-main/75">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-accent flex-shrink-0"></span>
+              Testreporting mit Allure
             </li>
           </ul>
         </div>
@@ -402,20 +470,20 @@ const techStack = [
       <!-- Stats row -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 reveal">
         <div class="text-center">
-          <div class="text-4xl font-bold grad-text">5+</div>
-          <div class="text-sm text-text-main/50 mt-1" data-key-stat-de="Jahre Erfahrung" data-key-stat-en="Years experience">Jahre Erfahrung</div>
+          <div class="text-4xl font-bold grad-text">6+</div>
+          <div class="text-sm text-text-main/50 mt-1" data-key-stat-de="Jahre Erfahrung" data-key-stat-en="Years Experience">Jahre Erfahrung</div>
         </div>
         <div class="text-center">
-          <div class="text-4xl font-bold grad-text">20+</div>
+          <div class="text-4xl font-bold grad-text">5+</div>
           <div class="text-sm text-text-main/50 mt-1" data-key-stat-de="Projekte" data-key-stat-en="Projects">Projekte</div>
         </div>
         <div class="text-center">
-          <div class="text-4xl font-bold grad-text">5</div>
-          <div class="text-sm text-text-main/50 mt-1" data-key-stat-de="Branchen" data-key-stat-en="Industries">Branchen</div>
+          <div class="text-4xl font-bold grad-text">2</div>
+          <div class="text-sm text-text-main/50 mt-1" data-key-stat-de="ISTQB Zertifikate" data-key-stat-en="ISTQB Certificates">ISTQB Zertifikate</div>
         </div>
         <div class="text-center">
-          <div class="text-4xl font-bold grad-text">100%</div>
-          <div class="text-sm text-text-main/50 mt-1" data-key-stat-de="Remote-fähig" data-key-stat-en="Remote-ready">Remote-fähig</div>
+          <div class="text-4xl font-bold grad-text">4</div>
+          <div class="text-sm text-text-main/50 mt-1" data-key-stat-de="Branchen" data-key-stat-en="Industries">Branchen</div>
         </div>
       </div>
     </div>
@@ -580,11 +648,11 @@ const techStack = [
     // Update meta
     const metaDesc = document.querySelector('meta[name="description"]');
     if (lang === 'en' && metaDesc) {
-      metaDesc.content = 'Lirsch QA Consulting Ltd. – Expert in test analysis, test strategy, and test automation. Helping software teams ship better products faster.';
-      document.title = 'LQA Consulting – QA Freelancer | Test Automation & Strategy';
+      metaDesc.content = 'Freelance QA Engineer with 6+ years of experience. Test analysis, test strategy and automation with Cypress, Selenium & Appium.';
+      document.title = 'Mario Lirsch – Freelance QA Engineer | LQA Consulting';
     } else if (metaDesc) {
-      metaDesc.content = 'Lirsch QA Consulting Ltd. – Experte für Testanalyse, Teststrategie und Testautomatisierung. Helfe Softwareteams, bessere Produkte schneller zu liefern.';
-      document.title = 'LQA Consulting – QA Freelancer | Testautomatisierung & Teststrategie';
+      metaDesc.content = 'Freiberuflicher QA-Engineer mit 6+ Jahren Erfahrung. Testanalyse, Teststrategie und Testautomatisierung mit Cypress, Selenium & Appium.';
+      document.title = 'Mario Lirsch – Freelance QA Engineer | LQA Consulting';
     }
   }
 
