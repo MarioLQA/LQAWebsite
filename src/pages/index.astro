@@ -1,0 +1,632 @@
+---
+import '../styles/global.css';
+
+const t = {
+  de: {
+    nav: { services: 'Leistungen', experience: 'Erfahrung', stack: 'Stack', contact: 'Kontakt' },
+    hero: {
+      headline: 'Qualität ist kein Zufall.',
+      sub: 'Ich helfe Softwareteams dabei, bessere Produkte schneller zu liefern – durch strukturierte Testanalyse und moderne Testautomatisierung.',
+      cta: 'Projekt anfragen',
+    },
+    services: {
+      title: 'Leistungen',
+      card1: {
+        title: 'Testanalyse & Teststrategie',
+        desc: 'Analyse von Anforderungen, risikobasiertes Testen, Testkonzepte und umfassende Qualitätssicherung im gesamten Software Development Lifecycle.',
+        items: ['Anforderungsanalyse', 'Risikobasiertes Testen', 'Testkonzepte', 'QA im gesamten SDLC'],
+      },
+      card2: {
+        title: 'Testautomatisierung',
+        desc: 'Aufbau und Wartung von Testframeworks, nahtlose Integration in CI/CD-Pipelines sowie End-to-End- und API-Testing.',
+        items: ['Testframework-Aufbau & -Wartung', 'CI/CD-Integration', 'End-to-End-Testing', 'API-Testing'],
+      },
+    },
+    experience: {
+      title: 'Branchen',
+      sub: 'Erfahrung in anspruchsvollen Projekten aus diversen Branchen.',
+    },
+    stack: {
+      title: 'Tech Stack',
+      sub: 'Bewährte Tools für moderne Qualitätssicherung.',
+    },
+    contact: {
+      title: 'Kontakt',
+      sub: 'Bereit für Ihr nächstes Projekt? Schreiben Sie mir.',
+      name: 'Name',
+      email: 'E-Mail',
+      message: 'Nachricht',
+      send: 'Senden',
+      linkedin: 'LinkedIn-Profil',
+      emaillink: 'E-Mail schreiben',
+    },
+    footer: {
+      copy: '© 2025 Lirsch QA Consulting Ltd. · Zypern',
+      tagline: 'Qualität ist kein Zufall.',
+    },
+  },
+  en: {
+    nav: { services: 'Services', experience: 'Experience', stack: 'Stack', contact: 'Contact' },
+    hero: {
+      headline: 'Quality is no coincidence.',
+      sub: 'I help software teams ship better products faster – through structured test analysis and modern test automation.',
+      cta: 'Start a project',
+    },
+    services: {
+      title: 'Services',
+      card1: {
+        title: 'Test Analysis & Test Strategy',
+        desc: 'Requirements analysis, risk-based testing, test concepts, and comprehensive quality assurance across the full software development lifecycle.',
+        items: ['Requirements analysis', 'Risk-based testing', 'Test concepts', 'QA across the full SDLC'],
+      },
+      card2: {
+        title: 'Test Automation',
+        desc: 'Building and maintaining test frameworks, seamless CI/CD pipeline integration, plus end-to-end and API testing.',
+        items: ['Test framework build & maintenance', 'CI/CD integration', 'End-to-end testing', 'API testing'],
+      },
+    },
+    experience: {
+      title: 'Industries',
+      sub: 'Proven experience across demanding projects in diverse industries.',
+    },
+    stack: {
+      title: 'Tech Stack',
+      sub: 'Proven tools for modern quality assurance.',
+    },
+    contact: {
+      title: 'Contact',
+      sub: 'Ready for your next project? Get in touch.',
+      name: 'Name',
+      email: 'E-Mail',
+      message: 'Message',
+      send: 'Send',
+      linkedin: 'LinkedIn Profile',
+      emaillink: 'Send an e-mail',
+    },
+    footer: {
+      copy: '© 2025 Lirsch QA Consulting Ltd. · Cyprus',
+      tagline: 'Quality is no coincidence.',
+    },
+  },
+};
+
+const industries = ['E-Commerce', 'Fintech', 'SaaS', 'HealthTech', 'B2B Software'];
+
+const techStack = [
+  {
+    name: 'Cypress',
+    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="64" cy="64" r="60" fill="#050E1A"/><path d="M64 24C42 24 24 42 24 64s18 40 40 40 40-18 40-40S86 24 64 24zm0 10c16.6 0 30 13.4 30 30S80.6 94 64 94 34 80.6 34 64s13.4-30 30-30zm-6 14v32l24-16-24-16z" fill="#00E5AA"/></svg>`,
+  },
+  {
+    name: 'Selenium',
+    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="56" font-family="Segoe UI,sans-serif" font-weight="700" fill="#2979FF">Se</text></svg>`,
+  },
+  {
+    name: 'Playwright',
+    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><polygon points="64,24 100,44 100,84 64,104 28,84 28,44" fill="none" stroke="#00E5AA" stroke-width="4"/><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="30" font-family="Segoe UI,sans-serif" font-weight="700" fill="#E8F4FF">PW</text></svg>`,
+  },
+  {
+    name: 'Postman',
+    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><circle cx="64" cy="64" r="30" fill="none" stroke="#FF6C37" stroke-width="6"/><line x1="64" y1="34" x2="94" y2="64" stroke="#FF6C37" stroke-width="4" stroke-linecap="round"/></svg>`,
+  },
+  {
+    name: 'Jest',
+    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" font-size="46" font-family="Segoe UI,sans-serif" font-weight="800" fill="#C21325">Jest</text></svg>`,
+  },
+  {
+    name: 'GitHub Actions',
+    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><circle cx="64" cy="64" r="28" fill="none" stroke="#2979FF" stroke-width="5"/><circle cx="64" cy="64" r="10" fill="#2979FF"/><line x1="64" y1="36" x2="64" y2="24" stroke="#2979FF" stroke-width="4" stroke-linecap="round"/><line x1="92" y1="64" x2="104" y2="64" stroke="#2979FF" stroke-width="4" stroke-linecap="round"/></svg>`,
+  },
+  {
+    name: 'REST / GraphQL',
+    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><text x="50%" y="44%" dominant-baseline="middle" text-anchor="middle" font-size="22" font-family="Segoe UI,sans-serif" font-weight="700" fill="#00E5AA">REST</text><text x="50%" y="68%" dominant-baseline="middle" text-anchor="middle" font-size="17" font-family="Segoe UI,sans-serif" fill="#E144BA">GraphQL</text></svg>`,
+  },
+  {
+    name: 'Jira / Confluence',
+    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="48" font-family="Segoe UI,sans-serif" font-weight="800" fill="#2979FF">J</text></svg>`,
+  },
+];
+---
+
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- DE Meta (default) -->
+  <title>LQA Consulting – QA Freelancer | Testautomatisierung & Teststrategie</title>
+  <meta name="description" content="Lirsch QA Consulting Ltd. – Experte für Testanalyse, Teststrategie und Testautomatisierung. Helfe Softwareteams, bessere Produkte schneller zu liefern." />
+  <meta name="keywords" content="QA Consulting, Testautomatisierung, Teststrategie, Cypress, Selenium, Freelancer, Zypern" />
+
+  <!-- EN Meta (in JSON-LD alternate) -->
+  <link rel="alternate" hreflang="en" href="?lang=en" />
+  <link rel="alternate" hreflang="de" href="?lang=de" />
+
+  <!-- OG -->
+  <meta property="og:title" content="LQA Consulting – QA Freelancer" />
+  <meta property="og:description" content="Testanalyse, Teststrategie und Testautomatisierung für moderne Softwareteams." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:locale:alternate" content="en_GB" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Lirsch QA Consulting Ltd.",
+    "description": "QA Consulting — Testanalyse, Teststrategie & Testautomatisierung",
+    "address": { "@type": "PostalAddress", "addressCountry": "CY" },
+    "serviceType": ["Software Testing", "Test Automation", "QA Consulting"]
+  }
+  </script>
+
+  <!-- Preload font hint -->
+  <style>
+    body { font-family: "Segoe UI", system-ui, sans-serif; }
+  </style>
+</head>
+
+<body class="bg-bg text-text-main antialiased overflow-x-hidden">
+
+  <!-- ======== NAVIGATION ======== -->
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <svg viewBox="0 0 80 80" width="44" height="44" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0">
+          <defs>
+            <linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2979FF" />
+              <stop offset="100%" stop-color="#00E5AA" />
+            </linearGradient>
+            <linearGradient id="nav-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2979FF" stop-opacity="0.18" />
+              <stop offset="100%" stop-color="#00E5AA" stop-opacity="0.07" />
+            </linearGradient>
+          </defs>
+          <polygon points="40,8 64,21 64,47 40,60 16,47 16,21" fill="url(#nav-fill)" stroke="url(#nav-grad)" stroke-width="2"/>
+          <line x1="26" y1="22" x2="26" y2="46" stroke="#2979FF" stroke-width="4" stroke-linecap="square"/>
+          <line x1="26" y1="46" x2="40" y2="46" stroke="#2979FF" stroke-width="4" stroke-linecap="square"/>
+          <circle cx="46" cy="32" r="11" fill="none" stroke="#00E5AA" stroke-width="2.5"/>
+          <line x1="53" y1="40" x2="59" y2="47" stroke="#00E5AA" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="40" cy="8" r="2.2" fill="#2979FF"/>
+          <circle cx="64" cy="47" r="2.2" fill="#00E5AA"/>
+          <circle cx="16" cy="21" r="2.2" fill="#2979FF" opacity="0.5"/>
+        </svg>
+        <div class="flex flex-col leading-tight">
+          <span class="font-bold text-base tracking-wide text-text-main">LQA Consulting</span>
+          <span class="text-xs text-text-main/40 tracking-wider">QUALITY ASSURANCE</span>
+        </div>
+      </a>
+
+      <!-- Nav links + lang switcher (desktop) -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#services" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.services">Leistungen</a>
+        <a href="#experience" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.experience">Erfahrung</a>
+        <a href="#stack" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.stack">Stack</a>
+        <a href="#contact" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.contact">Kontakt</a>
+
+        <!-- Language switcher -->
+        <div class="flex items-center gap-1 border border-white/10 rounded-md px-1">
+          <button id="btn-de" class="lang-btn active" onclick="setLang('de')">DE</button>
+          <span class="text-white/20 text-xs">|</span>
+          <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="menu-btn" class="md:hidden text-text-main/70 hover:text-text-main" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/10">
+      <div class="max-w-6xl mx-auto flex flex-col gap-4 pt-4 px-2">
+        <a href="#services" class="nav-link text-sm text-text-main/70" data-key="nav.services" onclick="closeMobileMenu()">Leistungen</a>
+        <a href="#experience" class="nav-link text-sm text-text-main/70" data-key="nav.experience" onclick="closeMobileMenu()">Erfahrung</a>
+        <a href="#stack" class="nav-link text-sm text-text-main/70" data-key="nav.stack" onclick="closeMobileMenu()">Stack</a>
+        <a href="#contact" class="nav-link text-sm text-text-main/70" data-key="nav.contact" onclick="closeMobileMenu()">Kontakt</a>
+        <div class="flex items-center gap-2">
+          <button id="btn-de-m" class="lang-btn active" onclick="setLang('de')">DE</button>
+          <span class="text-white/20 text-xs">|</span>
+          <button id="btn-en-m" class="lang-btn" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======== HERO ======== -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-20">
+    <div class="hex-bg"></div>
+
+    <!-- Decorative grid lines -->
+    <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(41,121,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(41,121,255,0.04) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+    <div class="relative max-w-4xl mx-auto text-center z-10">
+      <!-- Monogram large -->
+      <div class="flex justify-center mb-10 reveal">
+        <svg viewBox="0 0 80 80" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="hero-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2979FF" />
+              <stop offset="100%" stop-color="#00E5AA" />
+            </linearGradient>
+            <linearGradient id="hero-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2979FF" stop-opacity="0.18" />
+              <stop offset="100%" stop-color="#00E5AA" stop-opacity="0.07" />
+            </linearGradient>
+          </defs>
+          <polygon points="40,8 64,21 64,47 40,60 16,47 16,21" fill="url(#hero-fill)" stroke="url(#hero-grad)" stroke-width="2"/>
+          <line x1="26" y1="22" x2="26" y2="46" stroke="#2979FF" stroke-width="4" stroke-linecap="square"/>
+          <line x1="26" y1="46" x2="40" y2="46" stroke="#2979FF" stroke-width="4" stroke-linecap="square"/>
+          <circle cx="46" cy="32" r="11" fill="none" stroke="#00E5AA" stroke-width="2.5"/>
+          <line x1="53" y1="40" x2="59" y2="47" stroke="#00E5AA" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="40" cy="8" r="2.2" fill="#2979FF"/>
+          <circle cx="64" cy="47" r="2.2" fill="#00E5AA"/>
+          <circle cx="16" cy="21" r="2.2" fill="#2979FF" opacity="0.5"/>
+        </svg>
+      </div>
+
+      <h1 class="reveal text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+        <span class="grad-text" data-key="hero.headline">Qualität ist kein Zufall.</span>
+      </h1>
+
+      <p class="reveal text-lg md:text-xl text-text-main/70 max-w-2xl mx-auto mb-10 leading-relaxed" data-key="hero.sub">
+        Ich helfe Softwareteams dabei, bessere Produkte schneller zu liefern – durch strukturierte Testanalyse und moderne Testautomatisierung.
+      </p>
+
+      <div class="reveal">
+        <a href="#contact" class="btn-cta" data-key="hero.cta">Projekt anfragen</a>
+      </div>
+
+    </div>
+
+    <!-- Scroll indicator — anchored to section bottom -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40 pointer-events-none">
+      <span class="text-xs tracking-widest uppercase">Scroll</span>
+      <svg width="16" height="24" viewBox="0 0 16 24" fill="none">
+        <rect x="1" y="1" width="14" height="22" rx="7" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="8" cy="7" r="2.5" fill="currentColor" class="animate-bounce"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ======== SERVICES ======== -->
+  <section id="services" class="py-28 px-6 relative">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <div class="section-divider"></div>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4" data-key="services.title">Leistungen</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Card 1 -->
+        <div class="card-glow rounded-2xl p-8 bg-white/[0.02] reveal">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: rgba(41,121,255,0.15);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2979FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 11l3 3L22 4"/>
+                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold" data-key="services.card1.title">Testanalyse & Teststrategie</h3>
+          </div>
+          <p class="text-text-main/60 mb-6 leading-relaxed" data-key="services.card1.desc">
+            Analyse von Anforderungen, risikobasiertes Testen, Testkonzepte und umfassende Qualitätssicherung im gesamten Software Development Lifecycle.
+          </p>
+          <ul class="space-y-3" data-key-list="services.card1.items">
+            <li class="flex items-center gap-3 text-sm text-text-main/75">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-primary flex-shrink-0"></span>
+              Anforderungsanalyse
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-main/75">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-primary flex-shrink-0"></span>
+              Risikobasiertes Testen
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-main/75">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-primary flex-shrink-0"></span>
+              Testkonzepte
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-main/75">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-primary flex-shrink-0"></span>
+              QA im gesamten SDLC
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-glow rounded-2xl p-8 bg-white/[0.02] reveal">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: rgba(0,229,170,0.12);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00E5AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold" data-key="services.card2.title">Testautomatisierung</h3>
+          </div>
+          <p class="text-text-main/60 mb-6 leading-relaxed" data-key="services.card2.desc">
+            Aufbau und Wartung von Testframeworks, nahtlose Integration in CI/CD-Pipelines sowie End-to-End- und API-Testing.
+          </p>
+          <ul class="space-y-3" data-key-list="services.card2.items">
+            <li class="flex items-center gap-3 text-sm text-text-main/75">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-accent flex-shrink-0"></span>
+              Testframework-Aufbau & -Wartung
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-main/75">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-accent flex-shrink-0"></span>
+              CI/CD-Integration
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-main/75">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-accent flex-shrink-0"></span>
+              End-to-End-Testing
+            </li>
+            <li class="flex items-center gap-3 text-sm text-text-main/75">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-accent flex-shrink-0"></span>
+              API-Testing
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== EXPERIENCE / INDUSTRIES ======== -->
+  <section id="experience" class="py-28 px-6 relative">
+    <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 0%, rgba(41,121,255,0.03) 50%, transparent 100%); pointer-events:none;"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <div class="reveal">
+        <div class="section-divider"></div>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4" data-key="experience.title">Branchen</h2>
+        <p class="text-text-main/60 mb-12" data-key="experience.sub">Erfahrung in anspruchsvollen Projekten aus diversen Branchen.</p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4 reveal">
+        {industries.map((ind) => (
+          <span class="badge">{ind}</span>
+        ))}
+      </div>
+
+      <!-- Stats row -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 reveal">
+        <div class="text-center">
+          <div class="text-4xl font-bold grad-text">5+</div>
+          <div class="text-sm text-text-main/50 mt-1" data-key-stat-de="Jahre Erfahrung" data-key-stat-en="Years experience">Jahre Erfahrung</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold grad-text">20+</div>
+          <div class="text-sm text-text-main/50 mt-1" data-key-stat-de="Projekte" data-key-stat-en="Projects">Projekte</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold grad-text">5</div>
+          <div class="text-sm text-text-main/50 mt-1" data-key-stat-de="Branchen" data-key-stat-en="Industries">Branchen</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold grad-text">100%</div>
+          <div class="text-sm text-text-main/50 mt-1" data-key-stat-de="Remote-fähig" data-key-stat-en="Remote-ready">Remote-fähig</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== TECH STACK ======== -->
+  <section id="stack" class="py-28 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <div class="section-divider"></div>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4" data-key="stack.title">Tech Stack</h2>
+        <p class="text-text-main/60" data-key="stack.sub">Bewährte Tools für moderne Qualitätssicherung.</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 reveal">
+        {techStack.map((tool) => (
+          <div class="tech-chip">
+            <Fragment set:html={tool.svg} />
+            <span class="text-sm font-medium text-text-main/80 text-center">{tool.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CONTACT ======== -->
+  <section id="contact" class="py-28 px-6 relative">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at center bottom, rgba(0,229,170,0.04) 0%, transparent 70%); pointer-events:none;"></div>
+    <div class="max-w-2xl mx-auto relative z-10">
+      <div class="text-center mb-14 reveal">
+        <div class="section-divider"></div>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4" data-key="contact.title">Kontakt</h2>
+        <p class="text-text-main/60" data-key="contact.sub">Bereit für Ihr nächstes Projekt? Schreiben Sie mir.</p>
+      </div>
+
+      <!-- Contact form -->
+      <form
+        action="mailto:mario@lqa-consulting.com"
+        method="POST"
+        enctype="text/plain"
+        class="space-y-5 reveal card-glow rounded-2xl p-8 bg-white/[0.02]"
+      >
+        <div>
+          <label class="block text-sm text-text-main/60 mb-2" data-key="contact.name">Name</label>
+          <input type="text" name="name" class="form-input" placeholder="Max Mustermann" required data-placeholder-de="Max Mustermann" data-placeholder-en="John Doe" />
+        </div>
+        <div>
+          <label class="block text-sm text-text-main/60 mb-2" data-key="contact.email">E-Mail</label>
+          <input type="email" name="email" class="form-input" placeholder="max@example.com" required />
+        </div>
+        <div>
+          <label class="block text-sm text-text-main/60 mb-2" data-key="contact.message">Nachricht</label>
+          <textarea name="message" rows="5" class="form-input resize-none" placeholder="Beschreiben Sie Ihr Projekt…" required data-placeholder-de="Beschreiben Sie Ihr Projekt…" data-placeholder-en="Describe your project…"></textarea>
+        </div>
+        <button type="submit" class="btn-cta w-full text-center" data-key="contact.send">Senden</button>
+      </form>
+
+      <!-- Links -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10 reveal">
+        <a
+          href="https://www.linkedin.com/in/mario-lirsch"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-3 text-text-main/60 hover:text-blue-primary transition-colors"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          <span class="text-sm" data-key="contact.linkedin">LinkedIn-Profil</span>
+        </a>
+
+        <a
+          href="mailto:mario@lqa-consulting.com"
+          class="flex items-center gap-3 text-text-main/60 hover:text-green-accent transition-colors"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <span class="text-sm" data-key="contact.emaillink">E-Mail schreiben</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="border-t border-white/5 py-10 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <svg viewBox="0 0 80 80" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ft-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2979FF"/>
+              <stop offset="100%" stop-color="#00E5AA"/>
+            </linearGradient>
+          </defs>
+          <polygon points="40,8 64,21 64,47 40,60 16,47 16,21" fill="none" stroke="url(#ft-grad)" stroke-width="2"/>
+        </svg>
+        <span class="text-sm text-text-main/40" data-key="footer.copy">© 2025 Lirsch QA Consulting Ltd. · Zypern</span>
+      </div>
+      <span class="text-sm text-text-main/30 italic" data-key="footer.tagline">Qualität ist kein Zufall.</span>
+    </div>
+  </footer>
+
+</body>
+
+<!-- ======== SCRIPTS ======== -->
+<script define:vars={{ tDE: t.de, tEN: t.en }}>
+  // ---- Translations ----
+  const translations = { de: tDE, en: tEN };
+  let currentLang = 'de';
+
+  function getNestedValue(obj, key) {
+    return key.split('.').reduce((o, k) => (o ? o[k] : undefined), obj);
+  }
+
+  function applyTranslations(lang) {
+    const t = translations[lang];
+    currentLang = lang;
+
+    // Update html lang attr
+    document.documentElement.lang = lang;
+
+    // Text nodes
+    document.querySelectorAll('[data-key]').forEach(el => {
+      const val = getNestedValue(t, el.dataset.key);
+      if (val) el.textContent = val;
+    });
+
+    // List items
+    document.querySelectorAll('[data-key-list]').forEach(ul => {
+      const items = getNestedValue(t, ul.dataset.keyList);
+      if (!items) return;
+      const dots = ul.querySelectorAll('li');
+      dots.forEach((li, i) => {
+        const dot = li.querySelector('span');
+        li.textContent = '';
+        if (dot) li.appendChild(dot);
+        li.append(' ' + items[i]);
+      });
+    });
+
+    // Stat labels
+    document.querySelectorAll('[data-key-stat-de]').forEach(el => {
+      el.textContent = el.dataset[`keyStatDe`];
+    });
+    if (lang === 'en') {
+      document.querySelectorAll('[data-key-stat-de]').forEach(el => {
+        el.textContent = el.dataset[`keyStatEn`];
+      });
+    }
+
+    // Placeholder text
+    document.querySelectorAll('[data-placeholder-de]').forEach(el => {
+      el.placeholder = el.dataset[`placeholder${lang.charAt(0).toUpperCase() + lang.slice(1)}`] || el.dataset.placeholderDe;
+    });
+
+    // Update lang buttons
+    document.querySelectorAll('#btn-de, #btn-de-m').forEach(b => b.classList.toggle('active', lang === 'de'));
+    document.querySelectorAll('#btn-en, #btn-en-m').forEach(b => b.classList.toggle('active', lang === 'en'));
+
+    // Update meta
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (lang === 'en' && metaDesc) {
+      metaDesc.content = 'Lirsch QA Consulting Ltd. – Expert in test analysis, test strategy, and test automation. Helping software teams ship better products faster.';
+      document.title = 'LQA Consulting – QA Freelancer | Test Automation & Strategy';
+    } else if (metaDesc) {
+      metaDesc.content = 'Lirsch QA Consulting Ltd. – Experte für Testanalyse, Teststrategie und Testautomatisierung. Helfe Softwareteams, bessere Produkte schneller zu liefern.';
+      document.title = 'LQA Consulting – QA Freelancer | Testautomatisierung & Teststrategie';
+    }
+  }
+
+  window.setLang = function(lang) {
+    applyTranslations(lang);
+    try { localStorage.setItem('lqa-lang', lang); } catch(e) {}
+  };
+
+  // ---- Nav scroll effect ----
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ---- Mobile menu ----
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+  window.closeMobileMenu = function() {
+    mobileMenu.classList.add('hidden');
+  };
+
+  // ---- Scroll reveal ----
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ---- Init language ----
+  (function init() {
+    let lang = 'de';
+    try { lang = localStorage.getItem('lqa-lang') || 'de'; } catch(e) {}
+    if (lang !== 'de') applyTranslations(lang);
+  })();
+</script>
+
+</html>
