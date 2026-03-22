@@ -3,7 +3,15 @@ import '../styles/global.css';
 
 const t = {
   de: {
-    nav: { services: 'Leistungen', experience: 'Erfahrung', stack: 'Stack', contact: 'Kontakt' },
+    nav: { about: 'Über mich', services: 'Leistungen', experience: 'Erfahrung', stack: 'Stack', contact: 'Kontakt' },
+    about: {
+      title: 'Über mich',
+      para1: '„Eigentlich wollte ich Entwickler werden. Den Einstieg in die IT habe ich über meine erste QA-Rolle gemacht – und dabei etwas Unerwartetes entdeckt: die Faszination dafür, Software bis ins kleinste Detail zu durchleuchten. Die Liebe zum Code habe ich in der Testautomatisierung gefunden. Die Liebe zur Qualität in jedem Projekt danach.',
+      para2: 'Heute suche ich nicht nur Bugs – ich denke in Lösungen. Ich bin der Typ, der sich über einen kniffligen Edgecase freut, der anderen nicht aufgefallen wäre. Der nicht aufhört, bis er wirklich verstanden hat, warum etwas fehlschlägt. Saubere Prozesse, klare Kommunikation und ein Team das sich auf QA verlassen kann – dafür stehe ich."',
+      trait1: 'Bug Hunter & Edge-Case-Spezialist',
+      trait2: 'Testautomatisierungs-Engineer',
+      trait3: 'QA-Advocate & Teamplayer',
+    },
     hero: {
       headline: 'Qualität ist kein Zufall.',
       sub: 'Freiberuflicher QA-Engineer mit über 6 Jahren Erfahrung im manuellen und automatisierten Software-Testing für Web- und Mobile-Anwendungen. Als ISTQB-zertifizierter Test Analyst verbinde ich strukturierte Testanalyse mit moderner Testautomatisierung – in agilen Teams, remote und on-site.',
@@ -60,7 +68,15 @@ const t = {
     },
   },
   en: {
-    nav: { services: 'Services', experience: 'Experience', stack: 'Stack', contact: 'Contact' },
+    nav: { about: 'About', services: 'Services', experience: 'Experience', stack: 'Stack', contact: 'Contact' },
+    about: {
+      title: 'About me',
+      para1: '„I originally wanted to become a developer. My entry into IT came through my first QA role – and that\'s where I discovered something unexpected: a genuine fascination for testing software down to the smallest detail. I found my love for code in test automation. My love for quality in every project since.',
+      para2: 'Today I don\'t just find bugs – I think in solutions. I\'m the kind of person who gets excited about an edge case others would have missed. Who doesn\'t stop until they truly understand why something fails. Clean processes, clear communication, and a team that can rely on QA – that\'s what I stand for."',
+      trait1: 'Bug Hunter & Edge Case Explorer',
+      trait2: 'Test Automation Engineer',
+      trait3: 'QA Advocate & Team Player',
+    },
     hero: {
       headline: 'Quality is no coincidence.',
       sub: 'Freelance QA Engineer with 6+ years of experience in manual and automated software testing for web and mobile applications. As an ISTQB-certified Test Analyst, I combine structured test analysis with modern test automation – in agile teams, remotely and on-site.',
@@ -256,6 +272,7 @@ const techStack = [
 
       <!-- Nav links + lang switcher (desktop) -->
       <div class="hidden md:flex items-center gap-8">
+        <a href="#about" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.about">Über mich</a>
         <a href="#services" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.services">Leistungen</a>
         <a href="#experience" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.experience">Erfahrung</a>
         <a href="#stack" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.stack">Stack</a>
@@ -282,6 +299,7 @@ const techStack = [
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/10">
       <div class="max-w-6xl mx-auto flex flex-col gap-4 pt-4 px-2">
+        <a href="#about" class="nav-link text-sm text-text-main/70" data-key="nav.about" onclick="closeMobileMenu()">Über mich</a>
         <a href="#services" class="nav-link text-sm text-text-main/70" data-key="nav.services" onclick="closeMobileMenu()">Leistungen</a>
         <a href="#experience" class="nav-link text-sm text-text-main/70" data-key="nav.experience" onclick="closeMobileMenu()">Erfahrung</a>
         <a href="#stack" class="nav-link text-sm text-text-main/70" data-key="nav.stack" onclick="closeMobileMenu()">Stack</a>
@@ -355,6 +373,111 @@ const techStack = [
         <rect x="1" y="1" width="14" height="22" rx="7" stroke="currentColor" stroke-width="1.5"/>
         <circle cx="8" cy="7" r="2.5" fill="currentColor" class="animate-bounce"/>
       </svg>
+    </div>
+  </section>
+
+  <!-- ======== ABOUT ======== -->
+  <section id="about" class="py-28 px-6 relative">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-16 reveal">
+        <div class="section-divider"></div>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4" data-key="about.title">Über mich</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+
+        <!-- Text column -->
+        <div class="reveal space-y-6">
+          <p class="text-text-main/70 text-lg leading-relaxed" data-key="about.para1">
+            „Eigentlich wollte ich Entwickler werden. Den Einstieg in die IT habe ich über meine erste QA-Rolle gemacht – und dabei etwas Unerwartetes entdeckt: die Faszination dafür, Software bis ins kleinste Detail zu durchleuchten. Die Liebe zum Code habe ich in der Testautomatisierung gefunden. Die Liebe zur Qualität in jedem Projekt danach.
+          </p>
+          <p class="text-text-main/70 text-lg leading-relaxed" data-key="about.para2">
+            Heute suche ich nicht nur Bugs – ich denke in Lösungen. Ich bin der Typ, der sich über einen kniffligen Edgecase freut, der anderen nicht aufgefallen wäre. Der nicht aufhört, bis er wirklich verstanden hat, warum etwas fehlschlägt. Saubere Prozesse, klare Kommunikation und ein Team das sich auf QA verlassen kann – dafür stehe ich."
+          </p>
+        </div>
+
+        <!-- Visual column -->
+        <div class="reveal flex justify-center">
+          <div class="card-glow rounded-2xl p-8 bg-white/[0.02] w-full max-w-sm relative overflow-hidden">
+
+            <!-- Background glow blobs -->
+            <div class="absolute top-0 right-0 w-56 h-56 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(41,121,255,0.08), transparent 70%); transform: translate(30%, -30%);"></div>
+            <div class="absolute bottom-0 left-0 w-40 h-40 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(0,229,170,0.07), transparent 70%); transform: translate(-30%, 30%);"></div>
+
+            <!-- Geometric SVG -->
+            <svg viewBox="0 0 200 200" width="180" height="180" class="mx-auto mb-8 block" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="about-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#2979FF"/>
+                  <stop offset="100%" stop-color="#00E5AA"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Outer hexagon -->
+              <polygon points="100,18 158,52 158,118 100,152 42,118 42,52" fill="none" stroke="url(#about-grad)" stroke-width="1.5" opacity="0.5"/>
+              <!-- Inner hexagon -->
+              <polygon points="100,44 138,66 138,110 100,132 62,110 62,66" fill="none" stroke="url(#about-grad)" stroke-width="1" opacity="0.25"/>
+              <!-- Innermost hexagon -->
+              <polygon points="100,68 120,79 120,101 100,112 80,101 80,79" fill="rgba(41,121,255,0.06)" stroke="url(#about-grad)" stroke-width="1" opacity="0.4"/>
+
+              <!-- Connecting lines from outer vertices to center -->
+              <line x1="100" y1="18" x2="100" y2="68" stroke="#2979FF" stroke-width="0.75" opacity="0.3"/>
+              <line x1="158" y1="52" x2="120" y2="79" stroke="#00E5AA" stroke-width="0.75" opacity="0.3"/>
+              <line x1="158" y1="118" x2="120" y2="101" stroke="#2979FF" stroke-width="0.75" opacity="0.25"/>
+              <line x1="100" y1="152" x2="100" y2="112" stroke="#00E5AA" stroke-width="0.75" opacity="0.3"/>
+              <line x1="42" y1="118" x2="80" y2="101" stroke="#2979FF" stroke-width="0.75" opacity="0.25"/>
+              <line x1="42" y1="52" x2="80" y2="79" stroke="#00E5AA" stroke-width="0.75" opacity="0.3"/>
+
+              <!-- Vertex dots -->
+              <circle cx="100" cy="18" r="2.5" fill="#2979FF"/>
+              <circle cx="158" cy="52" r="2.5" fill="#00E5AA"/>
+              <circle cx="158" cy="118" r="2" fill="#2979FF" opacity="0.5"/>
+              <circle cx="100" cy="152" r="2.5" fill="#00E5AA"/>
+              <circle cx="42" cy="118" r="2" fill="#2979FF" opacity="0.5"/>
+              <circle cx="42" cy="52" r="2.5" fill="#00E5AA" opacity="0.7"/>
+
+              <!-- Center: magnifying glass icon -->
+              <circle cx="100" cy="90" r="18" fill="none" stroke="#2979FF" stroke-width="2.5"/>
+              <line x1="113" y1="103" x2="124" y2="114" stroke="#2979FF" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Small plus inside magnifier = "finding details" -->
+              <line x1="100" y1="83" x2="100" y2="97" stroke="#00E5AA" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="93" y1="90" x2="107" y2="90" stroke="#00E5AA" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+
+            <!-- Three trait rows -->
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(41,121,255,0.15);">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2979FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                  </svg>
+                </div>
+                <span class="text-sm text-text-main/70" data-key="about.trait1">Bug Hunter & Edge-Case-Spezialist</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(0,229,170,0.12);">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#00E5AA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+                  </svg>
+                </div>
+                <span class="text-sm text-text-main/70" data-key="about.trait2">Testautomatisierungs-Engineer</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(41,121,255,0.15);">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2979FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+                  </svg>
+                </div>
+                <span class="text-sm text-text-main/70" data-key="about.trait3">QA-Advocate & Teamplayer</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
