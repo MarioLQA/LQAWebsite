@@ -152,6 +152,32 @@ html {
   margin: 0 auto 16px;
 }
 
+/* Project cards expand/collapse */
+.project-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+}
+.project-card.expanded .project-body {
+  max-height: 3000px;
+}
+.project-card .less-text {
+  display: none;
+}
+.project-card.expanded .more-text {
+  display: none;
+}
+.project-card.expanded .less-text {
+  display: inline;
+}
+.chevron-icon {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+.project-card.expanded .chevron-icon {
+  transform: rotate(180deg);
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #050E1A; }
