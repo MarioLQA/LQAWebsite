@@ -69,6 +69,8 @@ const t = {
     footer: {
       copy: '© 2025 Lirsch QA Consulting Ltd. · Zypern',
       tagline: 'Qualität ist kein Zufall.',
+      legal: 'Impressum',
+      privacy: 'Datenschutz',
     },
   },
   en: {
@@ -138,6 +140,8 @@ const t = {
     footer: {
       copy: '© 2025 Lirsch QA Consulting Ltd. · Cyprus',
       tagline: 'Quality is no coincidence.',
+      legal: 'Legal Notice',
+      privacy: 'Privacy Policy',
     },
   },
 };
@@ -879,7 +883,7 @@ const techStack = [
 
   <!-- ======== FOOTER ======== -->
   <footer class="border-t border-white/5 py-10 px-6">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-3">
         <svg viewBox="0 0 80 80" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -892,7 +896,11 @@ const techStack = [
         </svg>
         <span class="text-sm text-text-main/40" data-key="footer.copy">© 2025 Lirsch QA Consulting Ltd. · Zypern</span>
       </div>
-      <span class="text-sm text-text-main/30 italic" data-key="footer.tagline">Qualität ist kein Zufall.</span>
+      <div class="flex items-center gap-6">
+        <a href="/legal" class="text-sm text-text-main/30 hover:text-text-main/60 transition-colors" data-key="footer.legal">Impressum</a>
+        <a href="/privacy" class="text-sm text-text-main/30 hover:text-text-main/60 transition-colors" data-key="footer.privacy">Datenschutz</a>
+        <span class="text-sm text-text-main/20 italic" data-key="footer.tagline">Qualität ist kein Zufall.</span>
+      </div>
     </div>
   </footer>
 

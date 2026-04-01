@@ -1,0 +1,289 @@
+---
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum – LQA Consulting</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <style>
+    body { font-family: "Segoe UI", system-ui, sans-serif; }
+  </style>
+</head>
+
+<body class="bg-bg text-text-main antialiased overflow-x-hidden">
+
+  <!-- ======== NAVIGATION ======== -->
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <svg viewBox="0 0 80 80" width="44" height="44" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0">
+          <defs>
+            <linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2979FF" />
+              <stop offset="100%" stop-color="#00E5AA" />
+            </linearGradient>
+            <linearGradient id="nav-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2979FF" stop-opacity="0.18" />
+              <stop offset="100%" stop-color="#00E5AA" stop-opacity="0.07" />
+            </linearGradient>
+          </defs>
+          <polygon points="40,8 64,21 64,47 40,60 16,47 16,21" fill="url(#nav-fill)" stroke="url(#nav-grad)" stroke-width="2"/>
+          <line x1="26" y1="22" x2="26" y2="46" stroke="#2979FF" stroke-width="4" stroke-linecap="square"/>
+          <line x1="26" y1="46" x2="40" y2="46" stroke="#2979FF" stroke-width="4" stroke-linecap="square"/>
+          <circle cx="46" cy="32" r="11" fill="none" stroke="#00E5AA" stroke-width="2.5"/>
+          <line x1="53" y1="40" x2="59" y2="47" stroke="#00E5AA" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="40" cy="8" r="2.2" fill="#2979FF"/>
+          <circle cx="64" cy="47" r="2.2" fill="#00E5AA"/>
+          <circle cx="16" cy="21" r="2.2" fill="#2979FF" opacity="0.5"/>
+        </svg>
+        <div class="flex flex-col leading-tight">
+          <span class="font-bold text-base tracking-wide text-text-main">LQA Consulting</span>
+          <span class="text-xs text-text-main/40 tracking-wider">QUALITY ASSURANCE</span>
+        </div>
+      </a>
+
+      <!-- Nav links + lang switcher (desktop) -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/#about" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.about">Über mich</a>
+        <a href="/#services" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.services">Leistungen</a>
+        <a href="/#experience" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.experience">Erfahrung</a>
+        <a href="/#projects" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.projects">Projekte</a>
+        <a href="/#stack" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.stack">Stack</a>
+        <a href="/#contact" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.contact">Kontakt</a>
+
+        <!-- Language switcher -->
+        <div class="flex items-center gap-1 border border-white/10 rounded-md px-1">
+          <button id="btn-de" class="lang-btn active" onclick="setLang('de')">DE</button>
+          <span class="text-white/20 text-xs">|</span>
+          <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="menu-btn" class="md:hidden text-text-main/70 hover:text-text-main" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/10">
+      <div class="max-w-6xl mx-auto flex flex-col gap-4 pt-4 px-2">
+        <a href="/#about" class="text-sm text-text-main/70" data-key="nav.about" onclick="closeMobileMenu()">Über mich</a>
+        <a href="/#services" class="text-sm text-text-main/70" data-key="nav.services" onclick="closeMobileMenu()">Leistungen</a>
+        <a href="/#experience" class="text-sm text-text-main/70" data-key="nav.experience" onclick="closeMobileMenu()">Erfahrung</a>
+        <a href="/#projects" class="text-sm text-text-main/70" data-key="nav.projects" onclick="closeMobileMenu()">Projekte</a>
+        <a href="/#stack" class="text-sm text-text-main/70" data-key="nav.stack" onclick="closeMobileMenu()">Stack</a>
+        <a href="/#contact" class="text-sm text-text-main/70" data-key="nav.contact" onclick="closeMobileMenu()">Kontakt</a>
+        <div class="flex items-center gap-2">
+          <button id="btn-de-m" class="lang-btn active" onclick="setLang('de')">DE</button>
+          <span class="text-white/20 text-xs">|</span>
+          <button id="btn-en-m" class="lang-btn" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======== CONTENT ======== -->
+  <main class="min-h-screen pt-32 pb-24 px-6">
+    <div class="max-w-2xl mx-auto">
+
+      <!-- Back link -->
+      <a href="/" class="inline-flex items-center gap-2 text-sm text-text-main/40 hover:text-text-main/70 transition-colors mb-10">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        <span data-show-lang="de">Zurück</span>
+        <span data-show-lang="en" class="hidden">Back</span>
+      </a>
+
+      <div class="card-glow rounded-2xl bg-white/[0.02] p-8 md:p-10 reveal">
+
+        <!-- DE content -->
+        <div data-show-lang="de">
+          <div class="section-divider"></div>
+          <h1 class="text-3xl md:text-4xl font-bold mt-4 mb-8">Impressum</h1>
+
+          <div class="space-y-6 text-text-main/75 text-sm leading-relaxed">
+            <div>
+              <p class="text-text-main/40 text-xs font-semibold uppercase tracking-widest mb-3">Angaben gemäß EU-Recht</p>
+              <p class="font-semibold text-text-main text-base">LIRSCH QA CONSULTING LIMITED</p>
+              <p>Alexandrou Papadiamanti 1, Block A, Flat/Office 1</p>
+              <p>6035 Larnaca, Cyprus</p>
+            </div>
+
+            <div>
+              <p>Registriert beim Registrar of Companies, Cyprus</p>
+              <p>Registrierungsnummer: <span class="text-text-main/90 font-medium">HE 490218</span></p>
+            </div>
+
+            <div class="border-t border-white/5 pt-6">
+              <p class="text-text-main/40 text-xs font-semibold uppercase tracking-widest mb-3">Verantwortlicher</p>
+              <p>Mario Lirsch</p>
+              <p>E-Mail: <a href="mailto:mario@lqa-consulting.com" class="text-blue-primary hover:text-green-accent transition-colors">mario@lqa-consulting.com</a></p>
+              <p>Website: <a href="/" class="text-blue-primary hover:text-green-accent transition-colors">lqa-consulting.com</a></p>
+            </div>
+
+            <div class="border-t border-white/5 pt-6">
+              <p>USt-IdNr.: <span class="text-text-main/50 italic">wird nachgetragen</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- EN content -->
+        <div data-show-lang="en" class="hidden">
+          <div class="section-divider"></div>
+          <h1 class="text-3xl md:text-4xl font-bold mt-4 mb-8">Legal Notice</h1>
+
+          <div class="space-y-6 text-text-main/75 text-sm leading-relaxed">
+            <div>
+              <p class="text-text-main/40 text-xs font-semibold uppercase tracking-widest mb-3">Legal Information</p>
+              <p class="font-semibold text-text-main text-base">LIRSCH QA CONSULTING LIMITED</p>
+              <p>Alexandrou Papadiamanti 1, Block A, Flat/Office 1</p>
+              <p>6035 Larnaca, Cyprus</p>
+            </div>
+
+            <div>
+              <p>Registered with the Registrar of Companies, Cyprus</p>
+              <p>Registration Number: <span class="text-text-main/90 font-medium">HE 490218</span></p>
+            </div>
+
+            <div class="border-t border-white/5 pt-6">
+              <p class="text-text-main/40 text-xs font-semibold uppercase tracking-widest mb-3">Responsible</p>
+              <p>Mario Lirsch</p>
+              <p>Email: <a href="mailto:mario@lqa-consulting.com" class="text-blue-primary hover:text-green-accent transition-colors">mario@lqa-consulting.com</a></p>
+              <p>Website: <a href="/" class="text-blue-primary hover:text-green-accent transition-colors">lqa-consulting.com</a></p>
+            </div>
+
+            <div class="border-t border-white/5 pt-6">
+              <p>VAT Number: <span class="text-text-main/50 italic">to be added</span></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="border-t border-white/5 py-10 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <svg viewBox="0 0 80 80" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ft-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2979FF"/>
+              <stop offset="100%" stop-color="#00E5AA"/>
+            </linearGradient>
+          </defs>
+          <polygon points="40,8 64,21 64,47 40,60 16,47 16,21" fill="none" stroke="url(#ft-grad)" stroke-width="2"/>
+        </svg>
+        <span class="text-sm text-text-main/40">
+          <span data-show-lang="de">© 2025 Lirsch QA Consulting Ltd. · Zypern</span>
+          <span data-show-lang="en" class="hidden">© 2025 Lirsch QA Consulting Ltd. · Cyprus</span>
+        </span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="/legal" class="text-sm text-text-main/50 hover:text-text-main/70 transition-colors">
+          <span data-show-lang="de">Impressum</span>
+          <span data-show-lang="en" class="hidden">Legal Notice</span>
+        </a>
+        <a href="/privacy" class="text-sm text-text-main/30 hover:text-text-main/60 transition-colors">
+          <span data-show-lang="de">Datenschutz</span>
+          <span data-show-lang="en" class="hidden">Privacy Policy</span>
+        </a>
+        <span class="text-sm text-text-main/20 italic">
+          <span data-show-lang="de">Qualität ist kein Zufall.</span>
+          <span data-show-lang="en" class="hidden">Quality is no coincidence.</span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+<!-- ======== SCRIPTS ======== -->
+<script>
+  const translations = {
+    de: { nav: { about: 'Über mich', services: 'Leistungen', experience: 'Erfahrung', projects: 'Projekte', stack: 'Stack', contact: 'Kontakt' } },
+    en: { nav: { about: 'About', services: 'Services', experience: 'Experience', projects: 'Projects', stack: 'Stack', contact: 'Contact' } },
+  };
+  let currentLang = 'de';
+
+  function applyTranslations(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+
+    // Nav text nodes
+    document.querySelectorAll('[data-key]').forEach(el => {
+      const keys = el.dataset.key.split('.');
+      const val = keys.reduce((o, k) => (o ? o[k] : undefined), translations[lang]);
+      if (val) el.textContent = val;
+    });
+
+    // Show/hide language-specific content
+    document.querySelectorAll('[data-show-lang]').forEach(el => {
+      el.classList.toggle('hidden', el.dataset.showLang !== lang);
+    });
+
+    // Update lang buttons
+    document.querySelectorAll('#btn-de, #btn-de-m').forEach(b => b.classList.toggle('active', lang === 'de'));
+    document.querySelectorAll('#btn-en, #btn-en-m').forEach(b => b.classList.toggle('active', lang === 'en'));
+
+    // Update page title
+    document.title = lang === 'en'
+      ? 'Legal Notice – LQA Consulting'
+      : 'Impressum – LQA Consulting';
+  }
+
+  window.setLang = function(lang) {
+    applyTranslations(lang);
+    try { localStorage.setItem('lqa-lang', lang); } catch(e) {}
+  };
+
+  // ---- Nav scroll effect ----
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ---- Mobile menu ----
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+  window.closeMobileMenu = function() {
+    mobileMenu.classList.add('hidden');
+  };
+
+  // ---- Scroll reveal ----
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ---- Init language ----
+  (function init() {
+    let lang = 'de';
+    try { lang = localStorage.getItem('lqa-lang') || 'de'; } catch(e) {}
+    if (lang !== 'de') applyTranslations(lang);
+  })();
+</script>
+
+</html>
