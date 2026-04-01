@@ -341,7 +341,7 @@ const techStack = [
 <body class="bg-bg text-text-main antialiased overflow-x-hidden">
 
   <!-- ======== NAVIGATION ======== -->
-  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-4">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
 
       <!-- Logo -->
@@ -401,7 +401,7 @@ const techStack = [
 
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/10">
-      <div class="max-w-6xl mx-auto flex flex-col gap-4 pt-4 px-2">
+      <div class="max-w-6xl mx-auto flex flex-col gap-4 pt-4 px-4">
         <a href="#about" class="nav-link text-sm text-text-main/70" data-key="nav.about" onclick="closeMobileMenu()">Über mich</a>
         <a href="#services" class="nav-link text-sm text-text-main/70" data-key="nav.services" onclick="closeMobileMenu()">Leistungen</a>
         <a href="#experience" class="nav-link text-sm text-text-main/70" data-key="nav.experience" onclick="closeMobileMenu()">Erfahrung</a>
@@ -418,7 +418,7 @@ const techStack = [
   </nav>
 
   <!-- ======== HERO ======== -->
-  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-20">
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 pt-20">
     <div class="hex-bg"></div>
 
     <!-- Decorative grid lines -->
@@ -426,8 +426,8 @@ const techStack = [
 
     <div class="relative max-w-4xl mx-auto text-center z-10">
       <!-- Monogram large -->
-      <div class="flex justify-center mb-10 reveal">
-        <svg viewBox="0 0 80 80" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+      <div class="flex justify-center mb-8 md:mb-10 reveal">
+        <svg viewBox="0 0 80 80" width="80" height="80" class="sm:w-24 sm:h-24 md:w-[100px] md:h-[100px]" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="hero-grad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stop-color="#2979FF" />
@@ -449,11 +449,11 @@ const techStack = [
         </svg>
       </div>
 
-      <h1 class="reveal text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+      <h1 class="reveal text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
         <span class="grad-text" data-key="hero.headline">Qualität ist kein Zufall.</span>
       </h1>
 
-      <p class="reveal text-lg md:text-xl text-text-main/70 max-w-2xl mx-auto mb-10 leading-relaxed" data-key="hero.sub">
+      <p class="reveal text-base sm:text-lg md:text-xl text-text-main/70 max-w-2xl mx-auto mb-10 leading-relaxed" data-key="hero.sub">
         Freiberuflicher QA-Engineer mit über 6 Jahren Erfahrung im manuellen und automatisierten Software-Testing für Web- und Mobile-Anwendungen. Als ISTQB-zertifizierter Test Analyst verbinde ich strukturierte Testanalyse mit moderner Testautomatisierung – in agilen Teams, remote und on-site.
       </p>
 
@@ -462,11 +462,11 @@ const techStack = [
       </div>
 
       <!-- Badges -->
-      <div class="reveal flex flex-wrap justify-center gap-3 mt-8">
-        <span class="badge" data-key="hero.badges.0">6+ Jahre Erfahrung</span>
-        <span class="badge" data-key="hero.badges.1">ISTQB Foundation & Advanced</span>
-        <span class="badge" data-key="hero.badges.2">Remote & On-site</span>
-        <span class="badge" data-key="hero.badges.3">Agile / Scrum</span>
+      <div class="reveal flex flex-wrap justify-center gap-2 sm:gap-3 mt-8">
+        <span class="badge text-xs sm:text-sm" data-key="hero.badges.0">6+ Jahre Erfahrung</span>
+        <span class="badge text-xs sm:text-sm" data-key="hero.badges.1">ISTQB Foundation & Advanced</span>
+        <span class="badge text-xs sm:text-sm" data-key="hero.badges.2">Remote & On-site</span>
+        <span class="badge text-xs sm:text-sm" data-key="hero.badges.3">Agile / Scrum</span>
       </div>
     </div>
 
@@ -481,36 +481,36 @@ const techStack = [
   </section>
 
   <!-- ======== ABOUT ======== -->
-  <section id="about" class="py-28 px-6 relative">
+  <section id="about" class="py-16 md:py-28 px-4 sm:px-6 relative">
     <div class="max-w-6xl mx-auto">
 
-      <div class="text-center mb-16 reveal">
+      <div class="text-center mb-10 md:mb-16 reveal">
         <div class="section-divider"></div>
         <h2 class="text-3xl md:text-4xl font-bold mt-4" data-key="about.title">Über mich</h2>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
 
         <!-- Text column -->
         <div class="reveal space-y-6">
-          <p class="text-text-main/70 text-lg leading-relaxed" data-key="about.para1">
+          <p class="text-text-main/70 text-base sm:text-lg leading-relaxed" data-key="about.para1">
             „Eigentlich wollte ich Entwickler werden. Den Einstieg in die IT habe ich über meine erste QA-Rolle gemacht – und dabei etwas Unerwartetes entdeckt: die Faszination dafür, Software bis ins kleinste Detail zu durchleuchten. Die Liebe zum Code habe ich in der Testautomatisierung gefunden. Die Liebe zur Qualität in jedem Projekt danach.
           </p>
-          <p class="text-text-main/70 text-lg leading-relaxed" data-key="about.para2">
+          <p class="text-text-main/70 text-base sm:text-lg leading-relaxed" data-key="about.para2">
             Heute suche ich nicht nur Bugs – ich denke in Lösungen. Ich bin der Typ, der sich über einen kniffligen Edgecase freut, der anderen nicht aufgefallen wäre. Der nicht aufhört, bis er wirklich verstanden hat, warum etwas fehlschlägt. Saubere Prozesse, klare Kommunikation und ein Team das sich auf QA verlassen kann – dafür stehe ich."
           </p>
         </div>
 
         <!-- Visual column -->
         <div class="reveal flex justify-center">
-          <div class="card-glow rounded-2xl p-8 bg-white/[0.02] w-full max-w-sm relative overflow-hidden">
+          <div class="card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02] w-full max-w-sm relative overflow-hidden">
 
             <!-- Background glow blobs -->
             <div class="absolute top-0 right-0 w-56 h-56 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(41,121,255,0.08), transparent 70%); transform: translate(30%, -30%);"></div>
             <div class="absolute bottom-0 left-0 w-40 h-40 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(0,229,170,0.07), transparent 70%); transform: translate(-30%, 30%);"></div>
 
             <!-- Geometric SVG -->
-            <svg viewBox="0 0 200 200" width="180" height="180" class="mx-auto mb-8 block" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 200 200" width="160" height="160" class="mx-auto mb-6 md:mb-8 block w-full max-w-[180px]" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="about-grad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stop-color="#2979FF"/>
@@ -586,9 +586,9 @@ const techStack = [
   </section>
 
   <!-- ======== SERVICES ======== -->
-  <section id="services" class="py-28 px-6 relative">
+  <section id="services" class="py-16 md:py-28 px-4 sm:px-6 relative">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16 reveal">
+      <div class="text-center mb-10 md:mb-16 reveal">
         <div class="section-divider"></div>
         <h2 class="text-3xl md:text-4xl font-bold mt-4" data-key="services.title">Leistungen</h2>
       </div>
@@ -596,15 +596,15 @@ const techStack = [
       <div class="grid md:grid-cols-2 gap-8">
 
         <!-- Card 1 -->
-        <div class="card-glow rounded-2xl p-8 bg-white/[0.02] reveal">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: rgba(41,121,255,0.15);">
+        <div class="card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02] reveal">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(41,121,255,0.15);">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2979FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 11l3 3L22 4"/>
                 <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
               </svg>
             </div>
-            <h3 class="text-xl font-bold" data-key="services.card1.title">Testanalyse & Teststrategie</h3>
+            <h3 class="text-xl font-bold pt-1" data-key="services.card1.title">Testanalyse & Teststrategie</h3>
           </div>
           <p class="text-text-main/60 mb-6 leading-relaxed" data-key="services.card1.desc">
             Analyse funktionaler & nicht-funktionaler Anforderungen, risikobasierte Teststrategie und Testkonzepte – für vollständige Qualitätssicherung im gesamten SDLC.
@@ -634,15 +634,15 @@ const techStack = [
         </div>
 
         <!-- Card 2 -->
-        <div class="card-glow rounded-2xl p-8 bg-white/[0.02] reveal">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: rgba(0,229,170,0.12);">
+        <div class="card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02] reveal">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(0,229,170,0.12);">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00E5AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="16 18 22 12 16 6"/>
                 <polyline points="8 6 2 12 8 18"/>
               </svg>
             </div>
-            <h3 class="text-xl font-bold" data-key="services.card2.title">Testautomatisierung</h3>
+            <h3 class="text-xl font-bold pt-1" data-key="services.card2.title">Testautomatisierung</h3>
           </div>
           <p class="text-text-main/60 mb-6 leading-relaxed" data-key="services.card2.desc">
             Aufbau & Wartung von Testautomatisierungs-Frameworks, E2E- und API-Testing sowie nahtlose CI/CD-Integration mit Allure-Reporting.
@@ -679,23 +679,23 @@ const techStack = [
   </section>
 
   <!-- ======== EXPERIENCE / INDUSTRIES ======== -->
-  <section id="experience" class="py-28 px-6 relative">
+  <section id="experience" class="py-16 md:py-28 px-4 sm:px-6 relative">
     <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 0%, rgba(41,121,255,0.03) 50%, transparent 100%); pointer-events:none;"></div>
     <div class="max-w-4xl mx-auto text-center relative z-10">
       <div class="reveal">
         <div class="section-divider"></div>
         <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4" data-key="experience.title">Branchen</h2>
-        <p class="text-text-main/60 mb-12" data-key="experience.sub">Erfahrung in anspruchsvollen Projekten aus diversen Branchen.</p>
+        <p class="text-text-main/60 mb-8 md:mb-12" data-key="experience.sub">Erfahrung in anspruchsvollen Projekten aus diversen Branchen.</p>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-4 reveal">
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-4 reveal">
         {industries.map((ind) => (
           <span class="badge">{ind}</span>
         ))}
       </div>
 
       <!-- Stats row -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 reveal">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 md:mt-20 reveal">
         <div class="text-center">
           <div class="text-4xl font-bold grad-text">6+</div>
           <div class="text-sm text-text-main/50 mt-1" data-key-stat-de="Jahre Erfahrung" data-key-stat-en="Years Experience">Jahre Erfahrung</div>
@@ -717,10 +717,10 @@ const techStack = [
   </section>
 
   <!-- ======== PROJECTS ======== -->
-  <section id="projects" class="py-28 px-6 relative">
+  <section id="projects" class="py-16 md:py-28 px-4 sm:px-6 relative">
     <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 0%, rgba(0,229,170,0.02) 50%, transparent 100%); pointer-events:none;"></div>
     <div class="max-w-4xl mx-auto relative z-10">
-      <div class="text-center mb-16 reveal">
+      <div class="text-center mb-10 md:mb-16 reveal">
         <div class="section-divider"></div>
         <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4" data-key="projects.title">Projekte</h2>
         <p class="text-text-main/60" data-key="projects.sub">Ausgewählte Projektreferenzen aus meiner freiberuflichen Tätigkeit.</p>
@@ -802,9 +802,9 @@ const techStack = [
   </section>
 
   <!-- ======== TECH STACK ======== -->
-  <section id="stack" class="py-28 px-6">
+  <section id="stack" class="py-16 md:py-28 px-4 sm:px-6">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16 reveal">
+      <div class="text-center mb-10 md:mb-16 reveal">
         <div class="section-divider"></div>
         <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4" data-key="stack.title">Tech Stack</h2>
         <p class="text-text-main/60" data-key="stack.sub">Bewährte Tools für moderne Qualitätssicherung.</p>
@@ -822,10 +822,10 @@ const techStack = [
   </section>
 
   <!-- ======== CONTACT ======== -->
-  <section id="contact" class="py-28 px-6 relative">
+  <section id="contact" class="py-16 md:py-28 px-4 sm:px-6 relative">
     <div class="absolute inset-0" style="background: radial-gradient(ellipse at center bottom, rgba(0,229,170,0.04) 0%, transparent 70%); pointer-events:none;"></div>
     <div class="max-w-2xl mx-auto relative z-10">
-      <div class="text-center mb-14 reveal">
+      <div class="text-center mb-8 md:mb-14 reveal">
         <div class="section-divider"></div>
         <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4" data-key="contact.title">Kontakt</h2>
         <p class="text-text-main/60" data-key="contact.sub">Bereit für Ihr nächstes Projekt? Schreiben Sie mir.</p>
@@ -836,7 +836,7 @@ const techStack = [
         action="mailto:mario@lqa-consulting.com"
         method="POST"
         enctype="text/plain"
-        class="space-y-5 reveal card-glow rounded-2xl p-8 bg-white/[0.02]"
+        class="space-y-5 reveal card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02]"
       >
         <div>
           <label class="block text-sm text-text-main/60 mb-2" data-key="contact.name">Name</label>
@@ -882,8 +882,8 @@ const techStack = [
   </section>
 
   <!-- ======== FOOTER ======== -->
-  <footer class="border-t border-white/5 py-10 px-6">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+  <footer class="border-t border-white/5 py-10 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
       <div class="flex items-center gap-3">
         <svg viewBox="0 0 80 80" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -896,10 +896,10 @@ const techStack = [
         </svg>
         <span class="text-sm text-text-main/40" data-key="footer.copy">© 2025 Lirsch QA Consulting Ltd. · Zypern</span>
       </div>
-      <div class="flex items-center gap-6">
+      <div class="flex flex-wrap items-center justify-center gap-4 md:gap-6">
         <a href="/legal" class="text-sm text-text-main/30 hover:text-text-main/60 transition-colors" data-key="footer.legal">Impressum</a>
         <a href="/privacy" class="text-sm text-text-main/30 hover:text-text-main/60 transition-colors" data-key="footer.privacy">Datenschutz</a>
-        <span class="text-sm text-text-main/20 italic" data-key="footer.tagline">Qualität ist kein Zufall.</span>
+        <span class="text-sm text-text-main/20 italic hidden sm:inline" data-key="footer.tagline">Qualität ist kein Zufall.</span>
       </div>
     </div>
   </footer>

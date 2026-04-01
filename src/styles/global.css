@@ -54,10 +54,16 @@ html {
   border: 1px solid rgba(41,121,255,0.3);
   color: #E8F4FF;
   border-radius: 999px;
-  padding: 6px 18px;
-  font-size: 0.85rem;
+  padding: 5px 12px;
+  font-size: 0.8rem;
   letter-spacing: 0.02em;
   transition: background 0.2s, border-color 0.2s;
+}
+@media (min-width: 640px) {
+  .badge {
+    padding: 6px 18px;
+    font-size: 0.85rem;
+  }
 }
 .badge:hover {
   background: rgba(0,229,170,0.12);
@@ -70,11 +76,16 @@ html {
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  padding: 20px 24px;
+  padding: 16px 12px;
   background: rgba(41,121,255,0.06);
   border: 1px solid rgba(41,121,255,0.18);
   border-radius: 12px;
   transition: transform 0.2s, border-color 0.2s;
+}
+@media (min-width: 640px) {
+  .tech-chip {
+    padding: 20px 24px;
+  }
 }
 .tech-chip:hover {
   transform: translateY(-4px);
@@ -86,12 +97,17 @@ html {
   background: linear-gradient(135deg, #2979FF 0%, #00E5AA 100%);
   color: #050E1A;
   font-weight: 700;
-  padding: 14px 36px;
+  padding: 12px 28px;
   border-radius: 8px;
   letter-spacing: 0.04em;
   transition: opacity 0.2s, transform 0.2s;
   display: inline-block;
   text-decoration: none;
+}
+@media (min-width: 640px) {
+  .btn-cta {
+    padding: 14px 36px;
+  }
 }
 .btn-cta:hover {
   opacity: 0.88;

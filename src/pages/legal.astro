@@ -18,7 +18,7 @@ import '../styles/global.css';
 <body class="bg-bg text-text-main antialiased overflow-x-hidden">
 
   <!-- ======== NAVIGATION ======== -->
-  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-4">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
 
       <!-- Logo -->
@@ -78,7 +78,7 @@ import '../styles/global.css';
 
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/10">
-      <div class="max-w-6xl mx-auto flex flex-col gap-4 pt-4 px-2">
+      <div class="max-w-6xl mx-auto flex flex-col gap-4 pt-4 px-4">
         <a href="/#about" class="text-sm text-text-main/70" data-key="nav.about" onclick="closeMobileMenu()">Über mich</a>
         <a href="/#services" class="text-sm text-text-main/70" data-key="nav.services" onclick="closeMobileMenu()">Leistungen</a>
         <a href="/#experience" class="text-sm text-text-main/70" data-key="nav.experience" onclick="closeMobileMenu()">Erfahrung</a>
@@ -95,7 +95,7 @@ import '../styles/global.css';
   </nav>
 
   <!-- ======== CONTENT ======== -->
-  <main class="min-h-screen pt-32 pb-24 px-6">
+  <main class="min-h-screen pt-32 pb-24 px-4 sm:px-6">
     <div class="max-w-2xl mx-auto">
 
       <!-- Back link -->
@@ -176,8 +176,8 @@ import '../styles/global.css';
   </main>
 
   <!-- ======== FOOTER ======== -->
-  <footer class="border-t border-white/5 py-10 px-6">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+  <footer class="border-t border-white/5 py-10 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
       <div class="flex items-center gap-3">
         <svg viewBox="0 0 80 80" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -193,7 +193,7 @@ import '../styles/global.css';
           <span data-show-lang="en" class="hidden">© 2025 Lirsch QA Consulting Ltd. · Cyprus</span>
         </span>
       </div>
-      <div class="flex items-center gap-6">
+      <div class="flex flex-wrap items-center justify-center gap-4 md:gap-6">
         <a href="/legal" class="text-sm text-text-main/50 hover:text-text-main/70 transition-colors">
           <span data-show-lang="de">Impressum</span>
           <span data-show-lang="en" class="hidden">Legal Notice</span>
@@ -202,7 +202,7 @@ import '../styles/global.css';
           <span data-show-lang="de">Datenschutz</span>
           <span data-show-lang="en" class="hidden">Privacy Policy</span>
         </a>
-        <span class="text-sm text-text-main/20 italic">
+        <span class="text-sm text-text-main/20 italic hidden sm:inline">
           <span data-show-lang="de">Qualität ist kein Zufall.</span>
           <span data-show-lang="en" class="hidden">Quality is no coincidence.</span>
         </span>
