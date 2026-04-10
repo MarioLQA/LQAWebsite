@@ -1,0 +1,715 @@
+---
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- DE Meta (default) -->
+  <title>LQA Talent Network – Tech-Freelancer finden | LQA Consulting</title>
+  <meta name="description" content="Geprüfte Freelancer für IT-Projekte – QA Engineers, Entwickler, PMs und mehr. Schnelle Vermittlung durch LQA Consulting." />
+
+  <!-- OG -->
+  <meta property="og:title" content="LQA Talent Network – Tech-Freelancer finden | LQA Consulting" />
+  <meta property="og:description" content="Geprüfte Freelancer für IT-Projekte – QA Engineers, Entwickler, PMs und mehr. Schnelle Vermittlung durch LQA Consulting." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    body { font-family: "Segoe UI", system-ui, sans-serif; }
+
+    /* Talent page hero badge — green accent to distinguish from personal freelancer page */
+    .talent-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 229, 170, 0.08);
+      border: 1px solid rgba(0, 229, 170, 0.35);
+      color: #00E5AA;
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .talent-hero-badge::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #00E5AA;
+      flex-shrink: 0;
+    }
+
+    /* Feature card icon container */
+    .icon-box-green {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(0, 229, 170, 0.08);
+      border: 1px solid rgba(0, 229, 170, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .icon-box-blue {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(41, 121, 255, 0.08);
+      border: 1px solid rgba(41, 121, 255, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Process step number circle */
+    .step-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(0, 229, 170, 0.08);
+      border: 1px solid rgba(0, 229, 170, 0.35);
+      color: #00E5AA;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Select element styling */
+    select.form-input {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(232,244,255,0.4)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+    select.form-input option {
+      background: #0a1628;
+      color: #E8F4FF;
+    }
+  </style>
+</head>
+
+<body class="bg-bg text-text-main antialiased overflow-x-hidden">
+
+  <!-- ======== NAVIGATION ======== -->
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <svg viewBox="0 0 80 80" width="44" height="44" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0">
+          <defs>
+            <linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2979FF" />
+              <stop offset="100%" stop-color="#00E5AA" />
+            </linearGradient>
+            <linearGradient id="nav-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2979FF" stop-opacity="0.18" />
+              <stop offset="100%" stop-color="#00E5AA" stop-opacity="0.07" />
+            </linearGradient>
+          </defs>
+          <polygon points="40,8 64,21 64,47 40,60 16,47 16,21" fill="url(#nav-fill)" stroke="url(#nav-grad)" stroke-width="2"/>
+          <line x1="26" y1="22" x2="26" y2="46" stroke="#2979FF" stroke-width="4" stroke-linecap="square"/>
+          <line x1="26" y1="46" x2="40" y2="46" stroke="#2979FF" stroke-width="4" stroke-linecap="square"/>
+          <circle cx="46" cy="32" r="11" fill="none" stroke="#00E5AA" stroke-width="2.5"/>
+          <line x1="53" y1="40" x2="59" y2="47" stroke="#00E5AA" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="40" cy="8" r="2.2" fill="#2979FF"/>
+          <circle cx="64" cy="47" r="2.2" fill="#00E5AA"/>
+          <circle cx="16" cy="21" r="2.2" fill="#2979FF" opacity="0.5"/>
+        </svg>
+        <div class="flex flex-col leading-tight">
+          <span class="font-bold text-base tracking-wide text-text-main">LQA Consulting</span>
+          <span class="text-xs text-text-main/40 tracking-wider">QUALITY ASSURANCE</span>
+        </div>
+      </a>
+
+      <!-- Desktop nav links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#why" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.why">Warum LQA</a>
+        <a href="#profiles" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.profiles">Profile</a>
+        <a href="#process" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.process">Ablauf</a>
+        <a href="#contact-form" class="text-sm text-green-accent/80 hover:text-green-accent transition-colors font-medium" data-key="nav.request">Anfrage stellen</a>
+
+        <!-- Language switcher -->
+        <div class="flex items-center gap-1 border border-white/10 rounded-md px-1">
+          <button id="btn-de" class="lang-btn active" onclick="setLang('de')">DE</button>
+          <span class="text-white/20 text-xs">|</span>
+          <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="menu-btn" class="md:hidden text-text-main/70 hover:text-text-main" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/10">
+      <div class="max-w-6xl mx-auto flex flex-col gap-4 pt-4 px-4">
+        <a href="#why" class="text-sm text-text-main/70" data-key="nav.why" onclick="closeMobileMenu()">Warum LQA</a>
+        <a href="#profiles" class="text-sm text-text-main/70" data-key="nav.profiles" onclick="closeMobileMenu()">Profile</a>
+        <a href="#process" class="text-sm text-text-main/70" data-key="nav.process" onclick="closeMobileMenu()">Ablauf</a>
+        <a href="#contact-form" class="text-sm text-green-accent/80 font-medium" data-key="nav.request" onclick="closeMobileMenu()">Anfrage stellen</a>
+        <div class="flex items-center gap-2">
+          <button id="btn-de-m" class="lang-btn active" onclick="setLang('de')">DE</button>
+          <span class="text-white/20 text-xs">|</span>
+          <button id="btn-en-m" class="lang-btn" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======== HERO ======== -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 pt-20">
+
+    <!-- Green-tinted hero accent — distinguishes this page from the personal freelancer hero -->
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 75% 55% at 50% -5%, rgba(0,229,170,0.14) 0%, transparent 65%), radial-gradient(circle at 15% 85%, rgba(0,229,170,0.05) 0%, transparent 45%);"></div>
+
+    <!-- Grid lines — shifted to green tint -->
+    <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(0,229,170,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,170,0.04) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+    <div class="relative max-w-4xl mx-auto text-center z-10">
+
+      <!-- Talent Network badge -->
+      <div class="reveal flex justify-center mb-8">
+        <span class="talent-hero-badge">LQA Talent Network</span>
+      </div>
+
+      <h1 class="reveal text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+        <span data-show-lang="de" class="grad-text">Sie suchen Tech-Talent?</span>
+        <span data-show-lang="en" class="grad-text hidden">Looking for tech talent?</span>
+      </h1>
+
+      <p class="reveal text-base sm:text-lg md:text-xl text-text-main/70 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <span data-show-lang="de">Ich vermittle geprüfte Freelancer aus meinem persönlichen Netzwerk – schnell, unkompliziert und passgenau auf Ihren Bedarf zugeschnitten.</span>
+        <span data-show-lang="en" class="hidden">I connect companies with vetted freelancers from my personal network – fast, straightforward, and tailored to your exact needs.</span>
+      </p>
+
+      <div class="reveal">
+        <a href="#contact-form" class="btn-cta inline-block">
+          <span data-show-lang="de">Jetzt Anfrage stellen</span>
+          <span data-show-lang="en" class="hidden">Submit a request</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-25">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="animate-bounce">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ======== WHY LQA TALENT NETWORK ======== -->
+  <section id="why" class="py-24 px-4 sm:px-6 border-t border-white/5">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-16">
+        <div class="section-divider reveal"></div>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 reveal">
+          <span data-show-lang="de">Warum über LQA Talent Network?</span>
+          <span data-show-lang="en" class="hidden">Why LQA Talent Network?</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
+        <!-- Card 1: Personally vetted -->
+        <div class="card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02] reveal flex flex-col gap-5">
+          <div class="icon-box-green">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00E5AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+              <path d="M16 11l1.5 1.5L21 9"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-base font-bold mb-2">
+              <span data-show-lang="de">Persönlich geprüft</span>
+              <span data-show-lang="en" class="hidden">Personally vetted</span>
+            </h3>
+            <p class="text-text-main/60 text-sm leading-relaxed">
+              <span data-show-lang="de">Ich kenne die Profile in meinem Netzwerk aus der Praxis. Keine anonymen Lebensläufe – ich weiß wer liefert.</span>
+              <span data-show-lang="en" class="hidden">I know the people in my network from real project experience. No anonymous CVs – I know who delivers.</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2: No agency overhead -->
+        <div class="card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02] reveal flex flex-col gap-5">
+          <div class="icon-box-blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2979FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-base font-bold mb-2">
+              <span data-show-lang="de">Kein Agentur-Overhead</span>
+              <span data-show-lang="en" class="hidden">No agency overhead</span>
+            </h3>
+            <p class="text-text-main/60 text-sm leading-relaxed">
+              <span data-show-lang="de">Direkte Vermittlung ohne großen bürokratischen Aufwand. Schnelle Reaktionszeiten und klare Kommunikation.</span>
+              <span data-show-lang="en" class="hidden">Direct placement without bureaucratic overhead. Fast response times and clear communication.</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3: Tech expertise from practice -->
+        <div class="card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02] reveal flex flex-col gap-5">
+          <div class="icon-box-green">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00E5AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-base font-bold mb-2">
+              <span data-show-lang="de">Tech-Expertise aus der Praxis</span>
+              <span data-show-lang="en" class="hidden">Tech expertise from practice</span>
+            </h3>
+            <p class="text-text-main/60 text-sm leading-relaxed">
+              <span data-show-lang="de">Als aktiver QA Engineer verstehe ich die Anforderungen – und finde das Profil das wirklich passt, nicht nur auf dem Papier.</span>
+              <span data-show-lang="en" class="hidden">As an active QA Engineer myself, I understand the requirements – and find the profile that truly fits, not just on paper.</span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== PROFILES ======== -->
+  <section id="profiles" class="py-24 px-4 sm:px-6 border-t border-white/5">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-14">
+        <div class="section-divider reveal"></div>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 reveal">
+          <span data-show-lang="de">Profile die ich vermittle</span>
+          <span data-show-lang="en" class="hidden">Profiles I place</span>
+        </h2>
+        <p class="text-text-main/55 text-lg mt-4 reveal">
+          <span data-show-lang="de">Aus meinem Netzwerk – remote, on-site oder hybrid.</span>
+          <span data-show-lang="en" class="hidden">From my network – remote, on-site or hybrid.</span>
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-3 reveal">
+        <span class="badge">QA Engineers &amp; Test Automation Specialists</span>
+        <span class="badge">Manual Testers</span>
+        <span class="badge">Software Developers (Frontend / Backend / Fullstack)</span>
+        <span class="badge">Project Managers &amp; Scrum Masters</span>
+        <span class="badge">Business Analysts</span>
+        <span class="badge">DevOps Engineers</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======== HOW IT WORKS ======== -->
+  <section id="process" class="py-24 px-4 sm:px-6 border-t border-white/5">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="text-center mb-16">
+        <div class="section-divider reveal"></div>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 reveal">
+          <span data-show-lang="de">So funktioniert es</span>
+          <span data-show-lang="en" class="hidden">How it works</span>
+        </h2>
+      </div>
+
+      <!-- Steps grid -->
+      <div class="relative">
+
+        <!-- Connector line — desktop only -->
+        <div class="hidden md:block absolute top-[22px] left-[calc(16.67%+22px)] right-[calc(16.67%+22px)] h-px" style="background: linear-gradient(90deg, rgba(0,229,170,0.3) 0%, rgba(41,121,255,0.3) 50%, rgba(0,229,170,0.3) 100%);"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+
+          <!-- Step 1 -->
+          <div class="reveal flex flex-col items-center text-center gap-4">
+            <div class="step-number">1</div>
+            <div>
+              <h3 class="text-base font-bold mb-2">
+                <span data-show-lang="de">Anfrage stellen</span>
+                <span data-show-lang="en" class="hidden">Submit a request</span>
+              </h3>
+              <p class="text-text-main/55 text-sm leading-relaxed">
+                <span data-show-lang="de">Beschreiben Sie Ihren Bedarf – Profil, Zeitraum, Remote oder vor Ort.</span>
+                <span data-show-lang="en" class="hidden">Describe your need – profile, timeframe, remote or on-site.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="reveal flex flex-col items-center text-center gap-4">
+            <div class="step-number">2</div>
+            <div>
+              <h3 class="text-base font-bold mb-2">
+                <span data-show-lang="de">Passende Profile erhalten</span>
+                <span data-show-lang="en" class="hidden">Receive matching profiles</span>
+              </h3>
+              <p class="text-text-main/55 text-sm leading-relaxed">
+                <span data-show-lang="de">Ich melde mich innerhalb von 48 Stunden mit geeigneten Kandidaten aus meinem Netzwerk.</span>
+                <span data-show-lang="en" class="hidden">I'll get back to you within 48 hours with suitable candidates from my network.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="reveal flex flex-col items-center text-center gap-4">
+            <div class="step-number">3</div>
+            <div>
+              <h3 class="text-base font-bold mb-2">
+                <span data-show-lang="de">Direkt starten</span>
+                <span data-show-lang="en" class="hidden">Get started</span>
+              </h3>
+              <p class="text-text-main/55 text-sm leading-relaxed">
+                <span data-show-lang="de">Sie wählen den passenden Kandidaten – und das Projekt kann beginnen.</span>
+                <span data-show-lang="en" class="hidden">You choose the right candidate – and the project can begin.</span>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CONTACT FORM ======== -->
+  <section id="contact-form" class="py-24 px-4 sm:px-6 border-t border-white/5">
+    <div class="max-w-2xl mx-auto">
+
+      <div class="text-center mb-12">
+        <div class="section-divider reveal"></div>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 reveal">
+          <span data-show-lang="de">Talent anfragen</span>
+          <span data-show-lang="en" class="hidden">Request talent</span>
+        </h2>
+        <p class="text-text-main/55 text-lg mt-4 reveal">
+          <span data-show-lang="de">Schildern Sie kurz Ihren Bedarf – ich melde mich innerhalb von 48 Stunden.</span>
+          <span data-show-lang="en" class="hidden">Briefly describe your needs – I'll get back to you within 48 hours.</span>
+        </p>
+      </div>
+
+      <form
+        action="mailto:mario@lqa-consulting.com"
+        method="POST"
+        enctype="text/plain"
+        class="space-y-5 card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02] reveal"
+      >
+
+        <!-- Company -->
+        <div>
+          <label class="block text-sm text-text-main/60 mb-2">
+            <span data-show-lang="de">Unternehmen</span>
+            <span data-show-lang="en" class="hidden">Company</span>
+          </label>
+          <input
+            type="text"
+            name="company"
+            class="form-input"
+            required
+            placeholder="Muster GmbH"
+            data-placeholder-de="Muster GmbH"
+            data-placeholder-en="Acme Corp"
+          />
+        </div>
+
+        <!-- Contact person -->
+        <div>
+          <label class="block text-sm text-text-main/60 mb-2">
+            <span data-show-lang="de">Ansprechpartner</span>
+            <span data-show-lang="en" class="hidden">Contact person</span>
+          </label>
+          <input
+            type="text"
+            name="contact_person"
+            class="form-input"
+            required
+            placeholder="Max Mustermann"
+            data-placeholder-de="Max Mustermann"
+            data-placeholder-en="Jane Doe"
+          />
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label class="block text-sm text-text-main/60 mb-2">E-Mail</label>
+          <input
+            type="email"
+            name="email"
+            class="form-input"
+            placeholder="max@example.com"
+            required
+          />
+        </div>
+
+        <!-- Profile needed -->
+        <div>
+          <label class="block text-sm text-text-main/60 mb-2">
+            <span data-show-lang="de">Gesuchtes Profil</span>
+            <span data-show-lang="en" class="hidden">Profile needed</span>
+          </label>
+          <input
+            type="text"
+            name="profile"
+            class="form-input"
+            required
+            placeholder="z.B. QA Engineer, Frontend-Entwickler…"
+            data-placeholder-de="z.B. QA Engineer, Frontend-Entwickler…"
+            data-placeholder-en="e.g. QA Engineer, Frontend Developer…"
+          />
+        </div>
+
+        <!-- Work mode -->
+        <div>
+          <label class="block text-sm text-text-main/60 mb-2">
+            <span data-show-lang="de">Einsatzart</span>
+            <span data-show-lang="en" class="hidden">Work mode</span>
+          </label>
+          <select name="work_mode" class="form-input" required>
+            <option value="remote">Remote</option>
+            <option value="onsite">On-site</option>
+            <option value="hybrid">Hybrid</option>
+          </select>
+        </div>
+
+        <!-- Project duration -->
+        <div>
+          <label class="block text-sm text-text-main/60 mb-2">
+            <span data-show-lang="de">Projektdauer</span>
+            <span data-show-lang="en" class="hidden">Project duration</span>
+          </label>
+          <select name="duration" id="duration-select" class="form-input" required>
+            <option value="" disabled selected>–</option>
+            <option value="short">Kurzfristig (&lt; 3 Monate)</option>
+            <option value="mid">Mittelfristig (3–6 Monate)</option>
+            <option value="long">Langfristig (&gt; 6 Monate)</option>
+            <option value="open">Noch offen</option>
+          </select>
+        </div>
+
+        <!-- Start date -->
+        <div>
+          <label class="block text-sm text-text-main/60 mb-2">
+            <span data-show-lang="de">Gewünschter Starttermin</span>
+            <span data-show-lang="en" class="hidden">Desired start date</span>
+          </label>
+          <input
+            type="text"
+            name="start_date"
+            class="form-input"
+            placeholder="z.B. Mai 2025 oder asap"
+            data-placeholder-de="z.B. Mai 2025 oder asap"
+            data-placeholder-en="e.g. May 2025 or asap"
+          />
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label class="block text-sm text-text-main/60 mb-2">
+            <span data-show-lang="de">Nachricht</span>
+            <span data-show-lang="en" class="hidden">Message</span>
+          </label>
+          <textarea
+            name="message"
+            rows="4"
+            class="form-input resize-none"
+            placeholder="Weitere Informationen zu Ihrem Bedarf…"
+            data-placeholder-de="Weitere Informationen zu Ihrem Bedarf…"
+            data-placeholder-en="Additional information about your needs…"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn-cta w-full text-center">
+          <span data-show-lang="de">Anfrage senden</span>
+          <span data-show-lang="en" class="hidden">Send request</span>
+        </button>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="border-t border-white/5 py-10 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
+      <div class="flex items-center gap-3">
+        <svg viewBox="0 0 80 80" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ft-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2979FF"/>
+              <stop offset="100%" stop-color="#00E5AA"/>
+            </linearGradient>
+          </defs>
+          <polygon points="40,8 64,21 64,47 40,60 16,47 16,21" fill="none" stroke="url(#ft-grad)" stroke-width="2"/>
+        </svg>
+        <span class="text-sm text-text-main/40">
+          <span data-show-lang="de">© 2025 Lirsch QA Consulting Ltd. · Zypern</span>
+          <span data-show-lang="en" class="hidden">© 2025 Lirsch QA Consulting Ltd. · Cyprus</span>
+        </span>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+        <a href="/talent" class="text-sm text-green-accent/60 hover:text-green-accent transition-colors">Talent Network</a>
+        <a href="/legal" class="text-sm text-text-main/30 hover:text-text-main/60 transition-colors">
+          <span data-show-lang="de">Impressum</span>
+          <span data-show-lang="en" class="hidden">Legal Notice</span>
+        </a>
+        <a href="/privacy" class="text-sm text-text-main/30 hover:text-text-main/60 transition-colors">
+          <span data-show-lang="de">Datenschutz</span>
+          <span data-show-lang="en" class="hidden">Privacy Policy</span>
+        </a>
+        <span class="text-sm text-text-main/20 italic hidden sm:inline">
+          <span data-show-lang="de">Qualität ist kein Zufall.</span>
+          <span data-show-lang="en" class="hidden">Quality is no coincidence.</span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+<!-- ======== SCRIPTS ======== -->
+<script>
+  const translations = {
+    de: { nav: { why: 'Warum LQA', profiles: 'Profile', process: 'Ablauf', request: 'Anfrage stellen' } },
+    en: { nav: { why: 'Why LQA', profiles: 'Profiles', process: 'How it works', request: 'Get in touch' } },
+  };
+  let currentLang = 'de';
+
+  const durationOptsDe = [
+    { value: 'short', label: 'Kurzfristig (< 3 Monate)' },
+    { value: 'mid',   label: 'Mittelfristig (3–6 Monate)' },
+    { value: 'long',  label: 'Langfristig (> 6 Monate)' },
+    { value: 'open',  label: 'Noch offen' },
+  ];
+  const durationOptsEn = [
+    { value: 'short', label: 'Short-term (< 3 months)' },
+    { value: 'mid',   label: 'Mid-term (3–6 months)' },
+    { value: 'long',  label: 'Long-term (> 6 months)' },
+    { value: 'open',  label: 'Open' },
+  ];
+
+  function updateDurationSelect(lang) {
+    const sel = document.getElementById('duration-select');
+    if (!sel) return;
+    const current = sel.value;
+    const opts = lang === 'en' ? durationOptsEn : durationOptsDe;
+    sel.innerHTML = '<option value="" disabled>–</option>';
+    opts.forEach(o => {
+      const opt = document.createElement('option');
+      opt.value = o.value;
+      opt.textContent = o.label;
+      if (o.value === current) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    if (!current) sel.value = '';
+  }
+
+  function applyTranslations(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+
+    // data-key text nodes
+    document.querySelectorAll('[data-key]').forEach(el => {
+      const keys = el.dataset.key.split('.');
+      const val = keys.reduce((o, k) => (o ? o[k] : undefined), translations[lang]);
+      if (val) el.textContent = val;
+    });
+
+    // data-show-lang visibility
+    document.querySelectorAll('[data-show-lang]').forEach(el => {
+      el.classList.toggle('hidden', el.dataset.showLang !== lang);
+    });
+
+    // Placeholder text
+    document.querySelectorAll('[data-placeholder-de]').forEach(el => {
+      el.placeholder = lang === 'en'
+        ? (el.dataset.placeholderEn || el.dataset.placeholderDe)
+        : el.dataset.placeholderDe;
+    });
+
+    // Lang button active states
+    document.querySelectorAll('#btn-de, #btn-de-m').forEach(b => b.classList.toggle('active', lang === 'de'));
+    document.querySelectorAll('#btn-en, #btn-en-m').forEach(b => b.classList.toggle('active', lang === 'en'));
+
+    // Duration select options
+    updateDurationSelect(lang);
+
+    // Meta / title
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (lang === 'en') {
+      document.title = 'LQA Talent Network – Find Tech Freelancers | LQA Consulting';
+      if (metaDesc) metaDesc.content = 'Vetted freelancers for IT projects – QA Engineers, developers, PMs and more. Fast placement through LQA Consulting.';
+    } else {
+      document.title = 'LQA Talent Network – Tech-Freelancer finden | LQA Consulting';
+      if (metaDesc) metaDesc.content = 'Geprüfte Freelancer für IT-Projekte – QA Engineers, Entwickler, PMs und mehr. Schnelle Vermittlung durch LQA Consulting.';
+    }
+  }
+
+  window.setLang = function(lang) {
+    applyTranslations(lang);
+    try { localStorage.setItem('lqa-lang', lang); } catch(e) {}
+  };
+
+  // ---- Nav scroll effect ----
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ---- Mobile menu ----
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+  window.closeMobileMenu = function() {
+    mobileMenu.classList.add('hidden');
+  };
+
+  // ---- Scroll reveal ----
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ---- Init language ----
+  (function init() {
+    let lang = 'de';
+    try { lang = localStorage.getItem('lqa-lang') || 'de'; } catch(e) {}
+    updateDurationSelect(lang);
+    if (lang !== 'de') applyTranslations(lang);
+  })();
+</script>
+
+</html>
