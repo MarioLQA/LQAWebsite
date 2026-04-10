@@ -186,29 +186,33 @@ import '../styles/global.css';
   <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 pt-20">
 
     <!-- Green-tinted hero accent — distinguishes this page from the personal freelancer hero -->
-    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 75% 55% at 50% -5%, rgba(0,229,170,0.14) 0%, transparent 65%), radial-gradient(circle at 15% 85%, rgba(0,229,170,0.05) 0%, transparent 45%);"></div>
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 75% 55% at 50% -5%, rgba(0,229,170,0.13) 0%, transparent 65%), radial-gradient(circle at 15% 85%, rgba(0,229,170,0.05) 0%, transparent 45%);"></div>
 
-    <!-- Grid lines — shifted to green tint -->
-    <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(0,229,170,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,170,0.04) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <!-- Animated grid — green variant -->
+    <div class="hero-grid-anim-green"></div>
+
+    <!-- Floating orbs -->
+    <div class="absolute pointer-events-none rounded-full" style="top: 15%; right: 10%; width: 320px; height: 320px; background: radial-gradient(circle, rgba(0,229,170,0.07) 0%, transparent 65%); animation: orb-float 20s ease-in-out infinite alternate;"></div>
+    <div class="absolute pointer-events-none rounded-full" style="bottom: 25%; left: 8%; width: 220px; height: 220px; background: radial-gradient(circle, rgba(41,121,255,0.055) 0%, transparent 65%); animation: orb-float-alt 26s ease-in-out infinite alternate;"></div>
 
     <div class="relative max-w-4xl mx-auto text-center z-10">
 
       <!-- Talent Network badge -->
-      <div class="reveal flex justify-center mb-8">
+      <div class="hero-animate flex justify-center mb-8" style="animation-delay: 0ms;">
         <span class="talent-hero-badge">LQA Talent Network</span>
       </div>
 
-      <h1 class="reveal text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+      <h1 class="hero-animate text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter mb-6 leading-[1.05]" style="animation-delay: 180ms;">
         <span data-show-lang="de" class="grad-text">Sie suchen Tech-Talent?</span>
         <span data-show-lang="en" class="grad-text hidden">Looking for tech talent?</span>
       </h1>
 
-      <p class="reveal text-base sm:text-lg md:text-xl text-text-main/70 max-w-2xl mx-auto mb-10 leading-relaxed">
+      <p class="hero-animate text-base sm:text-lg md:text-xl text-text-main/65 max-w-2xl mx-auto mb-10 leading-relaxed" style="animation-delay: 360ms;">
         <span data-show-lang="de">Ich vermittle geprüfte Freelancer aus meinem persönlichen Netzwerk – schnell, unkompliziert und passgenau auf Ihren Bedarf zugeschnitten.</span>
         <span data-show-lang="en" class="hidden">I connect companies with vetted freelancers from my personal network – fast, straightforward, and tailored to your exact needs.</span>
       </p>
 
-      <div class="reveal">
+      <div class="hero-animate" style="animation-delay: 520ms;">
         <a href="#contact-form" class="btn-cta inline-block">
           <span data-show-lang="de">Jetzt Anfrage stellen</span>
           <span data-show-lang="en" class="hidden">Submit a request</span>
@@ -228,9 +232,12 @@ import '../styles/global.css';
   <section id="why" class="py-24 px-4 sm:px-6 border-t border-white/5">
     <div class="max-w-6xl mx-auto">
 
-      <div class="text-center mb-16">
-        <div class="section-divider reveal"></div>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4 reveal">
+      <div class="text-center mb-16 reveal">
+        <div class="section-divider"></div>
+        <span class="section-label">
+          <span data-show-lang="de">WARUM LQA</span><span data-show-lang="en" class="hidden">WHY LQA</span>
+        </span>
+        <h2 class="text-3xl md:text-[2.6rem] font-bold leading-tight">
           <span data-show-lang="de">Warum über LQA Talent Network?</span>
           <span data-show-lang="en" class="hidden">Why LQA Talent Network?</span>
         </h2>
@@ -239,7 +246,7 @@ import '../styles/global.css';
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
 
         <!-- Card 1: Personally vetted -->
-        <div class="card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02] reveal flex flex-col gap-5">
+        <div class="card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02] reveal flex flex-col gap-5" style="transition-delay: 0ms;">
           <div class="icon-box-green">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00E5AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
@@ -260,7 +267,7 @@ import '../styles/global.css';
         </div>
 
         <!-- Card 2: No agency overhead -->
-        <div class="card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02] reveal flex flex-col gap-5">
+        <div class="card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02] reveal flex flex-col gap-5" style="transition-delay: 140ms;">
           <div class="icon-box-blue">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2979FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
@@ -279,7 +286,7 @@ import '../styles/global.css';
         </div>
 
         <!-- Card 3: Tech expertise from practice -->
-        <div class="card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02] reveal flex flex-col gap-5">
+        <div class="card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02] reveal flex flex-col gap-5" style="transition-delay: 280ms;">
           <div class="icon-box-green">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00E5AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="16 18 22 12 16 6"/>
@@ -306,19 +313,22 @@ import '../styles/global.css';
   <section id="profiles" class="py-24 px-4 sm:px-6 border-t border-white/5">
     <div class="max-w-6xl mx-auto">
 
-      <div class="text-center mb-14">
-        <div class="section-divider reveal"></div>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4 reveal">
+      <div class="text-center mb-14 reveal">
+        <div class="section-divider"></div>
+        <span class="section-label">
+          <span data-show-lang="de">PROFILE</span><span data-show-lang="en" class="hidden">PROFILES</span>
+        </span>
+        <h2 class="text-3xl md:text-[2.6rem] font-bold leading-tight">
           <span data-show-lang="de">Profile die ich vermittle</span>
           <span data-show-lang="en" class="hidden">Profiles I place</span>
         </h2>
-        <p class="text-text-main/55 text-lg mt-4 reveal">
+        <p class="text-text-main/55 text-base md:text-lg mt-4">
           <span data-show-lang="de">Aus meinem Netzwerk – remote, on-site oder hybrid.</span>
           <span data-show-lang="en" class="hidden">From my network – remote, on-site or hybrid.</span>
         </p>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-3 reveal">
+      <div class="flex flex-wrap justify-center gap-3 reveal-stagger">
         <span class="badge">QA Engineers &amp; Test Automation Specialists</span>
         <span class="badge">Manual Testers</span>
         <span class="badge">Software Developers (Frontend / Backend / Fullstack)</span>
@@ -334,9 +344,12 @@ import '../styles/global.css';
   <section id="process" class="py-24 px-4 sm:px-6 border-t border-white/5">
     <div class="max-w-5xl mx-auto">
 
-      <div class="text-center mb-16">
-        <div class="section-divider reveal"></div>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4 reveal">
+      <div class="text-center mb-16 reveal">
+        <div class="section-divider"></div>
+        <span class="section-label">
+          <span data-show-lang="de">ABLAUF</span><span data-show-lang="en" class="hidden">PROCESS</span>
+        </span>
+        <h2 class="text-3xl md:text-[2.6rem] font-bold leading-tight">
           <span data-show-lang="de">So funktioniert es</span>
           <span data-show-lang="en" class="hidden">How it works</span>
         </h2>
@@ -348,10 +361,10 @@ import '../styles/global.css';
         <!-- Connector line — desktop only -->
         <div class="hidden md:block absolute top-[22px] left-[calc(16.67%+22px)] right-[calc(16.67%+22px)] h-px" style="background: linear-gradient(90deg, rgba(0,229,170,0.3) 0%, rgba(41,121,255,0.3) 50%, rgba(0,229,170,0.3) 100%);"></div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 reveal-stagger">
 
           <!-- Step 1 -->
-          <div class="reveal flex flex-col items-center text-center gap-4">
+          <div class="flex flex-col items-center text-center gap-4">
             <div class="step-number">1</div>
             <div>
               <h3 class="text-base font-bold mb-2">
@@ -366,7 +379,7 @@ import '../styles/global.css';
           </div>
 
           <!-- Step 2 -->
-          <div class="reveal flex flex-col items-center text-center gap-4">
+          <div class="flex flex-col items-center text-center gap-4">
             <div class="step-number">2</div>
             <div>
               <h3 class="text-base font-bold mb-2">
@@ -381,7 +394,7 @@ import '../styles/global.css';
           </div>
 
           <!-- Step 3 -->
-          <div class="reveal flex flex-col items-center text-center gap-4">
+          <div class="flex flex-col items-center text-center gap-4">
             <div class="step-number">3</div>
             <div>
               <h3 class="text-base font-bold mb-2">
@@ -404,13 +417,16 @@ import '../styles/global.css';
   <section id="contact-form" class="py-24 px-4 sm:px-6 border-t border-white/5">
     <div class="max-w-2xl mx-auto">
 
-      <div class="text-center mb-12">
-        <div class="section-divider reveal"></div>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4 reveal">
+      <div class="text-center mb-12 reveal">
+        <div class="section-divider"></div>
+        <span class="section-label">
+          <span data-show-lang="de">ANFRAGE</span><span data-show-lang="en" class="hidden">REQUEST</span>
+        </span>
+        <h2 class="text-3xl md:text-[2.6rem] font-bold leading-tight">
           <span data-show-lang="de">Talent anfragen</span>
           <span data-show-lang="en" class="hidden">Request talent</span>
         </h2>
-        <p class="text-text-main/55 text-lg mt-4 reveal">
+        <p class="text-text-main/55 text-base md:text-lg mt-4">
           <span data-show-lang="de">Schildern Sie kurz Ihren Bedarf – ich melde mich innerhalb von 48 Stunden.</span>
           <span data-show-lang="en" class="hidden">Briefly describe your needs – I'll get back to you within 48 hours.</span>
         </p>
@@ -556,7 +572,7 @@ import '../styles/global.css';
   </section>
 
   <!-- ======== FOOTER ======== -->
-  <footer class="border-t border-white/5 py-10 px-4 sm:px-6">
+  <footer class="border-t border-white/[0.06] py-12 px-4 sm:px-6">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
       <div class="flex items-center gap-3">
         <svg viewBox="0 0 80 80" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
@@ -692,7 +708,7 @@ import '../styles/global.css';
     mobileMenu.classList.add('hidden');
   };
 
-  // ---- Scroll reveal ----
+  // ---- Scroll reveal (individual + stagger parents) ----
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -700,8 +716,8 @@ import '../styles/global.css';
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
 
   // ---- Init language ----
   (function init() {

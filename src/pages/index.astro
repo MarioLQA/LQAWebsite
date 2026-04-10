@@ -423,12 +423,16 @@ const techStack = [
   <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 pt-20">
     <div class="hex-bg"></div>
 
-    <!-- Decorative grid lines -->
-    <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(41,121,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(41,121,255,0.04) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <!-- Animated grid lines -->
+    <div class="hero-grid-anim"></div>
+
+    <!-- Floating orbs for atmospheric depth -->
+    <div class="absolute pointer-events-none rounded-full" style="top: 18%; right: 12%; width: 380px; height: 380px; background: radial-gradient(circle, rgba(41,121,255,0.07) 0%, transparent 65%); animation: orb-float 18s ease-in-out infinite alternate;"></div>
+    <div class="absolute pointer-events-none rounded-full" style="bottom: 22%; left: 8%; width: 260px; height: 260px; background: radial-gradient(circle, rgba(0,229,170,0.055) 0%, transparent 65%); animation: orb-float-alt 24s ease-in-out infinite alternate;"></div>
 
     <div class="relative max-w-4xl mx-auto text-center z-10">
       <!-- Monogram large -->
-      <div class="flex justify-center mb-8 md:mb-10 reveal">
+      <div class="flex justify-center mb-8 md:mb-10 hero-animate" style="animation-delay: 0ms;">
         <svg viewBox="0 0 80 80" width="80" height="80" class="sm:w-24 sm:h-24 md:w-[100px] md:h-[100px]" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="hero-grad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -451,20 +455,20 @@ const techStack = [
         </svg>
       </div>
 
-      <h1 class="reveal text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+      <h1 class="hero-animate text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter mb-6 leading-[1.05]" style="animation-delay: 180ms;">
         <span class="grad-text" data-key="hero.headline">Qualität ist kein Zufall.</span>
       </h1>
 
-      <p class="reveal text-base sm:text-lg md:text-xl text-text-main/70 max-w-2xl mx-auto mb-10 leading-relaxed" data-key="hero.sub">
+      <p class="hero-animate text-base sm:text-lg md:text-xl text-text-main/65 max-w-2xl mx-auto mb-10 leading-relaxed" style="animation-delay: 360ms;" data-key="hero.sub">
         Freiberuflicher QA-Engineer mit über 6 Jahren Erfahrung im manuellen und automatisierten Software-Testing für Web- und Mobile-Anwendungen. Als ISTQB-zertifizierter Test Analyst verbinde ich strukturierte Testanalyse mit moderner Testautomatisierung – in agilen Teams, remote und on-site.
       </p>
 
-      <div class="reveal">
+      <div class="hero-animate" style="animation-delay: 520ms;">
         <a href="#contact" class="btn-cta" data-key="hero.cta">Projekt anfragen</a>
       </div>
 
       <!-- Badges -->
-      <div class="reveal flex flex-wrap justify-center gap-2 sm:gap-3 mt-8">
+      <div class="hero-animate flex flex-wrap justify-center gap-2 sm:gap-3 mt-8" style="animation-delay: 680ms;">
         <span class="badge text-xs sm:text-sm" data-key="hero.badges.0">6+ Jahre Erfahrung</span>
         <span class="badge text-xs sm:text-sm" data-key="hero.badges.1">ISTQB Foundation & Advanced</span>
         <span class="badge text-xs sm:text-sm" data-key="hero.badges.2">Remote & On-site</span>
@@ -488,17 +492,20 @@ const techStack = [
 
       <div class="text-center mb-10 md:mb-16 reveal">
         <div class="section-divider"></div>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4" data-key="about.title">Über mich</h2>
+        <span class="section-label">
+          <span data-show-lang="de">ÜBER MICH</span><span data-show-lang="en" class="hidden">ABOUT ME</span>
+        </span>
+        <h2 class="text-3xl md:text-[2.6rem] font-bold leading-tight" data-key="about.title">Über mich</h2>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
 
         <!-- Text column -->
         <div class="reveal space-y-6">
-          <p class="text-text-main/70 text-base sm:text-lg leading-relaxed" data-key="about.para1">
+          <p class="text-text-main/65 text-base sm:text-lg leading-[1.85]" data-key="about.para1">
             „Eigentlich wollte ich Entwickler werden. Den Einstieg in die IT habe ich über meine erste QA-Rolle gemacht – und dabei etwas Unerwartetes entdeckt: die Faszination dafür, Software bis ins kleinste Detail zu durchleuchten. Die Liebe zum Code habe ich in der Testautomatisierung gefunden. Die Liebe zur Qualität in jedem Projekt danach.
           </p>
-          <p class="text-text-main/70 text-base sm:text-lg leading-relaxed" data-key="about.para2">
+          <p class="text-text-main/65 text-base sm:text-lg leading-[1.85]" data-key="about.para2">
             Heute suche ich nicht nur Bugs – ich denke in Lösungen. Ich bin der Typ, der sich über einen kniffligen Edgecase freut, der anderen nicht aufgefallen wäre. Der nicht aufhört, bis er wirklich verstanden hat, warum etwas fehlschlägt. Saubere Prozesse, klare Kommunikation und ein Team das sich auf QA verlassen kann – dafür stehe ich."
           </p>
         </div>
@@ -592,13 +599,16 @@ const techStack = [
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-10 md:mb-16 reveal">
         <div class="section-divider"></div>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4" data-key="services.title">Leistungen</h2>
+        <span class="section-label">
+          <span data-show-lang="de">LEISTUNGEN</span><span data-show-lang="en" class="hidden">SERVICES</span>
+        </span>
+        <h2 class="text-3xl md:text-[2.6rem] font-bold leading-tight" data-key="services.title">Leistungen</h2>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8">
 
         <!-- Card 1 -->
-        <div class="card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02] reveal">
+        <div class="card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02] reveal" style="transition-delay: 0ms;">
           <div class="flex items-start gap-4 mb-6">
             <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(41,121,255,0.15);">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2979FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -636,7 +646,7 @@ const techStack = [
         </div>
 
         <!-- Card 2 -->
-        <div class="card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02] reveal">
+        <div class="card-glow rounded-2xl p-6 md:p-8 bg-white/[0.02] reveal" style="transition-delay: 140ms;">
           <div class="flex items-start gap-4 mb-6">
             <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(0,229,170,0.12);">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00E5AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -686,33 +696,36 @@ const techStack = [
     <div class="max-w-4xl mx-auto text-center relative z-10">
       <div class="reveal">
         <div class="section-divider"></div>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4" data-key="experience.title">Branchen</h2>
-        <p class="text-text-main/60 mb-8 md:mb-12" data-key="experience.sub">Erfahrung in anspruchsvollen Projekten aus diversen Branchen.</p>
+        <span class="section-label">
+          <span data-show-lang="de">ERFAHRUNG</span><span data-show-lang="en" class="hidden">EXPERIENCE</span>
+        </span>
+        <h2 class="text-3xl md:text-[2.6rem] font-bold leading-tight mb-4" data-key="experience.title">Branchen</h2>
+        <p class="text-text-main/55 text-base md:text-lg mb-8 md:mb-12" data-key="experience.sub">Erfahrung in anspruchsvollen Projekten aus diversen Branchen.</p>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-2 sm:gap-4 reveal">
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 reveal-stagger">
         {industries.map((ind) => (
           <span class="badge">{ind}</span>
         ))}
       </div>
 
       <!-- Stats row -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 md:mt-20 reveal">
-        <div class="text-center">
-          <div class="text-4xl font-bold grad-text">6+</div>
-          <div class="text-sm text-text-main/50 mt-1" data-key-stat-de="Jahre Erfahrung" data-key-stat-en="Years Experience">Jahre Erfahrung</div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14 md:mt-20 reveal-stagger">
+        <div class="text-center py-2">
+          <div class="text-5xl md:text-6xl font-bold grad-text leading-none mb-2">6+</div>
+          <div class="text-xs text-text-main/45 mt-2 tracking-widest uppercase font-semibold" data-key-stat-de="Jahre Erfahrung" data-key-stat-en="Years Experience">Jahre Erfahrung</div>
         </div>
-        <div class="text-center">
-          <div class="text-4xl font-bold grad-text">5+</div>
-          <div class="text-sm text-text-main/50 mt-1" data-key-stat-de="Projekte" data-key-stat-en="Projects">Projekte</div>
+        <div class="text-center py-2">
+          <div class="text-5xl md:text-6xl font-bold grad-text leading-none mb-2">5+</div>
+          <div class="text-xs text-text-main/45 mt-2 tracking-widest uppercase font-semibold" data-key-stat-de="Projekte" data-key-stat-en="Projects">Projekte</div>
         </div>
-        <div class="text-center">
-          <div class="text-4xl font-bold grad-text">2</div>
-          <div class="text-sm text-text-main/50 mt-1" data-key-stat-de="ISTQB Zertifikate" data-key-stat-en="ISTQB Certificates">ISTQB Zertifikate</div>
+        <div class="text-center py-2">
+          <div class="text-5xl md:text-6xl font-bold grad-text leading-none mb-2">2</div>
+          <div class="text-xs text-text-main/45 mt-2 tracking-widest uppercase font-semibold" data-key-stat-de="ISTQB Zertifikate" data-key-stat-en="ISTQB Certificates">ISTQB Zertifikate</div>
         </div>
-        <div class="text-center">
-          <div class="text-4xl font-bold grad-text">4</div>
-          <div class="text-sm text-text-main/50 mt-1" data-key-stat-de="Branchen" data-key-stat-en="Industries">Branchen</div>
+        <div class="text-center py-2">
+          <div class="text-5xl md:text-6xl font-bold grad-text leading-none mb-2">4</div>
+          <div class="text-xs text-text-main/45 mt-2 tracking-widest uppercase font-semibold" data-key-stat-de="Branchen" data-key-stat-en="Industries">Branchen</div>
         </div>
       </div>
     </div>
@@ -724,13 +737,16 @@ const techStack = [
     <div class="max-w-4xl mx-auto relative z-10">
       <div class="text-center mb-10 md:mb-16 reveal">
         <div class="section-divider"></div>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4" data-key="projects.title">Projekte</h2>
-        <p class="text-text-main/60" data-key="projects.sub">Ausgewählte Projektreferenzen aus meiner freiberuflichen Tätigkeit.</p>
+        <span class="section-label">
+          <span data-show-lang="de">PROJEKTE</span><span data-show-lang="en" class="hidden">PROJECTS</span>
+        </span>
+        <h2 class="text-3xl md:text-[2.6rem] font-bold leading-tight mb-4" data-key="projects.title">Projekte</h2>
+        <p class="text-text-main/55 text-base md:text-lg" data-key="projects.sub">Ausgewählte Projektreferenzen aus meiner freiberuflichen Tätigkeit.</p>
       </div>
 
-      <div class="space-y-5">
+      <div class="space-y-5 reveal-stagger">
         {projects.map((project) => (
-          <div class="project-card card-glow rounded-2xl bg-white/[0.02] overflow-hidden reveal">
+          <div class="project-card card-glow rounded-2xl bg-white/[0.02] overflow-hidden">
             <div class="p-6 md:p-8">
 
               <!-- Header row: industry tag + period -->
@@ -808,15 +824,16 @@ const techStack = [
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-10 md:mb-16 reveal">
         <div class="section-divider"></div>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4" data-key="stack.title">Tech Stack</h2>
-        <p class="text-text-main/60" data-key="stack.sub">Bewährte Tools für moderne Qualitätssicherung.</p>
+        <span class="section-label">TECH STACK</span>
+        <h2 class="text-3xl md:text-[2.6rem] font-bold leading-tight mb-4" data-key="stack.title">Tech Stack</h2>
+        <p class="text-text-main/55 text-base md:text-lg" data-key="stack.sub">Bewährte Tools für moderne Qualitätssicherung.</p>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 reveal">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 reveal-stagger">
         {techStack.map((tool) => (
           <div class="tech-chip">
             <Fragment set:html={tool.svg} />
-            <span class="text-sm font-medium text-text-main/80 text-center">{tool.name}</span>
+            <span class="text-sm font-medium text-text-main/75 text-center">{tool.name}</span>
           </div>
         ))}
       </div>
@@ -829,8 +846,11 @@ const techStack = [
     <div class="max-w-2xl mx-auto relative z-10">
       <div class="text-center mb-8 md:mb-14 reveal">
         <div class="section-divider"></div>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4" data-key="contact.title">Kontakt</h2>
-        <p class="text-text-main/60" data-key="contact.sub">Bereit für Ihr nächstes Projekt? Schreiben Sie mir.</p>
+        <span class="section-label">
+          <span data-show-lang="de">KONTAKT</span><span data-show-lang="en" class="hidden">CONTACT</span>
+        </span>
+        <h2 class="text-3xl md:text-[2.6rem] font-bold leading-tight mb-4" data-key="contact.title">Kontakt</h2>
+        <p class="text-text-main/55 text-base md:text-lg" data-key="contact.sub">Bereit für Ihr nächstes Projekt? Schreiben Sie mir.</p>
       </div>
 
       <!-- Contact form -->
@@ -884,8 +904,8 @@ const techStack = [
   </section>
 
   <!-- ======== FOOTER ======== -->
-  <footer class="border-t border-white/5 py-10 px-4 sm:px-6">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
+  <footer class="border-t border-white/[0.06] py-12 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5 md:gap-6">
       <div class="flex items-center gap-3">
         <svg viewBox="0 0 80 80" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -896,7 +916,7 @@ const techStack = [
           </defs>
           <polygon points="40,8 64,21 64,47 40,60 16,47 16,21" fill="none" stroke="url(#ft-grad)" stroke-width="2"/>
         </svg>
-        <span class="text-sm text-text-main/40" data-key="footer.copy">© 2025 Lirsch QA Consulting Ltd. · Zypern</span>
+        <span class="text-xs text-text-main/35 tracking-wide" data-key="footer.copy">© 2025 Lirsch QA Consulting Ltd. · Zypern</span>
       </div>
       <div class="flex flex-wrap items-center justify-center gap-4 md:gap-6">
         <a href="/talent" class="text-sm text-green-accent/60 hover:text-green-accent transition-colors">Talent Network</a>
@@ -1007,7 +1027,7 @@ const techStack = [
     mobileMenu.classList.add('hidden');
   };
 
-  // ---- Scroll reveal ----
+  // ---- Scroll reveal (individual elements + stagger parents) ----
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1015,9 +1035,27 @@ const techStack = [
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
+
+  // ---- ScrollSpy — highlight active nav link ----
+  const spySections = ['about', 'services', 'experience', 'projects', 'stack', 'contact'];
+  const navLinks = document.querySelectorAll('.nav-link');
+  function updateActiveNav() {
+    const scrollY = window.scrollY + 120;
+    let current = '';
+    for (const id of spySections) {
+      const el = document.getElementById(id);
+      if (el && scrollY >= el.offsetTop) current = id;
+    }
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      const isActive = href === `#${current}`;
+      link.classList.toggle('active', isActive);
+    });
+  }
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
 
   // ---- Init language ----
   (function init() {
