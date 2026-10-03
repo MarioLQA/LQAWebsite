@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+
+const year = new Date().getFullYear();
 ---
 
 <!doctype html>
@@ -53,7 +55,6 @@ import '../styles/global.css';
       <div class="hidden md:flex items-center gap-8">
         <a href="/#about" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.about">Über mich</a>
         <a href="/#services" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.services">Leistungen</a>
-        <a href="/#experience" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.experience">Erfahrung</a>
         <a href="/#projects" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.projects">Projekte</a>
         <a href="/#stack" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.stack">Stack</a>
         <a href="/#contact" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.contact">Kontakt</a>
@@ -84,7 +85,6 @@ import '../styles/global.css';
       <div class="max-w-6xl mx-auto flex flex-col gap-4 pt-4 px-4">
         <a href="/#about" class="text-sm text-text-main/70" data-key="nav.about" onclick="closeMobileMenu()">Über mich</a>
         <a href="/#services" class="text-sm text-text-main/70" data-key="nav.services" onclick="closeMobileMenu()">Leistungen</a>
-        <a href="/#experience" class="text-sm text-text-main/70" data-key="nav.experience" onclick="closeMobileMenu()">Erfahrung</a>
         <a href="/#projects" class="text-sm text-text-main/70" data-key="nav.projects" onclick="closeMobileMenu()">Projekte</a>
         <a href="/#stack" class="text-sm text-text-main/70" data-key="nav.stack" onclick="closeMobileMenu()">Stack</a>
         <a href="/#contact" class="text-sm text-text-main/70" data-key="nav.contact" onclick="closeMobileMenu()">Kontakt</a>
@@ -195,8 +195,7 @@ import '../styles/global.css';
           <polygon points="40,8 64,21 64,47 40,60 16,47 16,21" fill="none" stroke="url(#ft-grad)" stroke-width="2"/>
         </svg>
         <span class="text-sm text-text-main/40">
-          <span data-show-lang="de">© 2025 Mario Lirsch · IT-Dienstleister</span>
-          <span data-show-lang="en" class="hidden">© 2025 Mario Lirsch · IT Service Provider</span>
+          © {year} Mario Lirsch · <span data-show-lang="de">IT-Dienstleister</span><span data-show-lang="en" class="hidden">IT Service Provider</span>
         </span>
       </div>
       <div class="flex flex-wrap items-center justify-center gap-4 md:gap-6">
@@ -224,8 +223,8 @@ import '../styles/global.css';
 <!-- ======== SCRIPTS ======== -->
 <script>
   const translations = {
-    de: { nav: { about: 'Über mich', services: 'Leistungen', experience: 'Erfahrung', projects: 'Projekte', stack: 'Stack', contact: 'Kontakt' } },
-    en: { nav: { about: 'About', services: 'Services', experience: 'Experience', projects: 'Projects', stack: 'Stack', contact: 'Contact' } },
+    de: { nav: { about: 'Über mich', services: 'Leistungen', projects: 'Projekte', stack: 'Stack', contact: 'Kontakt' } },
+    en: { nav: { about: 'About', services: 'Services', projects: 'Projects', stack: 'Stack', contact: 'Contact' } },
   };
   let currentLang = 'de';
 

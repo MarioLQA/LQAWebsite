@@ -1,144 +1,104 @@
 ---
 import '../styles/global.css';
 
+const year = new Date().getFullYear();
+
 const t = {
   de: {
-    nav: { about: 'Über mich', services: 'Leistungen', experience: 'Erfahrung', projects: 'Projekte', stack: 'Stack', contact: 'Kontakt' },
+    nav: { about: 'Über mich', services: 'Leistungen', projects: 'Projekte', stack: 'Stack', contact: 'Kontakt' },
     about: {
       title: 'Über mich',
-      para1: '„Eigentlich wollte ich Entwickler werden. Den Einstieg in die IT habe ich über meine erste QA-Rolle gemacht – und dabei etwas Unerwartetes entdeckt: die Faszination dafür, Software bis ins kleinste Detail zu durchleuchten. Die Liebe zum Code habe ich in der Testautomatisierung gefunden. Die Liebe zur Qualität in jedem Projekt danach.',
-      para2: 'Heute suche ich nicht nur Bugs – ich denke in Lösungen. Ich bin der Typ, der sich über einen kniffligen Edgecase freut, der anderen nicht aufgefallen wäre. Der nicht aufhört, bis er wirklich verstanden hat, warum etwas fehlschlägt. Saubere Prozesse, klare Kommunikation und ein Team das sich auf QA verlassen kann – dafür stehe ich."',
-      trait1: 'Bug Hunter & Edge-Case-Spezialist',
-      trait2: 'Testautomatisierungs-Engineer',
-      trait3: 'QA-Advocate & Teamplayer',
+      para1: 'Eigentlich wollte ich Entwickler werden. In die IT bin ich über meine erste QA-Rolle gekommen und habe dort etwas gefunden, das ich nicht gesucht hatte: Ich schaue Software gern bis ins Detail an. Den Code schreibe ich in der Testautomatisierung.',
+      para2: 'Ich freue mich über einen kniffligen Edge Case, den andere übersehen hätten. Und ich höre nicht auf, bevor klar ist, warum etwas fehlschlägt. Danach soll das Team wissen, was zu tun ist, ohne dass ich noch eine Runde erklären muss.',
+      note: 'ISTQB-zertifizierter Test Analyst, Foundation und Advanced. Ich arbeite remote und vor Ort.',
     },
     hero: {
-      headline: 'Qualität ist kein Zufall.',
-      sub: 'Freiberuflicher QA-Engineer mit über 6 Jahren Erfahrung im manuellen und automatisierten Software-Testing für Web- und Mobile-Anwendungen. Als ISTQB-zertifizierter Test Analyst verbinde ich strukturierte Testanalyse mit moderner Testautomatisierung – in agilen Teams, remote und on-site.',
-      cta: 'Projekt anfragen',
-      badges: ['6+ Jahre Erfahrung', 'ISTQB Foundation & Advanced', 'Remote & On-site', 'Agile / Scrum'],
+      kicker: 'Qualität ist kein Zufall.',
+      sub: 'Ich arbeite als freiberuflicher QA-Engineer in agilen Teams, remote und vor Ort, aktuell bei BRZ an der Zollanwendung Customs Decision Austria.',
+      cta: 'Schreiben Sie mir',
     },
     services: {
       title: 'Leistungen',
       card1: {
-        title: 'Testanalyse & Teststrategie',
-        desc: 'Analyse funktionaler & nicht-funktionaler Anforderungen, risikobasierte Teststrategie und Testkonzepte – für vollständige Qualitätssicherung im gesamten SDLC.',
-        items: [
-          'Analyse funktionaler & nicht-funktionaler Anforderungen',
-          'Risikobasierte Teststrategie & Testkonzepte',
-          'Definition von Testumfang & Abdeckung',
-          'Koordination von Testphasen im gesamten SDLC',
-          'Abstimmung zwischen Business- und Entwicklungsteams',
-        ],
+        title: 'Testanalyse und Teststrategie',
+        desc: 'So läuft es bei BRZ. Customs Decision Austria hängt an EU-Systemen, die Vorgaben ändern sich. Ich lese sie, lege den Testumfang fest und stimme die Testphasen mit dem Testmanager ab.',
+        link: 'Das BRZ-Projekt',
       },
       card2: {
         title: 'Testautomatisierung',
-        desc: 'Aufbau & Wartung von Testautomatisierungs-Frameworks, E2E- und API-Testing sowie nahtlose CI/CD-Integration mit Allure-Reporting.',
-        items: [
-          'Aufbau & Wartung von Testautomatisierungs-Frameworks',
-          'E2E-Testing mit Cypress, Selenium & Appium',
-          'API-Testing mit Postman',
-          'BDD mit Cucumber',
-          'CI/CD-Integration mit Jenkins & GitHub',
-          'Testreporting mit Allure',
-        ],
+        desc: 'So war es bei REWE. Die Artikelverwaltung wechselte von JSF auf Angular, und ich habe die Automatisierung mit Cypress und Cucumber neu aufgebaut: von null auf rund 200 Testfälle, neue Features jeweils gleich mit.',
+        link: 'Das REWE-Projekt',
       },
-    },
-    experience: {
-      title: 'Branchen',
-      sub: 'Erfahrung in anspruchsvollen Projekten aus diversen Branchen.',
     },
     projects: {
       title: 'Projekte',
-      sub: 'Ausgewählte Projektreferenzen aus meiner freiberuflichen Tätigkeit.',
+      sub: 'Zoll, Handel, Banken und ein Bauunternehmen.',
     },
     stack: {
       title: 'Tech Stack',
-      sub: 'Bewährte Tools für moderne Qualitätssicherung.',
+      sub: 'Womit ich arbeite.',
     },
     contact: {
       title: 'Kontakt',
-      sub: 'Bereit für Ihr nächstes Projekt? Schreiben Sie mir.',
+      sub: 'Wenn Sie Unterstützung im Testen brauchen, schreiben Sie mir. Es reichen ein paar Sätze, worum es geht.',
       name: 'Name',
       email: 'E-Mail',
       message: 'Nachricht',
-      send: 'Senden',
+      send: 'Per E-Mail senden',
       linkedin: 'LinkedIn-Profil',
       emaillink: 'E-Mail schreiben',
     },
     footer: {
-      copy: '© 2025 Mario Lirsch · IT-Dienstleister',
       tagline: 'Qualität ist kein Zufall.',
       legal: 'Impressum',
       privacy: 'Datenschutz',
     },
   },
   en: {
-    nav: { about: 'About', services: 'Services', experience: 'Experience', projects: 'Projects', stack: 'Stack', contact: 'Contact' },
+    nav: { about: 'About', services: 'Services', projects: 'Projects', stack: 'Stack', contact: 'Contact' },
     about: {
       title: 'About me',
-      para1: '„I originally wanted to become a developer. My entry into IT came through my first QA role – and that\'s where I discovered something unexpected: a genuine fascination for testing software down to the smallest detail. I found my love for code in test automation. My love for quality in every project since.',
-      para2: 'Today I don\'t just find bugs – I think in solutions. I\'m the kind of person who gets excited about an edge case others would have missed. Who doesn\'t stop until they truly understand why something fails. Clean processes, clear communication, and a team that can rely on QA – that\'s what I stand for."',
-      trait1: 'Bug Hunter & Edge Case Explorer',
-      trait2: 'Test Automation Engineer',
-      trait3: 'QA Advocate & Team Player',
+      para1: 'I was going to be a developer. I got into IT through my first QA role and found something I hadn\'t been looking for: I like taking software apart in detail. I write the code in the test automation.',
+      para2: 'I like a tricky edge case other people would have missed, and I don\'t stop until it\'s clear why something failed. After that, the team should know what to do without another round of explanation from me.',
+      note: 'ISTQB-certified Test Analyst, Foundation and Advanced. I work remote and on-site.',
     },
     hero: {
-      headline: 'Quality is no coincidence.',
-      sub: 'Freelance QA Engineer with 6+ years of experience in manual and automated software testing for web and mobile applications. As an ISTQB-certified Test Analyst, I combine structured test analysis with modern test automation – in agile teams, remotely and on-site.',
-      cta: 'Start a project',
-      badges: ['6+ Years Experience', 'ISTQB Foundation & Advanced', 'Remote & On-site', 'Agile / Scrum'],
+      kicker: 'Quality is no coincidence.',
+      sub: 'I work as a freelance QA engineer in agile teams, remote and on-site, currently at BRZ on Customs Decision Austria.',
+      cta: 'Write to me',
     },
     services: {
       title: 'Services',
       card1: {
-        title: 'Test Analysis & Test Strategy',
-        desc: 'Analysis of functional & non-functional requirements, risk-based test strategy and test concepts – for comprehensive quality assurance across the full SDLC.',
-        items: [
-          'Analysis of functional & non-functional requirements',
-          'Risk-based test strategy & test concepts',
-          'Definition of test scope & coverage',
-          'Coordination of test phases across the full SDLC',
-          'Alignment between business and development teams',
-        ],
+        title: 'Test analysis and test strategy',
+        desc: 'This is the work at BRZ. Customs Decision Austria is tied to EU systems, and the requirements keep changing. I read them, set the test scope, and plan the test phases with the test manager.',
+        link: 'The BRZ project',
       },
       card2: {
-        title: 'Test Automation',
-        desc: 'Building & maintaining test automation frameworks, E2E and API testing, plus seamless CI/CD integration with Allure reporting.',
-        items: [
-          'Building & maintaining test automation frameworks',
-          'E2E testing with Cypress, Selenium & Appium',
-          'API testing with Postman',
-          'BDD with Cucumber',
-          'CI/CD integration with Jenkins & GitHub',
-          'Test reporting with Allure',
-        ],
+        title: 'Test automation',
+        desc: 'This was the work at REWE. Product management moved from JSF to Angular, and I rebuilt the automation with Cypress and Cucumber: from zero to about 200 test cases, with each new feature covered as it shipped.',
+        link: 'The REWE project',
       },
-    },
-    experience: {
-      title: 'Industries',
-      sub: 'Proven experience across demanding projects in diverse industries.',
     },
     projects: {
       title: 'Projects',
-      sub: 'Selected project references from my freelance career.',
+      sub: 'Customs, retail, banking, and a construction company.',
     },
     stack: {
-      title: 'Tech Stack',
-      sub: 'Proven tools for modern quality assurance.',
+      title: 'Tech stack',
+      sub: 'What I work with.',
     },
     contact: {
       title: 'Contact',
-      sub: 'Ready for your next project? Get in touch.',
+      sub: 'If you need help with testing, write to me. A few sentences about the work are enough.',
       name: 'Name',
-      email: 'E-Mail',
+      email: 'Email',
       message: 'Message',
-      send: 'Send',
-      linkedin: 'LinkedIn Profile',
-      emaillink: 'Send an e-mail',
+      send: 'Send via email',
+      linkedin: 'LinkedIn profile',
+      emaillink: 'Write an email',
     },
     footer: {
-      copy: '© 2025 Mario Lirsch · IT Service Provider',
       tagline: 'Quality is no coincidence.',
       legal: 'Legal Notice',
       privacy: 'Privacy Policy',
@@ -146,153 +106,84 @@ const t = {
   },
 };
 
-const industries = [
-  '🏛 Public Sector & Government',
-  '🛒 E-Commerce & Retail',
-  '🏦 Banking & Fintech',
-  '🏗 Construction Tech',
-];
-
 const projects = [
   {
-    industryTag: 'Public Sector',
+    id: 'project-brz',
+    industryDe: 'Öffentlicher Sektor',
+    industryEn: 'Public sector',
     company: 'BRZ – Customs Decision Austria (CDA)',
     periodDe: 'Juli 2023 – Heute',
     periodEn: 'July 2023 – Present',
-    teaserDe: 'Bei BRZ arbeite ich als QA Engineer und Testkoordinator an CDA – Customs Decision Austria, einer Java/JSF-basierten Softwarelösung über die Wirtschaftsbeteiligte zollrechtliche Anträge stellen und Sachbearbeiter diese bearbeiten können.',
-    teaserEn: 'At BRZ, I work as a QA Engineer and Test Coordinator on CDA – Customs Decision Austria, a Java/JSF-based platform through which businesses submit customs applications and case workers process them.',
-    bodyDe: [
-      'Zusätzlich verantworten wir ein zentrales CRS-Datenbanksystem, das als Datendrehscheibe für mehrere SOAP- und REST-Schnittstellen dient, über die angebundene Umsysteme kommunizieren.',
-      'Die besondere Komplexität liegt in der direkten Anbindung an EU-Systeme: Regelmäßige Anforderungsänderungen, Datenanpassungen und Schnittstellenupdates seitens der EU müssen präzise analysiert, verstanden und in den Testprozess überführt werden. Testanalyse steht hier klar im Mittelpunkt – funktionale Anforderungen prüfen, Testumfänge definieren und sicherstellen dass Business- und regulatorische Anforderungen vollständig abgedeckt sind.',
-      'Parallel dazu unterstütze ich den Testmanager in der Rolle des Testkoordinators: Planung und Koordination von Testphasen, Fortschrittskontrolle und Abstimmung im Team. Die bestehende Testautomatisierung umfasst rund 200 Testfälle in Java mit Selenium. Aktuell begleiten wir zusätzlich die Migration der JSF-Oberfläche auf Angular – eine weitere Herausforderung die präzise Teststrategie und lückenlose Abdeckung erfordert.',
-    ],
-    bodyEn: [
-      'Additionally, the team manages a central CRS database system that serves as a data hub for multiple SOAP and REST interfaces used by connected external systems.',
-      'The core complexity lies in the direct integration with EU systems: regular requirement changes, data updates, and interface adjustments from the EU side must be precisely analyzed, understood, and translated into the testing process. Test analysis is the primary focus – reviewing functional requirements, defining test scope, and ensuring complete coverage of both business and regulatory requirements.',
-      'Alongside this, I support the Test Manager in a Test Coordinator role: planning and coordinating test phases, tracking progress, and aligning the team. The existing automation suite covers approximately 200 test cases built in Java with Selenium. Currently, the team is also managing a migration of the legacy JSF frontend to Angular – an additional challenge that demands precise test strategy and thorough coverage throughout the transition.',
-    ],
-    tags: ['Java', 'Selenium', 'SOAP', 'REST', 'JSF', 'Angular'],
+    textDe: 'In Customs Decision Austria stellen Unternehmen zollrechtliche Anträge, Sachbearbeiter bearbeiten sie. Die Anwendung ist Java/JSF, angebunden an EU-Systeme und an ein CRS für mehrere SOAP- und REST-Schnittstellen. Ich lese die Änderungen aus der EU, mache daraus Tests, koordiniere die Phasen mit dem Testmanager und begleite die Umstellung der Oberfläche auf Angular. Die Automatisierung umfasst rund 200 Testfälle in Java mit Selenium.',
+    textEn: 'In Customs Decision Austria, businesses file customs applications and case workers process them. The application is Java/JSF, connected to EU systems and to a CRS for several SOAP and REST interfaces. I read the changes coming from the EU, turn them into tests, coordinate the phases with the test manager, and test through the move of the UI from JSF to Angular. The automation covers about 200 Java test cases on Selenium.',
+    tagsDe: ['Java', 'Selenium', 'SOAP', 'REST', 'JSF', 'Angular'],
+    tagsEn: ['Java', 'Selenium', 'SOAP', 'REST', 'JSF', 'Angular'],
   },
   {
-    industryTag: 'E-Commerce & Retail',
+    id: 'project-rewe',
+    industryDe: 'Handel',
+    industryEn: 'Retail',
     company: 'REWE IT',
     periodDe: 'Oktober 2022 – Juli 2023',
     periodEn: 'October 2022 – July 2023',
-    teaserDe: 'Bei REWE IT stand ich vor einer klassischen Migrationsherausforderung: Eine veraltete JSF-basierte Artikelverwaltungssoftware wurde durch eine moderne Angular-Applikation abgelöst – und mit ihr das gesamte Testautomatisierungs-Framework.',
-    teaserEn: 'At REWE IT, I was brought in during a major migration: a legacy JSF-based product management system was being replaced by a modern Angular application – and with it, the entire test automation setup needed to be rebuilt from scratch.',
-    bodyDe: [
-      'Meine Aufgabe war es, die bestehende Testautomatisierung von Grund auf neu aufzubauen und dabei auf Cypress mit Cucumber umzusteigen. Von null auf rund 200 automatisierte Testfälle – strukturiert entlang der fachlichen Anforderungen einer komplexen Artikelverwaltungslogik mit vielfältigen Geschäftsregeln und Edge Cases.',
-      'Der Fokus lag dabei nicht nur auf dem initialen Aufbau, sondern auf einer nachhaltigen Strategie: Jedes neu implementierte Feature wurde unmittelbar mit automatisierten Tests abgedeckt, um die Testabdeckung parallel zur Entwicklung stabil zu halten. Das Ergebnis war ein robustes, wartbares Framework das mit dem Produkt mitwuchs.',
-    ],
-    bodyEn: [
-      'I designed and implemented a new automation framework using Cypress and Cucumber, growing the test suite from zero to approximately 200 automated test cases – structured around the complex business logic of a product management platform with diverse rules and edge cases.',
-      'The key principle throughout was continuous coverage: every newly implemented feature was immediately followed by automated tests, ensuring test coverage remained stable and reliable as the product evolved. The result was a maintainable, scalable framework that grew alongside the product.',
-    ],
-    tags: ['Cypress', 'Cucumber', 'Angular', 'JSF'],
+    textDe: 'Die Artikelverwaltung lief auf JSF und wurde durch eine Angular-Applikation ersetzt. Die Automatisierung habe ich dafür neu aufgebaut, mit Cypress und Cucumber, und neue Features direkt mit Tests abgedeckt. Von null auf rund 200 automatisierte Testfälle.',
+    textEn: 'Product management ran on JSF and was replaced by an Angular app. I rebuilt the automation for that move with Cypress and Cucumber, and covered new features as they were built. From zero to about 200 automated test cases.',
+    tagsDe: ['Cypress', 'Cucumber', 'Angular', 'JSF'],
+    tagsEn: ['Cypress', 'Cucumber', 'Angular', 'JSF'],
   },
   {
-    industryTag: 'Banking & Fintech',
+    id: 'project-erste',
+    industryDe: 'Banken',
+    industryEn: 'Banking',
     company: 'Erste Group IT',
     periodDe: 'Mai 2021 – September 2022',
     periodEn: 'May 2021 – September 2022',
-    teaserDe: 'Bei der Erste Group IT war ich in einem von mehreren agilen Feature-Squads eingebettet, parallel dazu arbeiteten dedizierte Regressionsteams. Mein Fokus lag auf schneller, featurenaher Qualitätssicherung direkt im Entwicklungsprozess.',
-    teaserEn: 'At Erste Group IT, I was embedded in one of several agile feature squads, working alongside dedicated regression teams. My focus was on fast, feature-level quality assurance directly within the development process.',
-    bodyDe: [
-      'Mein Schwerpunkt war komponentenbasierte Testautomatisierung mit Cypress: Jedes neu entwickelte Feature wurde isoliert getestet, indem alle API-Calls beim Laden der Seite abgefangen und durch kontrollierte Mock-Responses ersetzt wurden. So konnte ich das Backend vollständig simulieren – mit beliebig anpassbaren Antworten für unterschiedliche Szenarien und Edge Cases. Die fertigen Tests wurden anschließend an die Regressionsteams übergeben und dort als vollständige End-to-End-Tests gegen echte Systeme ausgeführt.',
-      'Besondere Komplexität brachte der Multi-Country-Scope: Die Applikation lief in fünf Ländern – Österreich, Kroatien, Slowakei, Rumänien und Tschechien – mit länderspezifischen UI-Varianten und Anforderungen, die in den Testfällen präzise abgebildet werden mussten.',
-    ],
-    bodyEn: [
-      'I specialized in component-level test automation with Cypress: every new feature was tested in isolation by intercepting all API calls on page load and replacing them with controlled mock responses. This allowed me to fully simulate the backend – with freely configurable responses to cover different scenarios and edge cases. Completed tests were then handed over to the regression teams for full end-to-end execution against live systems.',
-      'Additional complexity came from the multi-country scope: the application served five markets – Austria, Croatia, Slovakia, Romania, and Czech Republic – each with country-specific UI variations and business requirements that had to be precisely reflected in the test cases.',
-    ],
-    tags: ['Cypress', 'React', 'API Mocking', 'Cucumber', 'Postman'],
+    textDe: 'Ich saß in einem Feature-Squad, die Regression lief in eigenen Teams daneben. Neue Features habe ich mit Cypress isoliert getestet: die API-Calls beim Laden abgefangen und durch Mocks ersetzt. Fertige Tests gingen an die Regression und liefen dort als End-to-End-Tests gegen die echten Systeme. Die Applikation gab es in fünf Ländern: Österreich, Kroatien, Slowakei, Rumänien und Tschechien, jeweils mit eigener Oberfläche.',
+    textEn: 'I sat in a feature squad, with regression running in separate teams beside it. I tested new features in isolation with Cypress: intercepting the API calls on load and replacing them with mocks. Finished tests went to regression and ran there end to end against the real systems. The app was live in five countries: Austria, Croatia, Slovakia, Romania, and the Czech Republic, each with its own UI.',
+    tagsDe: ['Cypress', 'React', 'API-Mocking', 'Cucumber', 'Postman'],
+    tagsEn: ['Cypress', 'React', 'API mocking', 'Cucumber', 'Postman'],
   },
   {
-    industryTag: 'Banking & Fintech',
+    id: 'project-ing',
+    industryDe: 'Banken',
+    industryEn: 'Banking',
     company: 'ING Austria',
     periodDe: 'April 2019 – Mai 2021',
     periodEn: 'April 2019 – May 2021',
-    teaserDe: 'Bei ING Austria war ich als QA Engineer in einem etablierten Testing-Team verantwortlich für die Qualitätssicherung von vier Plattformen gleichzeitig: Online Banking, Mobile App (iOS & Android) sowie zwei interne Banking-Systeme.',
-    teaserEn: 'At ING Austria, I worked as a QA Engineer embedded in an established testing team, responsible for quality assurance across four platforms simultaneously: Online Banking, a Mobile App (iOS & Android), and two internal banking systems.',
-    bodyDe: [
-      'Die besondere Herausforderung lag in der Vielfalt der Plattformen – von einer kundenorientierten Banking-App bis hin zu komplexen fachlichen Backendsystemen, die völlig unterschiedliche Testing-Ansätze erforderten. Ein weiterer Faktor war die internationale Zusammenarbeit: Die Mobile-App-Entwicklung war nach Istanbul ausgelagert, was klare Kommunikation, präzise Fehlerdokumentation und enge Abstimmung über Zeitzonen hinweg erforderte.',
-      'Das Team verwaltete über 1.000 automatisierte Testfälle mit Selenium, Appium und Cucumber – strukturiert über Jenkins CI/CD und dokumentiert mit Allure Reporting. Meine Aufgabe war es, diese Testlandschaft zu warten, zu erweitern und stabile Releases über alle Plattformen hinweg sicherzustellen.',
-    ],
-    bodyEn: [
-      'The key challenge was the sheer diversity of these platforms – from a customer-facing banking app to complex backend systems for internal operations, each requiring fundamentally different testing approaches. An additional layer of complexity came from international collaboration: mobile app development was outsourced to Istanbul, which demanded precise bug documentation, clear communication, and close coordination across time zones.',
-      'The team maintained over 1,000 automated test cases built on Selenium, Appium, and Cucumber – managed through Jenkins CI/CD pipelines and reported via Allure. My focus was on maintaining and extending this test suite while ensuring stable, reliable releases across all platforms.',
-    ],
-    tags: ['Selenium', 'Appium', 'Cucumber', 'TestNG', 'Jenkins', 'Allure'],
+    textDe: 'Getestet habe ich vier Plattformen gleichzeitig: Online Banking, die App für iOS und Android und zwei interne Banksysteme. Die App wurde in Istanbul gebaut, die Abstimmung lief über Zeitzonen. Ich habe die vorhandene Automatisierung gepflegt und erweitert. Das waren über 1.000 Tests mit Selenium, Appium und Cucumber, an Jenkins angebunden und in Allure berichtet.',
+    textEn: 'I tested four platforms at once: online banking, the iOS and Android app, and two internal banking systems. The app was built in Istanbul, so the coordination crossed time zones. I maintained and extended the automation the team already had: over 1,000 tests on Selenium, Appium, and Cucumber, run through Jenkins and reported in Allure.',
+    tagsDe: ['Selenium', 'Appium', 'Cucumber', 'TestNG', 'Jenkins', 'Allure'],
+    tagsEn: ['Selenium', 'Appium', 'Cucumber', 'TestNG', 'Jenkins', 'Allure'],
   },
   {
-    industryTag: 'Construction Tech',
+    id: 'project-huberbau',
+    industryDe: 'Bau',
+    industryEn: 'Construction',
     company: 'HuberBau',
     periodDe: 'Januar 2020 – Dezember 2020',
     periodEn: 'January 2020 – December 2020',
-    teaserDe: 'Bei HuberBau war ich der einzige Tester in einem kleinen Team – gemeinsam mit zwei Entwicklern haben wir eine Angular-Applikation von Grund auf neu entwickelt und in Betrieb genommen.',
-    teaserEn: 'At HuberBau, I was the sole QA engineer in a small team – working alongside two developers to build and launch an Angular application from scratch.',
-    bodyDe: [
-      'Die Software verwaltete Personaldaten, Baustelleninformationen und war über eine App-Integration zur Fotodokumentation direkt auf den Baustellen einsetzbar.',
-      'Als alleiniger QA-Verantwortlicher habe ich die gesamte Teststrategie eigenständig aufgebaut: Testfälle für alle Features konzipiert, ein strukturiertes Regressions-Testset mit rund 30–50 Testfällen aufgebaut und die Qualität über alle Entwicklungszyklen hinweg sichergestellt. Ein klassisches Beispiel dafür, wie QA auch in kleinen, agilen Teams einen echten Unterschied macht.',
-    ],
-    bodyEn: [
-      'The software managed personnel data, construction site information, and included a mobile app integration for on-site photo documentation.',
-      'As the only QA responsible, I independently built the entire test strategy: designing test cases for all features, establishing a structured regression test set of around 30–50 test cases, and ensuring quality throughout all development cycles. A clear example of how QA adds real value even in small, fast-moving teams.',
-    ],
-    tags: ['Manuelles Testing', 'Angular', 'Regression Testing'],
+    textDe: 'Ich war der einzige Tester, neben zwei Entwicklern. Zusammen haben wir eine Angular-Applikation von Grund auf entwickelt: Personaldaten, Baustellen und Fotos direkt auf der Baustelle. Die Testfälle habe ich geschrieben, dazu ein Regressionsset mit rund 30–50 Fällen.',
+    textEn: 'I was the only tester, next to two developers. Together we built an Angular app from scratch: staff data, construction sites, and photos taken on site. I wrote the test cases, including a regression set of about 30–50.',
+    tagsDe: ['Manuelles Testen', 'Angular', 'Regression'],
+    tagsEn: ['Manual testing', 'Angular', 'Regression'],
   },
 ];
 
 const techStack = [
-  {
-    name: 'Cypress',
-    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="64" cy="64" r="60" fill="#050E1A"/><path d="M64 24C42 24 24 42 24 64s18 40 40 40 40-18 40-40S86 24 64 24zm0 10c16.6 0 30 13.4 30 30S80.6 94 64 94 34 80.6 34 64s13.4-30 30-30zm-6 14v32l24-16-24-16z" fill="#00E5AA"/></svg>`,
-  },
-  {
-    name: 'Selenium',
-    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="56" font-family="Segoe UI,sans-serif" font-weight="700" fill="#2979FF">Se</text></svg>`,
-  },
-  {
-    name: 'Appium',
-    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><rect x="34" y="20" width="60" height="88" rx="10" fill="none" stroke="#00E5AA" stroke-width="4"/><circle cx="64" cy="96" r="5" fill="#00E5AA"/><text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-size="24" font-family="Segoe UI,sans-serif" font-weight="700" fill="#00E5AA">App</text></svg>`,
-  },
-  {
-    name: 'Cucumber',
-    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><ellipse cx="64" cy="68" rx="22" ry="32" fill="#23D96C" opacity="0.9"/><path d="M64 36 C64 36 72 28 80 30" stroke="#23D96C" stroke-width="3" stroke-linecap="round" fill="none"/><line x1="50" y1="55" x2="78" y2="55" stroke="#050E1A" stroke-width="2.5" stroke-linecap="round"/><line x1="48" y1="68" x2="80" y2="68" stroke="#050E1A" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="81" x2="78" y2="81" stroke="#050E1A" stroke-width="2.5" stroke-linecap="round"/></svg>`,
-  },
-  {
-    name: 'TestNG',
-    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><text x="50%" y="44%" dominant-baseline="middle" text-anchor="middle" font-size="28" font-family="Segoe UI,sans-serif" font-weight="800" fill="#FF6C37">Test</text><text x="50%" y="68%" dominant-baseline="middle" text-anchor="middle" font-size="28" font-family="Segoe UI,sans-serif" font-weight="800" fill="#FF6C37">NG</text></svg>`,
-  },
-  {
-    name: 'Java',
-    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><path d="M52 80 C48 72 56 60 64 56 C72 60 80 72 76 80 C70 88 58 88 52 80Z" fill="none" stroke="#E8A400" stroke-width="3"/><path d="M44 92 C52 86 76 86 84 92" stroke="#E8A400" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M64 30 C64 30 56 42 64 50 C72 42 64 30 64 30Z" fill="#E8A400"/></svg>`,
-  },
-  {
-    name: 'JS / TypeScript',
-    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><text x="50%" y="42%" dominant-baseline="middle" text-anchor="middle" font-size="26" font-family="Segoe UI,sans-serif" font-weight="700" fill="#F7DF1E">JS</text><line x1="20" y1="66" x2="108" y2="66" stroke="#ffffff" stroke-width="1" stroke-opacity="0.15"/><text x="50%" y="72%" dominant-baseline="middle" text-anchor="middle" font-size="22" font-family="Segoe UI,sans-serif" font-weight="700" fill="#3178C6">TS</text></svg>`,
-  },
-  {
-    name: 'Postman',
-    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><circle cx="64" cy="64" r="30" fill="none" stroke="#FF6C37" stroke-width="6"/><line x1="64" y1="34" x2="94" y2="64" stroke="#FF6C37" stroke-width="4" stroke-linecap="round"/></svg>`,
-  },
-  {
-    name: 'Allure',
-    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><path d="M64 24 L88 88 H40 Z" fill="none" stroke="#00E5AA" stroke-width="4" stroke-linejoin="round"/><line x1="52" y1="72" x2="76" y2="72" stroke="#00E5AA" stroke-width="3" stroke-linecap="round"/><circle cx="64" cy="60" r="4" fill="#00E5AA"/></svg>`,
-  },
-  {
-    name: 'Jira / Confluence',
-    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="48" font-family="Segoe UI,sans-serif" font-weight="800" fill="#2979FF">J</text></svg>`,
-  },
-  {
-    name: 'Jenkins / GitHub',
-    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><circle cx="64" cy="64" r="28" fill="none" stroke="#2979FF" stroke-width="5"/><circle cx="64" cy="64" r="10" fill="#2979FF"/><line x1="64" y1="36" x2="64" y2="24" stroke="#2979FF" stroke-width="4" stroke-linecap="round"/><line x1="92" y1="64" x2="104" y2="64" stroke="#2979FF" stroke-width="4" stroke-linecap="round"/></svg>`,
-  },
-  {
-    name: 'Xray / Testlink',
-    svg: `<svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#050E1A"/><text x="50%" y="42%" dominant-baseline="middle" text-anchor="middle" font-size="26" font-family="Segoe UI,sans-serif" font-weight="700" fill="#00E5AA">Xray</text><line x1="20" y1="66" x2="108" y2="66" stroke="#ffffff" stroke-width="1" stroke-opacity="0.15"/><text x="50%" y="72%" dominant-baseline="middle" text-anchor="middle" font-size="18" font-family="Segoe UI,sans-serif" fill="#E8F4FF">Testlink</text></svg>`,
-  },
+  'Cypress',
+  'Selenium',
+  'Appium',
+  'Cucumber',
+  'TestNG',
+  'Java',
+  'JS / TypeScript',
+  'Postman',
+  'Allure',
+  'Jira / Confluence',
+  'Jenkins / GitHub',
+  'Xray / Testlink',
 ];
+
 ---
 
 <!doctype html>
@@ -303,7 +194,7 @@ const techStack = [
 
   <!-- DE Meta (default) -->
   <title>Mario Lirsch – Freelance QA Engineer | LQA Consulting</title>
-  <meta name="description" content="Freiberuflicher QA-Engineer mit 6+ Jahren Erfahrung. Testanalyse, Teststrategie und Testautomatisierung mit Cypress, Selenium & Appium." />
+  <meta name="description" content="Mario Lirsch, freiberuflicher QA-Engineer. Testanalyse und Testautomatisierung, aktuell bei BRZ an Customs Decision Austria." />
   <meta name="keywords" content="QA Consulting, Testautomatisierung, Teststrategie, Cypress, Selenium, Appium, ISTQB, Freelancer, Mario Lirsch" />
 
   <!-- EN Meta (in JSON-LD alternate) -->
@@ -312,7 +203,7 @@ const techStack = [
 
   <!-- OG -->
   <meta property="og:title" content="Mario Lirsch – Freelance QA Engineer | LQA Consulting" />
-  <meta property="og:description" content="Freiberuflicher QA-Engineer mit 6+ Jahren Erfahrung. Testanalyse, Teststrategie und Testautomatisierung mit Cypress, Selenium & Appium." />
+  <meta property="og:description" content="Mario Lirsch, freiberuflicher QA-Engineer. Testanalyse und Testautomatisierung, aktuell bei BRZ an Customs Decision Austria." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="de_DE" />
   <meta property="og:locale:alternate" content="en_GB" />
@@ -326,7 +217,7 @@ const techStack = [
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Lirsch QA Consulting Ltd.",
-    "description": "QA Consulting — Testanalyse, Teststrategie & Testautomatisierung",
+    "description": "Freiberufliche Testanalyse und Testautomatisierung",
     "address": { "@type": "PostalAddress", "addressCountry": "CY" },
     "serviceType": ["Software Testing", "Test Automation", "QA Consulting"]
   }
@@ -376,7 +267,6 @@ const techStack = [
       <div class="hidden md:flex items-center gap-8">
         <a href="#about" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.about">Über mich</a>
         <a href="#services" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.services">Leistungen</a>
-        <a href="#experience" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.experience">Erfahrung</a>
         <a href="#projects" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.projects">Projekte</a>
         <a href="#stack" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.stack">Stack</a>
         <a href="#contact" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.contact">Kontakt</a>
@@ -407,7 +297,6 @@ const techStack = [
       <div class="max-w-6xl mx-auto flex flex-col gap-4 pt-4 px-4">
         <a href="#about" class="nav-link text-sm text-text-main/70" data-key="nav.about" onclick="closeMobileMenu()">Über mich</a>
         <a href="#services" class="nav-link text-sm text-text-main/70" data-key="nav.services" onclick="closeMobileMenu()">Leistungen</a>
-        <a href="#experience" class="nav-link text-sm text-text-main/70" data-key="nav.experience" onclick="closeMobileMenu()">Erfahrung</a>
         <a href="#projects" class="nav-link text-sm text-text-main/70" data-key="nav.projects" onclick="closeMobileMenu()">Projekte</a>
         <a href="#stack" class="nav-link text-sm text-text-main/70" data-key="nav.stack" onclick="closeMobileMenu()">Stack</a>
         <a href="#contact" class="nav-link text-sm text-text-main/70" data-key="nav.contact" onclick="closeMobileMenu()">Kontakt</a>
@@ -459,24 +348,18 @@ const techStack = [
         </svg>
       </div>
 
-      <h1 class="hero-animate text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter mb-6 leading-[1.05]" style="animation-delay: 180ms;">
-        <span class="grad-text" data-key="hero.headline">Qualität ist kein Zufall.</span>
+      <p class="hero-animate text-sm sm:text-base text-text-main/45 tracking-wide mb-4" style="animation-delay: 120ms;" data-key="hero.kicker">Qualität ist kein Zufall.</p>
+
+      <h1 class="hero-animate text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.05]" style="animation-delay: 180ms;">
+        Mario Lirsch
       </h1>
 
-      <p class="hero-animate text-base sm:text-lg md:text-xl text-text-main/65 max-w-2xl mx-auto mb-10 leading-relaxed" style="animation-delay: 360ms;" data-key="hero.sub">
-        Freiberuflicher QA-Engineer mit über 6 Jahren Erfahrung im manuellen und automatisierten Software-Testing für Web- und Mobile-Anwendungen. Als ISTQB-zertifizierter Test Analyst verbinde ich strukturierte Testanalyse mit moderner Testautomatisierung – in agilen Teams, remote und on-site.
+      <p class="hero-animate text-base sm:text-lg md:text-xl text-text-main/70 max-w-2xl mx-auto mb-10 leading-relaxed" style="animation-delay: 360ms;" data-key="hero.sub">
+        Ich arbeite als freiberuflicher QA-Engineer in agilen Teams, remote und vor Ort, aktuell bei BRZ an der Zollanwendung Customs Decision Austria.
       </p>
 
       <div class="hero-animate" style="animation-delay: 520ms;">
-        <a href="#contact" class="btn-cta" data-key="hero.cta">Projekt anfragen</a>
-      </div>
-
-      <!-- Badges -->
-      <div class="hero-animate flex flex-wrap justify-center gap-2 sm:gap-3 mt-8" style="animation-delay: 680ms;">
-        <span class="badge text-xs sm:text-sm" data-key="hero.badges.0">6+ Jahre Erfahrung</span>
-        <span class="badge text-xs sm:text-sm" data-key="hero.badges.1">ISTQB Foundation & Advanced</span>
-        <span class="badge text-xs sm:text-sm" data-key="hero.badges.2">Remote & On-site</span>
-        <span class="badge text-xs sm:text-sm" data-key="hero.badges.3">Agile / Scrum</span>
+        <a href="#contact" class="btn-cta" data-key="hero.cta">Schreiben Sie mir</a>
       </div>
     </div>
 
@@ -507,10 +390,10 @@ const techStack = [
         <!-- Text column -->
         <div class="reveal space-y-6">
           <p class="text-text-main/65 text-base sm:text-lg leading-[1.85]" data-key="about.para1">
-            „Eigentlich wollte ich Entwickler werden. Den Einstieg in die IT habe ich über meine erste QA-Rolle gemacht – und dabei etwas Unerwartetes entdeckt: die Faszination dafür, Software bis ins kleinste Detail zu durchleuchten. Die Liebe zum Code habe ich in der Testautomatisierung gefunden. Die Liebe zur Qualität in jedem Projekt danach.
+            Eigentlich wollte ich Entwickler werden. In die IT bin ich über meine erste QA-Rolle gekommen und habe dort etwas gefunden, das ich nicht gesucht hatte: Ich schaue Software gern bis ins Detail an. Den Code schreibe ich in der Testautomatisierung.
           </p>
           <p class="text-text-main/65 text-base sm:text-lg leading-[1.85]" data-key="about.para2">
-            Heute suche ich nicht nur Bugs – ich denke in Lösungen. Ich bin der Typ, der sich über einen kniffligen Edgecase freut, der anderen nicht aufgefallen wäre. Der nicht aufhört, bis er wirklich verstanden hat, warum etwas fehlschlägt. Saubere Prozesse, klare Kommunikation und ein Team das sich auf QA verlassen kann – dafür stehe ich."
+            Ich freue mich über einen kniffligen Edge Case, den andere übersehen hätten. Und ich höre nicht auf, bevor klar ist, warum etwas fehlschlägt. Danach soll das Team wissen, was zu tun ist, ohne dass ich noch eine Runde erklären muss.
           </p>
         </div>
 
@@ -562,34 +445,9 @@ const techStack = [
               <line x1="93" y1="90" x2="107" y2="90" stroke="#00E5AA" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
 
-            <!-- Three trait rows -->
-            <div class="space-y-4">
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(41,121,255,0.15);">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2979FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
-                  </svg>
-                </div>
-                <span class="text-sm text-text-main/70" data-key="about.trait1">Bug Hunter & Edge-Case-Spezialist</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(0,229,170,0.12);">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#00E5AA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-                  </svg>
-                </div>
-                <span class="text-sm text-text-main/70" data-key="about.trait2">Testautomatisierungs-Engineer</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(41,121,255,0.15);">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2979FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
-                    <path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
-                  </svg>
-                </div>
-                <span class="text-sm text-text-main/70" data-key="about.trait3">QA-Advocate & Teamplayer</span>
-              </div>
-            </div>
+            <p class="text-sm text-text-main/70 leading-relaxed text-center" data-key="about.note">
+              ISTQB-zertifizierter Test Analyst, Foundation und Advanced. Ich arbeite remote und vor Ort.
+            </p>
 
           </div>
         </div>
@@ -620,33 +478,12 @@ const techStack = [
                 <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
               </svg>
             </div>
-            <h3 class="text-xl font-bold pt-1" data-key="services.card1.title">Testanalyse & Teststrategie</h3>
+            <h3 class="text-xl font-bold pt-1" data-key="services.card1.title">Testanalyse und Teststrategie</h3>
           </div>
           <p class="text-text-main/60 mb-6 leading-relaxed" data-key="services.card1.desc">
-            Analyse funktionaler & nicht-funktionaler Anforderungen, risikobasierte Teststrategie und Testkonzepte – für vollständige Qualitätssicherung im gesamten SDLC.
+            So läuft es bei BRZ. Customs Decision Austria hängt an EU-Systemen, die Vorgaben ändern sich. Ich lese sie, lege den Testumfang fest und stimme die Testphasen mit dem Testmanager ab.
           </p>
-          <ul class="space-y-3" data-key-list="services.card1.items">
-            <li class="flex items-center gap-3 text-sm text-text-main/75">
-              <span class="w-1.5 h-1.5 rounded-full bg-blue-primary flex-shrink-0"></span>
-              Analyse funktionaler & nicht-funktionaler Anforderungen
-            </li>
-            <li class="flex items-center gap-3 text-sm text-text-main/75">
-              <span class="w-1.5 h-1.5 rounded-full bg-blue-primary flex-shrink-0"></span>
-              Risikobasierte Teststrategie & Testkonzepte
-            </li>
-            <li class="flex items-center gap-3 text-sm text-text-main/75">
-              <span class="w-1.5 h-1.5 rounded-full bg-blue-primary flex-shrink-0"></span>
-              Definition von Testumfang & Abdeckung
-            </li>
-            <li class="flex items-center gap-3 text-sm text-text-main/75">
-              <span class="w-1.5 h-1.5 rounded-full bg-blue-primary flex-shrink-0"></span>
-              Koordination von Testphasen im gesamten SDLC
-            </li>
-            <li class="flex items-center gap-3 text-sm text-text-main/75">
-              <span class="w-1.5 h-1.5 rounded-full bg-blue-primary flex-shrink-0"></span>
-              Abstimmung zwischen Business- und Entwicklungsteams
-            </li>
-          </ul>
+          <a href="#project-brz" class="text-sm font-medium text-blue-primary hover:text-green-accent transition-colors" data-key="services.card1.link">Das BRZ-Projekt</a>
         </div>
 
         <!-- Card 2 -->
@@ -661,75 +498,9 @@ const techStack = [
             <h3 class="text-xl font-bold pt-1" data-key="services.card2.title">Testautomatisierung</h3>
           </div>
           <p class="text-text-main/60 mb-6 leading-relaxed" data-key="services.card2.desc">
-            Aufbau & Wartung von Testautomatisierungs-Frameworks, E2E- und API-Testing sowie nahtlose CI/CD-Integration mit Allure-Reporting.
+            So war es bei REWE. Die Artikelverwaltung wechselte von JSF auf Angular, und ich habe die Automatisierung mit Cypress und Cucumber neu aufgebaut: von null auf rund 200 Testfälle, neue Features jeweils gleich mit.
           </p>
-          <ul class="space-y-3" data-key-list="services.card2.items">
-            <li class="flex items-center gap-3 text-sm text-text-main/75">
-              <span class="w-1.5 h-1.5 rounded-full bg-green-accent flex-shrink-0"></span>
-              Aufbau & Wartung von Testautomatisierungs-Frameworks
-            </li>
-            <li class="flex items-center gap-3 text-sm text-text-main/75">
-              <span class="w-1.5 h-1.5 rounded-full bg-green-accent flex-shrink-0"></span>
-              E2E-Testing mit Cypress, Selenium & Appium
-            </li>
-            <li class="flex items-center gap-3 text-sm text-text-main/75">
-              <span class="w-1.5 h-1.5 rounded-full bg-green-accent flex-shrink-0"></span>
-              API-Testing mit Postman
-            </li>
-            <li class="flex items-center gap-3 text-sm text-text-main/75">
-              <span class="w-1.5 h-1.5 rounded-full bg-green-accent flex-shrink-0"></span>
-              BDD mit Cucumber
-            </li>
-            <li class="flex items-center gap-3 text-sm text-text-main/75">
-              <span class="w-1.5 h-1.5 rounded-full bg-green-accent flex-shrink-0"></span>
-              CI/CD-Integration mit Jenkins & GitHub
-            </li>
-            <li class="flex items-center gap-3 text-sm text-text-main/75">
-              <span class="w-1.5 h-1.5 rounded-full bg-green-accent flex-shrink-0"></span>
-              Testreporting mit Allure
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== EXPERIENCE / INDUSTRIES ======== -->
-  <section id="experience" class="py-16 md:py-28 px-4 sm:px-6 relative">
-    <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 0%, rgba(41,121,255,0.03) 50%, transparent 100%); pointer-events:none;"></div>
-    <div class="max-w-4xl mx-auto text-center relative z-10">
-      <div class="reveal">
-        <div class="section-divider"></div>
-        <span class="section-label">
-          <span data-show-lang="de">ERFAHRUNG</span><span data-show-lang="en" class="hidden">EXPERIENCE</span>
-        </span>
-        <h2 class="text-3xl md:text-[2.6rem] font-bold leading-tight mb-4" data-key="experience.title">Branchen</h2>
-        <p class="text-text-main/55 text-base md:text-lg mb-8 md:mb-12" data-key="experience.sub">Erfahrung in anspruchsvollen Projekten aus diversen Branchen.</p>
-      </div>
-
-      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 reveal-stagger">
-        {industries.map((ind) => (
-          <span class="badge">{ind}</span>
-        ))}
-      </div>
-
-      <!-- Stats row -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14 md:mt-20 reveal-stagger">
-        <div class="text-center py-2">
-          <div class="text-5xl md:text-6xl font-bold grad-text leading-none mb-2">6+</div>
-          <div class="text-xs text-text-main/45 mt-2 tracking-widest uppercase font-semibold" data-key-stat-de="Jahre Erfahrung" data-key-stat-en="Years Experience">Jahre Erfahrung</div>
-        </div>
-        <div class="text-center py-2">
-          <div class="text-5xl md:text-6xl font-bold grad-text leading-none mb-2">5+</div>
-          <div class="text-xs text-text-main/45 mt-2 tracking-widest uppercase font-semibold" data-key-stat-de="Projekte" data-key-stat-en="Projects">Projekte</div>
-        </div>
-        <div class="text-center py-2">
-          <div class="text-5xl md:text-6xl font-bold grad-text leading-none mb-2">2</div>
-          <div class="text-xs text-text-main/45 mt-2 tracking-widest uppercase font-semibold" data-key-stat-de="ISTQB Zertifikate" data-key-stat-en="ISTQB Certificates">ISTQB Zertifikate</div>
-        </div>
-        <div class="text-center py-2">
-          <div class="text-5xl md:text-6xl font-bold grad-text leading-none mb-2">4</div>
-          <div class="text-xs text-text-main/45 mt-2 tracking-widest uppercase font-semibold" data-key-stat-de="Branchen" data-key-stat-en="Industries">Branchen</div>
+          <a href="#project-rewe" class="text-sm font-medium text-blue-primary hover:text-green-accent transition-colors" data-key="services.card2.link">Das REWE-Projekt</a>
         </div>
       </div>
     </div>
@@ -745,18 +516,17 @@ const techStack = [
           <span data-show-lang="de">PROJEKTE</span><span data-show-lang="en" class="hidden">PROJECTS</span>
         </span>
         <h2 class="text-3xl md:text-[2.6rem] font-bold leading-tight mb-4" data-key="projects.title">Projekte</h2>
-        <p class="text-text-main/55 text-base md:text-lg" data-key="projects.sub">Ausgewählte Projektreferenzen aus meiner freiberuflichen Tätigkeit.</p>
+        <p class="text-text-main/55 text-base md:text-lg" data-key="projects.sub">Zoll, Handel, Banken und ein Bauunternehmen.</p>
       </div>
 
       <div class="space-y-5 reveal-stagger">
         {projects.map((project) => (
-          <div class="project-card card-glow rounded-2xl bg-white/[0.02] overflow-hidden">
+          <article id={project.id} class="card-glow rounded-2xl bg-white/[0.02] overflow-hidden scroll-mt-28">
             <div class="p-6 md:p-8">
-
-              <!-- Header row: industry tag + period -->
               <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
-                <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full" style="background: rgba(0,229,170,0.1); border: 1px solid rgba(0,229,170,0.3); color: #00E5AA; letter-spacing: 0.06em;">
-                  {project.industryTag}
+                <span class="text-xs text-text-main/50">
+                  <span data-show-lang="de">{project.industryDe}</span>
+                  <span data-show-lang="en" class="hidden">{project.industryEn}</span>
                 </span>
                 <span class="text-xs text-text-main/40">
                   <span data-show-lang="de">{project.periodDe}</span>
@@ -764,60 +534,27 @@ const techStack = [
                 </span>
               </div>
 
-              <!-- Company name -->
               <h3 class="text-lg font-bold text-text-main mb-3">{project.company}</h3>
 
-              <!-- Teaser -->
               <p class="text-text-main/70 text-sm leading-relaxed">
-                <span data-show-lang="de">{project.teaserDe}</span>
-                <span data-show-lang="en" class="hidden">{project.teaserEn}</span>
+                <span data-show-lang="de">{project.textDe}</span>
+                <span data-show-lang="en" class="hidden">{project.textEn}</span>
               </p>
 
-              <!-- Expandable body -->
-              <div class="project-body">
-                <div class="pt-4 space-y-3">
-                  <div data-show-lang="de" class="space-y-3">
-                    {project.bodyDe.map((para) => (
-                      <p class="text-text-main/65 text-sm leading-relaxed">{para}</p>
-                    ))}
-                  </div>
-                  <div data-show-lang="en" class="hidden space-y-3">
-                    {project.bodyEn.map((para) => (
-                      <p class="text-text-main/65 text-sm leading-relaxed">{para}</p>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <!-- Footer: tags + toggle button -->
-              <div class="flex flex-wrap items-center justify-between gap-3 mt-5 pt-4 border-t border-white/5">
-                <div class="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
+              <div class="flex flex-wrap gap-2 mt-5 pt-4 border-t border-white/5">
+                <div class="flex flex-wrap gap-2" data-show-lang="de">
+                  {project.tagsDe.map((tag) => (
                     <span class="text-xs px-2.5 py-1 rounded-full" style="background: rgba(41,121,255,0.1); border: 1px solid rgba(41,121,255,0.25); color: rgba(232,244,255,0.7);">{tag}</span>
                   ))}
                 </div>
-                <button
-                  onclick="toggleProject(this)"
-                  class="read-more-btn text-sm font-medium text-blue-primary hover:text-green-accent transition-colors flex items-center gap-1.5 flex-shrink-0"
-                >
-                  <span>
-                    <span class="more-text">
-                      <span data-show-lang="de">Mehr lesen</span>
-                      <span data-show-lang="en" class="hidden">Read more</span>
-                    </span>
-                    <span class="less-text">
-                      <span data-show-lang="de">Weniger</span>
-                      <span data-show-lang="en" class="hidden">Show less</span>
-                    </span>
-                  </span>
-                  <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9"/>
-                  </svg>
-                </button>
+                <div class="flex flex-wrap gap-2 hidden" data-show-lang="en">
+                  {project.tagsEn.map((tag) => (
+                    <span class="text-xs px-2.5 py-1 rounded-full" style="background: rgba(41,121,255,0.1); border: 1px solid rgba(41,121,255,0.25); color: rgba(232,244,255,0.7);">{tag}</span>
+                  ))}
+                </div>
               </div>
-
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </div>
@@ -830,15 +567,12 @@ const techStack = [
         <div class="section-divider"></div>
         <span class="section-label">TECH STACK</span>
         <h2 class="text-3xl md:text-[2.6rem] font-bold leading-tight mb-4" data-key="stack.title">Tech Stack</h2>
-        <p class="text-text-main/55 text-base md:text-lg" data-key="stack.sub">Bewährte Tools für moderne Qualitätssicherung.</p>
+        <p class="text-text-main/55 text-base md:text-lg" data-key="stack.sub">Womit ich arbeite.</p>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 reveal-stagger">
-        {techStack.map((tool) => (
-          <div class="tech-chip">
-            <Fragment set:html={tool.svg} />
-            <span class="text-sm font-medium text-text-main/75 text-center">{tool.name}</span>
-          </div>
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 reveal-stagger">
+        {techStack.map((name) => (
+          <span class="badge">{name}</span>
         ))}
       </div>
     </div>
@@ -854,7 +588,7 @@ const techStack = [
           <span data-show-lang="de">KONTAKT</span><span data-show-lang="en" class="hidden">CONTACT</span>
         </span>
         <h2 class="text-3xl md:text-[2.6rem] font-bold leading-tight mb-4" data-key="contact.title">Kontakt</h2>
-        <p class="text-text-main/55 text-base md:text-lg" data-key="contact.sub">Bereit für Ihr nächstes Projekt? Schreiben Sie mir.</p>
+        <p class="text-text-main/55 text-base md:text-lg" data-key="contact.sub">Wenn Sie Unterstützung im Testen brauchen, schreiben Sie mir. Es reichen ein paar Sätze, worum es geht.</p>
       </div>
 
       <!-- Contact form -->
@@ -866,7 +600,7 @@ const techStack = [
       >
         <div>
           <label class="block text-sm text-text-main/60 mb-2" data-key="contact.name">Name</label>
-          <input type="text" name="name" class="form-input" placeholder="Max Mustermann" required data-placeholder-de="Max Mustermann" data-placeholder-en="John Doe" />
+          <input type="text" name="name" class="form-input" placeholder="Ihr Name" required data-placeholder-de="Ihr Name" data-placeholder-en="Your name" />
         </div>
         <div>
           <label class="block text-sm text-text-main/60 mb-2" data-key="contact.email">E-Mail</label>
@@ -874,9 +608,13 @@ const techStack = [
         </div>
         <div>
           <label class="block text-sm text-text-main/60 mb-2" data-key="contact.message">Nachricht</label>
-          <textarea name="message" rows="5" class="form-input resize-none" placeholder="Beschreiben Sie Ihr Projekt…" required data-placeholder-de="Beschreiben Sie Ihr Projekt…" data-placeholder-en="Describe your project…"></textarea>
+          <textarea name="message" rows="5" class="form-input resize-none" placeholder="Worum geht es?" required data-placeholder-de="Worum geht es?" data-placeholder-en="What is it about?"></textarea>
         </div>
-        <button type="submit" class="btn-cta w-full text-center" data-key="contact.send">Senden</button>
+        <button type="submit" class="btn-cta w-full text-center" data-key="contact.send">Per E-Mail senden</button>
+        <p class="text-xs text-text-main/45 leading-relaxed">
+          <span data-show-lang="de">Der Button öffnet Ihr E-Mail-Programm, die Nachricht geht direkt an mich. Was ich mit den Angaben mache, steht in der <a href="/privacy" class="underline hover:text-text-main/70">Datenschutzerklärung</a>.</span>
+          <span data-show-lang="en" class="hidden">The button opens your email app, and the message comes straight to me. How I handle what you send is in the <a href="/privacy" class="underline hover:text-text-main/70">privacy policy</a>.</span>
+        </p>
       </form>
 
       <!-- Links -->
@@ -920,7 +658,7 @@ const techStack = [
           </defs>
           <polygon points="40,8 64,21 64,47 40,60 16,47 16,21" fill="none" stroke="url(#ft-grad)" stroke-width="2"/>
         </svg>
-        <span class="text-xs text-text-main/35 tracking-wide" data-key="footer.copy">© 2025 Mario Lirsch · IT-Dienstleister</span>
+        <span class="text-xs text-text-main/35 tracking-wide">© {year} Mario Lirsch · <span data-show-lang="de">IT-Dienstleister</span><span data-show-lang="en" class="hidden">IT Service Provider</span></span>
       </div>
       <div class="flex flex-wrap items-center justify-center gap-4 md:gap-6">
         <!-- Talent Network temporarily disabled — see notice in nav above
@@ -958,29 +696,6 @@ const techStack = [
       if (val) el.textContent = val;
     });
 
-    // List items
-    document.querySelectorAll('[data-key-list]').forEach(ul => {
-      const items = getNestedValue(t, ul.dataset.keyList);
-      if (!items) return;
-      const dots = ul.querySelectorAll('li');
-      dots.forEach((li, i) => {
-        const dot = li.querySelector('span');
-        li.textContent = '';
-        if (dot) li.appendChild(dot);
-        li.append(' ' + items[i]);
-      });
-    });
-
-    // Stat labels
-    document.querySelectorAll('[data-key-stat-de]').forEach(el => {
-      el.textContent = el.dataset[`keyStatDe`];
-    });
-    if (lang === 'en') {
-      document.querySelectorAll('[data-key-stat-de]').forEach(el => {
-        el.textContent = el.dataset[`keyStatEn`];
-      });
-    }
-
     // Placeholder text
     document.querySelectorAll('[data-placeholder-de]').forEach(el => {
       el.placeholder = el.dataset[`placeholder${lang.charAt(0).toUpperCase() + lang.slice(1)}`] || el.dataset.placeholderDe;
@@ -998,10 +713,10 @@ const techStack = [
     // Update meta
     const metaDesc = document.querySelector('meta[name="description"]');
     if (lang === 'en' && metaDesc) {
-      metaDesc.content = 'Freelance QA Engineer with 6+ years of experience. Test analysis, test strategy and automation with Cypress, Selenium & Appium.';
+      metaDesc.content = 'Mario Lirsch, freelance QA engineer. Test analysis and test automation, currently at BRZ on Customs Decision Austria.';
       document.title = 'Mario Lirsch – Freelance QA Engineer | LQA Consulting';
     } else if (metaDesc) {
-      metaDesc.content = 'Freiberuflicher QA-Engineer mit 6+ Jahren Erfahrung. Testanalyse, Teststrategie und Testautomatisierung mit Cypress, Selenium & Appium.';
+      metaDesc.content = 'Mario Lirsch, freiberuflicher QA-Engineer. Testanalyse und Testautomatisierung, aktuell bei BRZ an Customs Decision Austria.';
       document.title = 'Mario Lirsch – Freelance QA Engineer | LQA Consulting';
     }
   }
@@ -1009,12 +724,6 @@ const techStack = [
   window.setLang = function(lang) {
     applyTranslations(lang);
     try { localStorage.setItem('lqa-lang', lang); } catch(e) {}
-  };
-
-  // ---- Project card expand/collapse ----
-  window.toggleProject = function(btn) {
-    const card = btn.closest('.project-card');
-    card.classList.toggle('expanded');
   };
 
   // ---- Nav scroll effect ----
@@ -1046,7 +755,7 @@ const techStack = [
   document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
 
   // ---- ScrollSpy — highlight active nav link ----
-  const spySections = ['about', 'services', 'experience', 'projects', 'stack', 'contact'];
+  const spySections = ['about', 'services', 'projects', 'stack', 'contact'];
   const navLinks = document.querySelectorAll('.nav-link');
   function updateActiveNav() {
     const scrollY = window.scrollY + 120;
