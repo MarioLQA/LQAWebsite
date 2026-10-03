@@ -7,7 +7,7 @@ export default {
         bg: '#050E1A',
         'blue-primary': '#2979FF',
         'green-accent': '#00E5AA',
-        'text-main': '#E8F4FF',
+        'text-main': '#E8E2D4',
       },
       fontFamily: {
         sans: ['"Segoe UI"', 'system-ui', 'sans-serif'],
