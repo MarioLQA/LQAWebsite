@@ -13,7 +13,6 @@ const t = {
       note: 'ISTQB-zertifizierter Test Analyst, Foundation und Advanced. Ich arbeite remote und vor Ort.',
     },
     hero: {
-      kicker: 'Qualität ist kein Zufall.',
       sub: 'Ich arbeite als freiberuflicher QA-Engineer in agilen Teams, remote und vor Ort, aktuell bei BRZ an der Zollanwendung Customs Decision Austria.',
       cta: 'Schreiben Sie mir',
     },
@@ -44,12 +43,16 @@ const t = {
       name: 'Name',
       email: 'E-Mail',
       message: 'Nachricht',
-      send: 'Per E-Mail senden',
+      send: 'Nachricht senden',
+      sending: 'Wird gesendet …',
+      sent: 'Danke. Die Nachricht ist unterwegs.',
+      failed: 'Die Nachricht wurde nicht gesendet. Bitte schreiben Sie direkt an mario@lqa-consulting.com.',
+      invalid: 'Bitte Name, E-Mail und Nachricht ausfüllen und die Datenschutzerklärung bestätigen.',
+      note: 'Die Nachricht geht an mich. Es öffnet sich kein E-Mail-Programm.',
       linkedin: 'LinkedIn-Profil',
       emaillink: 'E-Mail schreiben',
     },
     footer: {
-      tagline: 'Qualität ist kein Zufall.',
       legal: 'Impressum',
       privacy: 'Datenschutz',
     },
@@ -63,7 +66,6 @@ const t = {
       note: 'ISTQB-certified Test Analyst, Foundation and Advanced. I work remote and on-site.',
     },
     hero: {
-      kicker: 'Quality is no coincidence.',
       sub: 'I work as a freelance QA engineer in agile teams, remote and on-site, currently at BRZ on Customs Decision Austria.',
       cta: 'Write to me',
     },
@@ -94,12 +96,16 @@ const t = {
       name: 'Name',
       email: 'Email',
       message: 'Message',
-      send: 'Send via email',
+      send: 'Send message',
+      sending: 'Sending …',
+      sent: 'Thank you. The message is on its way.',
+      failed: 'The message was not sent. Please write directly to mario@lqa-consulting.com.',
+      invalid: 'Please fill in your name, email, and message, and confirm the privacy policy.',
+      note: 'The message comes to me. No email app opens.',
       linkedin: 'LinkedIn profile',
       emaillink: 'Write an email',
     },
     footer: {
-      tagline: 'Quality is no coincidence.',
       legal: 'Legal Notice',
       privacy: 'Privacy Policy',
     },
@@ -298,8 +304,6 @@ function yearSpan(period: string) {
   <section id="hero" class="relative min-h-[92vh] flex items-center px-4 sm:px-6 pt-28 pb-20">
     <div class="relative max-w-6xl mx-auto w-full grid md:grid-cols-[minmax(0,1.15fr)_minmax(16rem,22rem)] gap-14 md:gap-16 items-center">
       <div>
-        <p class="hero-animate text-sm sm:text-base text-text-main/70 mb-5" style="animation-delay: 80ms;" data-key="hero.kicker">Qualität ist kein Zufall.</p>
-
         <h1 class="hero-animate text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.02]" style="animation-delay: 160ms;">
           Mario Lirsch
         </h1>
@@ -419,28 +423,40 @@ function yearSpan(period: string) {
       </div>
 
       <form
-        action="mailto:mario@lqa-consulting.com"
-        method="POST"
-        enctype="text/plain"
-        class="space-y-7 reveal max-w-xl"
+        id="contact-form"
+        action="/api/contact"
+        method="post"
+        accept-charset="utf-8"
+        class="contact-form reveal"
       >
-        <div>
-          <label class="block text-sm text-text-main/70 mb-2" data-key="contact.name">Name</label>
-          <input type="text" name="name" class="form-input" placeholder="Ihr Name" required data-placeholder-de="Ihr Name" data-placeholder-en="Your name" />
+        <div class="contact-field">
+          <label for="contact-name" data-key="contact.name">Name</label>
+          <input id="contact-name" type="text" name="name" class="form-input" autocomplete="name" maxlength="120" placeholder="Ihr Name" required data-placeholder-de="Ihr Name" data-placeholder-en="Your name" />
         </div>
-        <div>
-          <label class="block text-sm text-text-main/70 mb-2" data-key="contact.email">E-Mail</label>
-          <input type="email" name="email" class="form-input" placeholder="max@example.com" required />
+        <div class="contact-field">
+          <label for="contact-email" data-key="contact.email">E-Mail</label>
+          <input id="contact-email" type="email" name="email" class="form-input" autocomplete="email" maxlength="254" placeholder="max@example.com" required />
         </div>
-        <div>
-          <label class="block text-sm text-text-main/70 mb-2" data-key="contact.message">Nachricht</label>
-          <textarea name="message" rows="5" class="form-input resize-none" placeholder="Worum geht es?" required data-placeholder-de="Worum geht es?" data-placeholder-en="What is it about?"></textarea>
+        <div class="contact-field">
+          <label for="contact-message" data-key="contact.message">Nachricht</label>
+          <textarea id="contact-message" name="message" rows="6" class="form-input resize-none" maxlength="5000" placeholder="Worum geht es?" required data-placeholder-de="Worum geht es?" data-placeholder-en="What is it about?"></textarea>
         </div>
-        <button type="submit" class="btn-cta" data-key="contact.send">Per E-Mail senden</button>
-        <p class="text-sm text-text-main/55 leading-relaxed">
-          <span data-show-lang="de">Der Button öffnet Ihr E-Mail-Programm, die Nachricht geht direkt an mich. Was ich mit den Angaben mache, steht in der <a href="/privacy" class="underline hover:text-text-main/80">Datenschutzerklärung</a>.</span>
-          <span data-show-lang="en" class="hidden">The button opens your email app, and the message comes straight to me. How I handle what you send is in the <a href="/privacy" class="underline hover:text-text-main/80">privacy policy</a>.</span>
-        </p>
+        <div class="contact-hp" aria-hidden="true">
+          <label for="contact-hp">Company</label>
+          <input id="contact-hp" type="text" name="hp_field" tabindex="-1" autocomplete="off" />
+        </div>
+        <div class="contact-consent">
+          <input id="contact-consent" type="checkbox" name="consent" value="yes" required />
+          <label for="contact-consent">
+            <span data-show-lang="de">Ich habe die <a href="/privacy">Datenschutzerklärung</a> gelesen und bin einverstanden, dass Name, E-Mail und Nachricht zur Beantwortung verwendet werden.</span>
+            <span data-show-lang="en" class="hidden">I have read the <a href="/privacy">privacy policy</a> and agree that my name, email, and message may be used to reply.</span>
+          </label>
+        </div>
+        <div class="contact-actions">
+          <button type="submit" class="btn-cta" data-key="contact.send">Nachricht senden</button>
+          <p id="contact-status" class="contact-status" role="status" aria-live="polite" tabindex="-1" hidden></p>
+          <p class="contact-note" data-key="contact.note">Die Nachricht geht an mich. Es öffnet sich kein E-Mail-Programm.</p>
+        </div>
       </form>
 
       <div class="flex flex-col sm:flex-row items-start gap-6 mt-14 reveal">
@@ -482,7 +498,6 @@ function yearSpan(period: string) {
         -->
         <a href="/legal" class="text-sm text-text-main/30 hover:text-text-main/60 transition-colors" data-key="footer.legal">Impressum</a>
         <a href="/privacy" class="text-sm text-text-main/30 hover:text-text-main/60 transition-colors" data-key="footer.privacy">Datenschutz</a>
-        <span class="text-sm text-text-main/20 italic hidden sm:inline" data-key="footer.tagline">Qualität ist kein Zufall.</span>
       </div>
     </div>
   </footer>
@@ -525,6 +540,8 @@ function yearSpan(period: string) {
     // Update lang buttons
     document.querySelectorAll('#btn-de, #btn-de-m').forEach(b => b.classList.toggle('active', lang === 'de'));
     document.querySelectorAll('#btn-en, #btn-en-m').forEach(b => b.classList.toggle('active', lang === 'en'));
+
+    renderContactStatus();
 
     // Update meta
     const metaDesc = document.querySelector('meta[name="description"]');
@@ -588,11 +605,95 @@ function yearSpan(period: string) {
   }
   window.addEventListener('scroll', updateActiveNav, { passive: true });
 
+  // ---- Contact form ----
+  function renderContactStatus() {
+    const el = document.getElementById('contact-status');
+    if (!el) return;
+    const key = el.dataset.status;
+    if (!key) {
+      el.hidden = true;
+      el.textContent = '';
+      el.classList.remove('is-error', 'is-success');
+      return;
+    }
+    el.hidden = false;
+    el.textContent = getNestedValue(translations[currentLang], 'contact.' + key) || '';
+    el.classList.toggle('is-error', key === 'failed' || key === 'invalid');
+    el.classList.toggle('is-success', key === 'sent');
+  }
+
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const status = document.getElementById('contact-status');
+      const button = contactForm.querySelector('button[type="submit"]');
+      if (!status || !button || button.disabled) return;
+      if (!contactForm.reportValidity()) return;
+
+      button.disabled = true;
+      contactForm.setAttribute('aria-busy', 'true');
+      status.dataset.status = 'sending';
+      renderContactStatus();
+
+      const body = {
+        name: contactForm.elements.name.value,
+        email: contactForm.elements.email.value,
+        message: contactForm.elements.message.value,
+        consent: contactForm.elements.consent.checked,
+        hp_field: contactForm.elements.hp_field.value,
+      };
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+            accept: 'application/json',
+          },
+          body: JSON.stringify(body),
+        });
+        let payload = null;
+        try { payload = await response.json(); } catch (e) {}
+        if (response.ok && payload && payload.ok === true) {
+          status.dataset.status = 'sent';
+          contactForm.reset();
+        } else if (payload && payload.error === 'validation') {
+          status.dataset.status = 'invalid';
+        } else {
+          status.dataset.status = 'failed';
+        }
+      } catch (e) {
+        status.dataset.status = 'failed';
+      } finally {
+        button.disabled = false;
+        contactForm.removeAttribute('aria-busy');
+        renderContactStatus();
+        if (status.dataset.status === 'sent' || status.dataset.status === 'failed' || status.dataset.status === 'invalid') {
+          status.focus();
+        }
+      }
+    });
+  }
+
   // ---- Init language ----
   (function init() {
     let lang = 'de';
     try { lang = localStorage.getItem('lqa-lang') || 'de'; } catch(e) {}
     if (lang !== 'de') applyTranslations(lang);
+
+    const params = new URLSearchParams(location.search);
+    const contactState = params.get('contact');
+    if (contactState === 'sent' || contactState === 'failed' || contactState === 'invalid') {
+      const status = document.getElementById('contact-status');
+      if (status) status.dataset.status = contactState;
+      renderContactStatus();
+      const section = document.getElementById('contact');
+      if (section) section.scrollIntoView();
+      params.delete('contact');
+      const next = params.toString();
+      history.replaceState(null, '', location.pathname + (next ? '?' + next : '') + '#contact');
+    }
   })();
 </script>
 
