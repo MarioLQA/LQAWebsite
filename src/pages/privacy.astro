@@ -23,33 +23,8 @@ const year = new Date().getFullYear();
   <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-4">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
 
-      <!-- Logo -->
-      <a href="/" class="flex items-center gap-3 group">
-        <svg viewBox="0 0 80 80" width="44" height="44" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0">
-          <defs>
-            <linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#2979FF" />
-              <stop offset="100%" stop-color="#00E5AA" />
-            </linearGradient>
-            <linearGradient id="nav-fill" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#2979FF" stop-opacity="0.18" />
-              <stop offset="100%" stop-color="#00E5AA" stop-opacity="0.07" />
-            </linearGradient>
-          </defs>
-          <polygon points="40,8 64,21 64,47 40,60 16,47 16,21" fill="url(#nav-fill)" stroke="url(#nav-grad)" stroke-width="2"/>
-          <line x1="26" y1="22" x2="26" y2="46" stroke="#2979FF" stroke-width="4" stroke-linecap="square"/>
-          <line x1="26" y1="46" x2="40" y2="46" stroke="#2979FF" stroke-width="4" stroke-linecap="square"/>
-          <circle cx="46" cy="32" r="11" fill="none" stroke="#00E5AA" stroke-width="2.5"/>
-          <line x1="53" y1="40" x2="59" y2="47" stroke="#00E5AA" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="40" cy="8" r="2.2" fill="#2979FF"/>
-          <circle cx="64" cy="47" r="2.2" fill="#00E5AA"/>
-          <circle cx="16" cy="21" r="2.2" fill="#2979FF" opacity="0.5"/>
-        </svg>
-        <div class="flex flex-col leading-tight">
-          <span class="font-bold text-base tracking-wide text-text-main">LQA Consulting</span>
-          <span class="text-xs text-text-main/40 tracking-wider">QUALITY ASSURANCE</span>
-        </div>
-      </a>
+      <!-- Wordmark -->
+      <a href="/" class="text-sm font-semibold tracking-tight text-text-main leading-none">LQA</a>
 
       <!-- Nav links + lang switcher (desktop) -->
       <div class="hidden md:flex items-center gap-8">
@@ -209,15 +184,6 @@ const year = new Date().getFullYear();
   <footer class="border-t border-white/5 py-10 px-4 sm:px-6">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
       <div class="flex items-center gap-3">
-        <svg viewBox="0 0 80 80" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="ft-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#2979FF"/>
-              <stop offset="100%" stop-color="#00E5AA"/>
-            </linearGradient>
-          </defs>
-          <polygon points="40,8 64,21 64,47 40,60 16,47 16,21" fill="none" stroke="url(#ft-grad)" stroke-width="2"/>
-        </svg>
         <span class="text-sm text-text-main/40">
           © {year} Mario Lirsch · <span data-show-lang="de">IT-Dienstleister</span><span data-show-lang="en" class="hidden">IT Service Provider</span>
         </span>
