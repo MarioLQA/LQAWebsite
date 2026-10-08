@@ -392,25 +392,27 @@ h1, h2, h3 {
   background: linear-gradient(90deg, #2979FF, #00E5AA);
 }
 
-.hero-heading {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.9rem 1.35rem;
-  max-width: 46rem;
-}
-
-.hero-heading h1 {
-  min-width: 0;
-}
-
 .photo-slot {
   position: relative;
-  flex: 0 0 auto;
-  width: 3.25rem;
-  height: 3.25rem;
-  border-radius: 999px;
-  overflow: hidden;
+  width: min(17.5rem, 78vw);
+  aspect-ratio: 4 / 5;
+  justify-self: start;
+  /* Wall at the top, sides, and lower chest dissolves into the page. Face and suit stay opaque. */
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 18%, #000 58%, transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 32%, #000 68%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 18%, #000 58%, transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 32%, #000 68%, transparent 100%);
+  mask-composite: intersect;
+}
+
+@media (min-width: 768px) {
+  .photo-slot {
+    width: 100%;
+    justify-self: end;
+  }
 }
 
 .photo-slot-img {
@@ -420,35 +422,8 @@ h1, h2, h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 34%;
-  transform: scale(2.05);
-}
-
-/* Studio wall dissolves into the page navy. closest-side keeps the fade on the rim, not the face. */
-.photo-slot::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(
-    circle closest-side,
-    transparent 52%,
-    rgba(5, 14, 26, 0.45) 74%,
-    rgba(5, 14, 26, 0.88) 90%,
-    #050E1A 100%
-  );
-  pointer-events: none;
-}
-
-@media (min-width: 768px) {
-  .hero-heading {
-    gap: 1.5rem;
-  }
-
-  .photo-slot {
-    width: 5.5rem;
-    height: 5.5rem;
-  }
+  /* 9:16 source in the 4:5 frame: 29% keeps a little wall above the hair and ends at the upper chest. */
+  object-position: center 29%;
 }
 
 .section-title {

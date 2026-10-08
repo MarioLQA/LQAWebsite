@@ -306,34 +306,35 @@ function yearSpan(period: string) {
 
   <!-- ======== HERO ======== -->
   <section id="hero" class="relative min-h-[92vh] flex items-center px-4 sm:px-6 pt-28 pb-20">
-    <div class="relative max-w-6xl mx-auto w-full">
-      <div class="hero-heading">
+    <div class="relative max-w-6xl mx-auto w-full grid md:grid-cols-[minmax(0,1.15fr)_minmax(16rem,22rem)] gap-14 md:gap-16 items-center">
+      <div>
         <h1 class="hero-animate text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.02]" style="animation-delay: 160ms;">
           Mario Lirsch
         </h1>
-        <div class="photo-slot hero-animate" style="animation-delay: 200ms;">
-          <Image
-            src={portrait}
-            alt="Porträt von Mario Lirsch"
-            data-alt-key="hero.portraitAlt"
-            width={240}
-            widths={[160, 240, 320]}
-            sizes="(min-width: 768px) 5.5rem, 3.25rem"
-            quality={80}
-            format="webp"
-            class="photo-slot-img"
-            priority
-          />
+        <hr class="accent-line hero-animate" style="animation-delay: 240ms;" aria-hidden="true" />
+
+        <p class="hero-animate text-base sm:text-lg md:text-xl text-text-main/85 max-w-xl mt-8 mb-10 leading-relaxed" style="animation-delay: 320ms;" data-key="hero.sub">
+          Ich arbeite als freiberuflicher QA-Engineer in agilen Teams, remote und vor Ort, aktuell bei BRZ an der Zollanwendung Customs Decision Austria.
+        </p>
+
+        <div class="hero-animate" style="animation-delay: 440ms;">
+          <a href="#contact" class="btn-cta" data-key="hero.cta">Schreiben Sie mir</a>
         </div>
       </div>
-      <hr class="accent-line hero-animate" style="animation-delay: 240ms;" aria-hidden="true" />
 
-      <p class="hero-animate text-base sm:text-lg md:text-xl text-text-main/85 max-w-xl mt-8 mb-10 leading-relaxed" style="animation-delay: 320ms;" data-key="hero.sub">
-        Ich arbeite als freiberuflicher QA-Engineer in agilen Teams, remote und vor Ort, aktuell bei BRZ an der Zollanwendung Customs Decision Austria.
-      </p>
-
-      <div class="hero-animate" style="animation-delay: 440ms;">
-        <a href="#contact" class="btn-cta" data-key="hero.cta">Schreiben Sie mir</a>
+      <div class="photo-slot hero-animate" style="animation-delay: 200ms;">
+        <Image
+          src={portrait}
+          alt="Porträt von Mario Lirsch"
+          data-alt-key="hero.portraitAlt"
+          width={720}
+          widths={[480, 720, 960]}
+          sizes="(min-width: 768px) 22rem, min(17.5rem, 78vw)"
+          quality={80}
+          format="webp"
+          class="photo-slot-img"
+          priority
+        />
       </div>
     </div>
   </section>
