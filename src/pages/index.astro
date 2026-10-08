@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import portrait from '../assets/mario-lirsch.png';
 import '../styles/global.css';
 
 const year = new Date().getFullYear();
@@ -15,6 +17,7 @@ const t = {
     hero: {
       sub: 'Ich arbeite als freiberuflicher QA-Engineer in agilen Teams, remote und vor Ort, aktuell bei BRZ an der Zollanwendung Customs Decision Austria.',
       cta: 'Schreiben Sie mir',
+      portraitAlt: 'Porträt von Mario Lirsch',
     },
     services: {
       title: 'Leistungen',
@@ -68,6 +71,7 @@ const t = {
     hero: {
       sub: 'I work as a freelance QA engineer in agile teams, remote and on-site, currently at BRZ on Customs Decision Austria.',
       cta: 'Write to me',
+      portraitAlt: 'Portrait of Mario Lirsch',
     },
     services: {
       title: 'Services',
@@ -318,8 +322,20 @@ function yearSpan(period: string) {
         </div>
       </div>
 
-      <!-- Reserved for a portrait. Empty on purpose: no photo exists yet. -->
-      <div class="photo-slot" aria-hidden="true"></div>
+      <div class="photo-slot hero-animate" style="animation-delay: 200ms;">
+        <Image
+          src={portrait}
+          alt="Porträt von Mario Lirsch"
+          data-alt-key="hero.portraitAlt"
+          width={720}
+          widths={[480, 720, 960]}
+          sizes="(min-width: 768px) 22rem, min(17.5rem, 78vw)"
+          quality={80}
+          format="webp"
+          class="photo-slot-img"
+          priority
+        />
+      </div>
     </div>
   </section>
 
@@ -525,6 +541,11 @@ function yearSpan(period: string) {
     document.querySelectorAll('[data-key]').forEach(el => {
       const val = getNestedValue(t, el.dataset.key);
       if (val) el.textContent = val;
+    });
+
+    document.querySelectorAll('[data-alt-key]').forEach(el => {
+      const val = getNestedValue(t, el.dataset.altKey);
+      if (val) el.alt = val;
     });
 
     // Placeholder text
