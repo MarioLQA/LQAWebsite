@@ -396,15 +396,22 @@ h1, h2, h3 {
   position: relative;
   width: min(17.5rem, 78vw);
   aspect-ratio: 4 / 5;
-  border: 1px solid rgba(232, 226, 212, 0.16);
-  border-radius: 8px;
-  overflow: hidden;
-  background: rgba(232, 226, 212, 0.025);
+  justify-self: start;
+  /* Wall at the top, sides, and lower chest dissolves into the page. Face and suit stay opaque. */
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 18%, #000 58%, transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 32%, #000 68%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 18%, #000 58%, transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 32%, #000 68%, transparent 100%);
+  mask-composite: intersect;
 }
 
 @media (min-width: 768px) {
   .photo-slot {
     width: 100%;
+    justify-self: end;
   }
 }
 
