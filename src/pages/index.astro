@@ -7,29 +7,48 @@ const year = new Date().getFullYear();
 
 const t = {
   de: {
-    nav: { about: 'Über mich', services: 'Leistungen', projects: 'Projekte', stack: 'Stack', contact: 'Kontakt' },
-    about: {
-      title: 'Über mich',
-      para1: 'Eigentlich wollte ich Entwickler werden. In die IT bin ich über meine erste QA-Rolle gekommen und habe dort etwas gefunden, das ich nicht gesucht hatte: Ich schaue Software gern bis ins Detail an. Den Code schreibe ich in der Testautomatisierung.',
-      para2: 'Ich freue mich über einen kniffligen Edge Case, den andere übersehen hätten. Und ich höre nicht auf, bevor klar ist, warum etwas fehlschlägt. Danach soll das Team wissen, was zu tun ist, ohne dass ich noch eine Runde erklären muss.',
-      note: 'ISTQB-zertifizierter Test Analyst, Foundation und Advanced. Ich arbeite remote und vor Ort.',
-    },
+    nav: { services: 'Leistungen', process: 'Ablauf', projects: 'Projekte', about: 'Über mich', contact: 'Kontakt' },
     hero: {
-      sub: 'Ich arbeite als freiberuflicher QA-Engineer in agilen Teams, remote und vor Ort, aktuell bei BRZ an der Zollanwendung Customs Decision Austria.',
+      title: 'Teststrategie und Testautomatisierung für Ihr Unternehmen',
+      sub: 'Ich schaue mir an, wie Sie heute testen, und baue mit Ihrem Team ein Setup, das im Alltag läuft. Hinter LQA Consulting stehe ich, Mario Lirsch, freiberuflicher QA-Engineer in Wien.',
       cta: 'Schreiben Sie mir',
-      portraitAlt: 'Porträt von Mario Lirsch',
     },
     services: {
       title: 'Leistungen',
-      card1: {
-        title: 'Testanalyse und Teststrategie',
-        desc: 'So läuft es bei BRZ. Customs Decision Austria hängt an EU-Systemen, die Vorgaben ändern sich. Ich lese sie, lege den Testumfang fest und stimme die Testphasen mit dem Testmanager ab.',
-        link: 'Das BRZ-Projekt',
+      strategy: {
+        title: 'Teststrategie',
+        desc: 'Ich sehe mir an, wie bei Ihnen getestet wird: was abgedeckt ist, was fehlt und wo Zeit verloren geht. Daraus entstehen eine Teststrategie mit klarem Testumfang und eine Roadmap, was in welcher Reihenfolge kommt. Sie wissen danach, wo Sie anfangen.',
       },
-      card2: {
-        title: 'Testautomatisierung',
-        desc: 'So war es bei REWE. Die Artikelverwaltung wechselte von JSF auf Angular, und ich habe die Automatisierung mit Cypress und Cucumber neu aufgebaut: von null auf rund 200 Testfälle, neue Features jeweils gleich mit.',
-        link: 'Das REWE-Projekt',
+      automation: {
+        title: 'Testautomatisierung aufbauen',
+        desc: 'Ich baue automatisierte Tests mit Cypress oder Selenium auf, für die Oberfläche und für APIs. Die Tests laufen in Ihrer CI-Pipeline, zum Beispiel in Jenkins, bei jedem Build mit. Am Ende haben Sie eine Testsuite, die Ihr Team versteht und erweitern kann.',
+      },
+      interim: {
+        title: 'Testkoordination und QA auf Zeit',
+        desc: 'Wenn Ihrem Team Testkapazität fehlt, arbeite ich für eine vereinbarte Zeit mit, remote oder vor Ort. Ich plane die Testphasen, stimme mich mit Entwicklung und Fachbereich ab und teste selbst. So bleiben die Tests nicht liegen, wenn es eng wird.',
+      },
+      coaching: {
+        title: 'Coaching für Ihr Team',
+        desc: 'Ich zeige Ihrem Team, wie die Tests aufgebaut sind, wie man neue schreibt und wie man Fehler analysiert. Das passiert an Ihrem eigenen Projekt, nicht an Beispielen. Wenn ich gehe, kann Ihr Team selbst weitermachen.',
+      },
+    },
+    process: {
+      title: 'So läuft ein Projekt',
+      call: {
+        title: 'Erstgespräch.',
+        text: 'Sie erzählen mir, worum es geht, und ich sage Ihnen offen, ob und wie ich helfen kann.',
+      },
+      analysis: {
+        title: 'Analyse.',
+        text: 'Ich sehe mir Anwendung, Tests und Abläufe an und schlage einen konkreten Plan vor.',
+      },
+      build: {
+        title: 'Umsetzung.',
+        text: 'Ich setze den Plan mit Ihrem Team um, in kleinen Schritten, die Sie jederzeit sehen.',
+      },
+      handover: {
+        title: 'Übergabe.',
+        text: 'Ich dokumentiere das Setup und arbeite Ihr Team ein, damit es ohne mich weitergeht.',
       },
     },
     projects: {
@@ -40,17 +59,34 @@ const t = {
       title: 'Tech Stack',
       sub: 'Womit ich arbeite.',
     },
+    about: {
+      title: 'Über mich',
+      para1: 'Eigentlich wollte ich Entwickler werden. In die IT bin ich über meine erste QA-Rolle gekommen und dabei geblieben, weil ich Software gern bis ins Detail anschaue. Den Code schreibe ich heute in der Testautomatisierung.',
+      para2: 'Ich höre nicht auf, bevor klar ist, warum etwas fehlschlägt. Danach soll das Team wissen, was zu tun ist, ohne dass ich noch eine Runde erklären muss.',
+      para3: 'Seit 2019 teste ich in Banken, im Handel und im öffentlichen Sektor. Aktuell arbeite ich beim BRZ an der Zollanwendung Customs Decision Austria. Ich arbeite remote und vor Ort.',
+      certs: 'Zertifikate',
+      cert1: 'ISTQB Certified Tester Foundation Level (April 2019)',
+      cert2: 'ISTQB Advanced Level Test Analyst (Dezember 2024)',
+      network: 'Bei größeren Projekten stelle ich ein Team aus erfahrenen QA-Freelancern aus meinem Netzwerk zusammen.',
+      portraitAlt: 'Porträt von Mario Lirsch',
+    },
     contact: {
       title: 'Kontakt',
-      sub: 'Wenn Sie Unterstützung im Testen brauchen, schreiben Sie mir. Es reichen ein paar Sätze, worum es geht.',
+      sub: 'Schreiben Sie mir kurz, worum es geht. Ich melde mich bei Ihnen.',
       name: 'Name',
       email: 'E-Mail',
+      topic: 'Worum geht es?',
+      topicPlaceholder: 'Bitte wählen',
+      topicStrategy: 'Teststrategie',
+      topicAutomation: 'Testautomatisierung',
+      topicTeam: 'Unterstützung im Team',
+      topicOther: 'Sonstiges',
       message: 'Nachricht',
       send: 'Nachricht senden',
       sending: 'Wird gesendet …',
       sent: 'Danke. Die Nachricht ist unterwegs.',
       failed: 'Die Nachricht wurde nicht gesendet. Bitte schreiben Sie direkt an mario@lqa-consulting.com.',
-      invalid: 'Bitte Name, E-Mail und Nachricht ausfüllen und die Datenschutzerklärung bestätigen.',
+      invalid: 'Bitte Name, E-Mail, Anliegen und Nachricht ausfüllen und die Datenschutzerklärung bestätigen.',
       note: 'Die Nachricht geht an mich. Es öffnet sich kein E-Mail-Programm.',
       linkedin: 'LinkedIn-Profil',
       emaillink: 'E-Mail schreiben',
@@ -61,29 +97,48 @@ const t = {
     },
   },
   en: {
-    nav: { about: 'About', services: 'Services', projects: 'Projects', stack: 'Stack', contact: 'Contact' },
-    about: {
-      title: 'About me',
-      para1: 'I was going to be a developer. I got into IT through my first QA role and found something I hadn\'t been looking for: I like taking software apart in detail. I write the code in the test automation.',
-      para2: 'I like a tricky edge case other people would have missed, and I don\'t stop until it\'s clear why something failed. After that, the team should know what to do without another round of explanation from me.',
-      note: 'ISTQB-certified Test Analyst, Foundation and Advanced. I work remote and on-site.',
-    },
+    nav: { services: 'Services', process: 'How it works', projects: 'Projects', about: 'About', contact: 'Contact' },
     hero: {
-      sub: 'I work as a freelance QA engineer in agile teams, remote and on-site, currently at BRZ on Customs Decision Austria.',
-      cta: 'Write to me',
-      portraitAlt: 'Portrait of Mario Lirsch',
+      title: 'Test strategy and test automation for your company',
+      sub: 'I look at how you test today and work with your team to build a setup that holds up day to day. LQA Consulting is me, Mario Lirsch, a freelance QA engineer based in Vienna.',
+      cta: 'Get in touch',
     },
     services: {
       title: 'Services',
-      card1: {
-        title: 'Test analysis and test strategy',
-        desc: 'This is the work at BRZ. Customs Decision Austria is tied to EU systems, and the requirements keep changing. I read them, set the test scope, and plan the test phases with the test manager.',
-        link: 'The BRZ project',
+      strategy: {
+        title: 'Test strategy',
+        desc: 'I look at how your testing works today: what is covered, what is missing, and where time gets lost. From that you get a test strategy with a clear scope and a roadmap for what comes first. You know where to start.',
       },
-      card2: {
-        title: 'Test automation',
-        desc: 'This was the work at REWE. Product management moved from JSF to Angular, and I rebuilt the automation with Cypress and Cucumber: from zero to about 200 test cases, with each new feature covered as it shipped.',
-        link: 'The REWE project',
+      automation: {
+        title: 'Building test automation',
+        desc: 'I set up automated tests with Cypress or Selenium, for the UI and for APIs. They run in your CI pipeline, Jenkins for example, on every build. You end up with a test suite your team understands and can extend.',
+      },
+      interim: {
+        title: 'Test coordination and interim QA',
+        desc: 'When your team is short on testing, I join for an agreed period, remote or on-site. I plan the test phases, work things out with development and the business side, and do the testing myself. Testing keeps up even when deadlines get tight.',
+      },
+      coaching: {
+        title: 'Coaching your team',
+        desc: 'I show your team how the tests are built, how to write new ones, and how to track down failures. We work on your own project, not on textbook examples. When I leave, your team can carry on without me.',
+      },
+    },
+    process: {
+      title: 'How it works',
+      call: {
+        title: 'First call.',
+        text: 'You tell me what\'s going on, and I tell you honestly whether and how I can help.',
+      },
+      analysis: {
+        title: 'Analysis.',
+        text: 'I look at your application, your tests, and how your team works, then propose a concrete plan.',
+      },
+      build: {
+        title: 'Implementation.',
+        text: 'I carry out the plan with your team in small steps you can follow along the way.',
+      },
+      handover: {
+        title: 'Handover.',
+        text: 'I document the setup and walk your team through it, so things keep running after I\'m gone.',
       },
     },
     projects: {
@@ -94,18 +149,35 @@ const t = {
       title: 'Tech stack',
       sub: 'What I work with.',
     },
+    about: {
+      title: 'About me',
+      para1: 'I was going to be a developer. I got into IT through my first QA role and stayed, because I like taking software apart in detail. These days I write my code in test automation.',
+      para2: 'I don\'t stop until it\'s clear why something failed. After that, the team should know what to do without another round of explanation from me.',
+      para3: 'I\'ve been testing since 2019, in banking, retail, and the public sector. Right now I work at BRZ on the customs application Customs Decision Austria. I work remote and on-site.',
+      certs: 'Certificates',
+      cert1: 'ISTQB Certified Tester Foundation Level (April 2019)',
+      cert2: 'ISTQB Advanced Level Test Analyst (December 2024)',
+      network: 'For larger projects, I put together a team of experienced QA freelancers from my network.',
+      portraitAlt: 'Portrait of Mario Lirsch',
+    },
     contact: {
       title: 'Contact',
-      sub: 'If you need help with testing, write to me. A few sentences about the work are enough.',
+      sub: 'Tell me briefly what it\'s about, and I\'ll get back to you.',
       name: 'Name',
       email: 'Email',
+      topic: 'What is it about?',
+      topicPlaceholder: 'Please choose',
+      topicStrategy: 'Test strategy',
+      topicAutomation: 'Test automation',
+      topicTeam: 'Support in your team',
+      topicOther: 'Something else',
       message: 'Message',
       send: 'Send message',
       sending: 'Sending …',
       sent: 'Thank you. The message is on its way.',
       failed: 'The message was not sent. Please write directly to mario@lqa-consulting.com.',
-      invalid: 'Please fill in your name, email, and message, and confirm the privacy policy.',
-      note: 'The message comes to me. No email app opens.',
+      invalid: 'Please fill in your name, email, what it\'s about, and your message, and confirm the privacy policy.',
+      note: 'The message comes straight to me. No email app opens.',
       linkedin: 'LinkedIn profile',
       emaillink: 'Write an email',
     },
@@ -121,23 +193,38 @@ const projects = [
     id: 'project-brz',
     industryDe: 'Öffentlicher Sektor',
     industryEn: 'Public sector',
-    company: 'BRZ – Customs Decision Austria (CDA)',
-    periodDe: 'Juli 2023 – Heute',
-    periodEn: 'July 2023 – Present',
-    textDe: 'In Customs Decision Austria stellen Unternehmen zollrechtliche Anträge, Sachbearbeiter bearbeiten sie. Die Anwendung ist Java/JSF, angebunden an EU-Systeme und an ein CRS für mehrere SOAP- und REST-Schnittstellen. Ich lese die Änderungen aus der EU, mache daraus Tests, koordiniere die Phasen mit dem Testmanager und begleite die Umstellung der Oberfläche auf Angular. Die Automatisierung umfasst rund 200 Testfälle in Java mit Selenium.',
-    textEn: 'In Customs Decision Austria, businesses file customs applications and case workers process them. The application is Java/JSF, connected to EU systems and to a CRS for several SOAP and REST interfaces. I read the changes coming from the EU, turn them into tests, coordinate the phases with the test manager, and test through the move of the UI from JSF to Angular. The automation covers about 200 Java test cases on Selenium.',
+    companyDe: 'BRZ – Customs Decision Austria',
+    companyEn: 'BRZ – Customs Decision Austria',
+    periodDe: 'seit Juli 2023',
+    periodEn: 'since July 2023',
+    textDe: 'Zollanwendung in Java/JSF, angebunden an EU-Systeme und mehrere SOAP- und REST-Schnittstellen. Ich mache aus den Änderungen der EU Tests, koordiniere die Testphasen mit dem Testmanager und teste die Umstellung der Oberfläche auf Angular. Die Automatisierung umfasst rund 200 Testfälle in Java mit Selenium.',
+    textEn: 'A customs application in Java/JSF, connected to EU systems and several SOAP and REST interfaces. I turn changes coming from the EU into tests, plan the test phases with the test manager, and test the move of the UI to Angular. The automation covers about 200 Java test cases on Selenium.',
     tagsDe: ['Java', 'Selenium', 'SOAP', 'REST', 'JSF', 'Angular'],
     tagsEn: ['Java', 'Selenium', 'SOAP', 'REST', 'JSF', 'Angular'],
+  },
+  {
+    id: 'project-brz-payout',
+    industryDe: 'Öffentlicher Sektor',
+    industryEn: 'Public sector',
+    companyDe: 'BRZ – Auszahlungssystem (Projekt TL3/BKA)',
+    companyEn: 'BRZ – Payout system (TL3/BKA project)',
+    periodDe: 'August – November 2023',
+    periodEn: 'August – November 2023',
+    textDe: 'Backend-Tests für ein System, das Geldleistungen an bestimmte Personen auszahlt. Ich habe die Tests ausschließlich über API-Calls mit Cypress automatisiert, ohne Oberfläche.',
+    textEn: 'Backend tests for a system that pays out money to specific groups of people. I automated the tests purely through API calls with Cypress, with no UI involved.',
+    tagsDe: ['Cypress', 'API-Testing', 'JavaScript'],
+    tagsEn: ['Cypress', 'API testing', 'JavaScript'],
   },
   {
     id: 'project-rewe',
     industryDe: 'Handel',
     industryEn: 'Retail',
-    company: 'REWE IT',
+    companyDe: 'REWE IT',
+    companyEn: 'REWE IT',
     periodDe: 'Oktober 2022 – Juli 2023',
     periodEn: 'October 2022 – July 2023',
-    textDe: 'Die Artikelverwaltung lief auf JSF und wurde durch eine Angular-Applikation ersetzt. Die Automatisierung habe ich dafür neu aufgebaut, mit Cypress und Cucumber, und neue Features direkt mit Tests abgedeckt. Von null auf rund 200 automatisierte Testfälle.',
-    textEn: 'Product management ran on JSF and was replaced by an Angular app. I rebuilt the automation for that move with Cypress and Cucumber, and covered new features as they were built. From zero to about 200 automated test cases.',
+    textDe: 'Die Artikelverwaltung wurde von JSF auf Angular umgestellt. Ich habe die Testautomatisierung dafür mit Cypress und Cucumber neu aufgebaut und neue Features gleich mit Tests abgedeckt. Von null auf rund 200 automatisierte Testfälle.',
+    textEn: 'Product management moved from JSF to Angular. I rebuilt the test automation for it with Cypress and Cucumber and covered new features as they were built. From zero to about 200 automated test cases.',
     tagsDe: ['Cypress', 'Cucumber', 'Angular', 'JSF'],
     tagsEn: ['Cypress', 'Cucumber', 'Angular', 'JSF'],
   },
@@ -145,11 +232,12 @@ const projects = [
     id: 'project-erste',
     industryDe: 'Banken',
     industryEn: 'Banking',
-    company: 'Erste Group IT',
+    companyDe: 'Erste Group IT',
+    companyEn: 'Erste Group IT',
     periodDe: 'Mai 2021 – September 2022',
     periodEn: 'May 2021 – September 2022',
-    textDe: 'Ich saß in einem Feature-Squad, die Regression lief in eigenen Teams daneben. Neue Features habe ich mit Cypress isoliert getestet: die API-Calls beim Laden abgefangen und durch Mocks ersetzt. Fertige Tests gingen an die Regression und liefen dort als End-to-End-Tests gegen die echten Systeme. Die Applikation gab es in fünf Ländern: Österreich, Kroatien, Slowakei, Rumänien und Tschechien, jeweils mit eigener Oberfläche.',
-    textEn: 'I sat in a feature squad, with regression running in separate teams beside it. I tested new features in isolation with Cypress: intercepting the API calls on load and replacing them with mocks. Finished tests went to regression and ran there end to end against the real systems. The app was live in five countries: Austria, Croatia, Slovakia, Romania, and the Czech Republic, each with its own UI.',
+    textDe: 'Banking-Applikation in fünf Ländern, jeweils mit eigener Oberfläche. Im Feature-Squad habe ich neue Features mit Cypress isoliert getestet und die API-Calls durch Mocks ersetzt. Die fertigen Tests liefen danach in der Regression End-to-End gegen die echten Systeme.',
+    textEn: 'A banking app live in five countries, each with its own UI. In a feature squad, I tested new features in isolation with Cypress, replacing the API calls with mocks. Those tests then went into regression and ran end to end against the real systems.',
     tagsDe: ['Cypress', 'React', 'API-Mocking', 'Cucumber', 'Postman'],
     tagsEn: ['Cypress', 'React', 'API mocking', 'Cucumber', 'Postman'],
   },
@@ -157,11 +245,12 @@ const projects = [
     id: 'project-ing',
     industryDe: 'Banken',
     industryEn: 'Banking',
-    company: 'ING Austria',
+    companyDe: 'ING Austria',
+    companyEn: 'ING Austria',
     periodDe: 'April 2019 – Mai 2021',
     periodEn: 'April 2019 – May 2021',
-    textDe: 'Getestet habe ich vier Plattformen gleichzeitig: Online Banking, die App für iOS und Android und zwei interne Banksysteme. Die App wurde in Istanbul gebaut, die Abstimmung lief über Zeitzonen. Ich habe die vorhandene Automatisierung gepflegt und erweitert. Das waren über 1.000 Tests mit Selenium, Appium und Cucumber, an Jenkins angebunden und in Allure berichtet.',
-    textEn: 'I tested four platforms at once: online banking, the iOS and Android app, and two internal banking systems. The app was built in Istanbul, so the coordination crossed time zones. I maintained and extended the automation the team already had: over 1,000 tests on Selenium, Appium, and Cucumber, run through Jenkins and reported in Allure.',
+    textDe: 'Online Banking, App für iOS und Android und zwei interne Banksysteme, die App wurde in Istanbul entwickelt. Ich habe die bestehende Automatisierung mit über 1.000 Tests gepflegt und erweitert: Selenium, Appium und Cucumber, ausgeführt über Jenkins, berichtet in Allure.',
+    textEn: 'Online banking, the iOS and Android app, and two internal banking systems, with the app built in Istanbul. I maintained and extended the existing automation of over 1,000 tests: Selenium, Appium, and Cucumber, run through Jenkins and reported in Allure.',
     tagsDe: ['Selenium', 'Appium', 'Cucumber', 'TestNG', 'Jenkins', 'Allure'],
     tagsEn: ['Selenium', 'Appium', 'Cucumber', 'TestNG', 'Jenkins', 'Allure'],
   },
@@ -169,11 +258,12 @@ const projects = [
     id: 'project-huberbau',
     industryDe: 'Bau',
     industryEn: 'Construction',
-    company: 'HuberBau',
-    periodDe: 'Januar 2020 – Dezember 2020',
-    periodEn: 'January 2020 – December 2020',
-    textDe: 'Ich war der einzige Tester, neben zwei Entwicklern. Zusammen haben wir eine Angular-Applikation von Grund auf entwickelt: Personaldaten, Baustellen und Fotos direkt auf der Baustelle. Die Testfälle habe ich geschrieben, dazu ein Regressionsset mit rund 30–50 Fällen.',
-    textEn: 'I was the only tester, next to two developers. Together we built an Angular app from scratch: staff data, construction sites, and photos taken on site. I wrote the test cases, including a regression set of about 30–50.',
+    companyDe: 'HuberBau',
+    companyEn: 'HuberBau',
+    periodDe: 'Januar – Dezember 2020',
+    periodEn: 'January – December 2020',
+    textDe: 'Neue Angular-Applikation für Personaldaten, Baustellen und Fotos direkt von der Baustelle. Als einziger Tester neben zwei Entwicklern habe ich die Testfälle geschrieben und ein Regressionsset mit rund 30–50 Fällen aufgebaut.',
+    textEn: 'A new Angular app for staff data, construction sites, and photos taken on site. As the only tester next to two developers, I wrote the test cases and built a regression set of about 30–50.',
     tagsDe: ['Manuelles Testen', 'Angular', 'Regression'],
     tagsEn: ['Manual testing', 'Angular', 'Regression'],
   },
@@ -210,8 +300,8 @@ function yearSpan(period: string) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- DE Meta (default) -->
-  <title>Mario Lirsch – Freelance QA Engineer | LQA Consulting</title>
-  <meta name="description" content="Mario Lirsch, freiberuflicher QA-Engineer. Testanalyse und Testautomatisierung, aktuell bei BRZ an Customs Decision Austria." />
+  <title>LQA Consulting – Teststrategie und Testautomatisierung | Mario Lirsch</title>
+  <meta name="description" content="Teststrategie, Testautomatisierung und QA im Team für Unternehmen. Von der Analyse bis zum laufenden Setup. Mario Lirsch, QA-Engineer in Wien." />
   <meta name="keywords" content="QA Consulting, Testautomatisierung, Teststrategie, Cypress, Selenium, Appium, ISTQB, Freelancer, Mario Lirsch" />
 
   <!-- EN Meta (in JSON-LD alternate) -->
@@ -219,8 +309,8 @@ function yearSpan(period: string) {
   <link rel="alternate" hreflang="de" href="?lang=de" />
 
   <!-- OG -->
-  <meta property="og:title" content="Mario Lirsch – Freelance QA Engineer | LQA Consulting" />
-  <meta property="og:description" content="Mario Lirsch, freiberuflicher QA-Engineer. Testanalyse und Testautomatisierung, aktuell bei BRZ an Customs Decision Austria." />
+  <meta property="og:title" content="LQA Consulting – Teststrategie und Testautomatisierung | Mario Lirsch" />
+  <meta property="og:description" content="Teststrategie, Testautomatisierung und QA im Team für Unternehmen. Von der Analyse bis zum laufenden Setup. Mario Lirsch, QA-Engineer in Wien." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="de_DE" />
   <meta property="og:locale:alternate" content="en_GB" />
@@ -234,7 +324,7 @@ function yearSpan(period: string) {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Lirsch QA Consulting Ltd.",
-    "description": "Freiberufliche Testanalyse und Testautomatisierung",
+    "description": "Teststrategie, Testautomatisierung und QA im Team für Unternehmen",
     "address": { "@type": "PostalAddress", "addressCountry": "CY" },
     "serviceType": ["Software Testing", "Test Automation", "QA Consulting"]
   }
@@ -256,11 +346,11 @@ function yearSpan(period: string) {
       <a href="#hero" class="text-sm font-semibold tracking-tight text-text-main leading-none">LQA</a>
 
       <!-- Nav links + lang switcher (desktop) -->
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#about" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.about">Über mich</a>
+      <div class="hidden md:flex items-center gap-5 lg:gap-8">
         <a href="#services" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.services">Leistungen</a>
+        <a href="#process" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.process">Ablauf</a>
         <a href="#projects" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.projects">Projekte</a>
-        <a href="#stack" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.stack">Stack</a>
+        <a href="#about" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.about">Über mich</a>
         <a href="#contact" class="nav-link text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.contact">Kontakt</a>
         <!-- Talent Network temporarily disabled — re-enable by uncommenting and restoring src/pages/talent.astro from src/pages/_disabled/
         <a href="/talent" class="text-sm text-green-accent/70 hover:text-green-accent transition-colors">Talent Network</a>
@@ -287,10 +377,10 @@ function yearSpan(period: string) {
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/10">
       <div class="max-w-6xl mx-auto flex flex-col gap-4 pt-4 px-4">
-        <a href="#about" class="nav-link text-sm text-text-main/70" data-key="nav.about" onclick="closeMobileMenu()">Über mich</a>
         <a href="#services" class="nav-link text-sm text-text-main/70" data-key="nav.services" onclick="closeMobileMenu()">Leistungen</a>
+        <a href="#process" class="nav-link text-sm text-text-main/70" data-key="nav.process" onclick="closeMobileMenu()">Ablauf</a>
         <a href="#projects" class="nav-link text-sm text-text-main/70" data-key="nav.projects" onclick="closeMobileMenu()">Projekte</a>
-        <a href="#stack" class="nav-link text-sm text-text-main/70" data-key="nav.stack" onclick="closeMobileMenu()">Stack</a>
+        <a href="#about" class="nav-link text-sm text-text-main/70" data-key="nav.about" onclick="closeMobileMenu()">Über mich</a>
         <a href="#contact" class="nav-link text-sm text-text-main/70" data-key="nav.contact" onclick="closeMobileMenu()">Kontakt</a>
         <!-- Talent Network temporarily disabled — see notice above
         <a href="/talent" class="text-sm text-green-accent/70" onclick="closeMobileMenu()">Talent Network</a>
@@ -305,54 +395,19 @@ function yearSpan(period: string) {
   </nav>
 
   <!-- ======== HERO ======== -->
-  <section id="hero" class="relative min-h-[92vh] flex items-center px-4 sm:px-6 pt-28 pb-20">
-    <div class="relative max-w-6xl mx-auto w-full grid md:grid-cols-[minmax(0,1.15fr)_minmax(16rem,22rem)] gap-14 md:gap-16 items-center">
-      <div>
-        <h1 class="hero-animate text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.02]" style="animation-delay: 160ms;">
-          Mario Lirsch
-        </h1>
-        <hr class="accent-line hero-animate" style="animation-delay: 240ms;" aria-hidden="true" />
+  <section id="hero" class="relative px-4 sm:px-6 pt-32 pb-20 md:pt-40 md:pb-28">
+    <div class="relative max-w-6xl mx-auto w-full">
+      <h1 class="hero-title hero-animate" style="animation-delay: 160ms;" data-key="hero.title">
+        Teststrategie und Testautomatisierung für Ihr Unternehmen
+      </h1>
+      <hr class="accent-line hero-animate" style="animation-delay: 240ms;" aria-hidden="true" />
 
-        <p class="hero-animate text-base sm:text-lg md:text-xl text-text-main/85 max-w-xl mt-8 mb-10 leading-relaxed" style="animation-delay: 320ms;" data-key="hero.sub">
-          Ich arbeite als freiberuflicher QA-Engineer in agilen Teams, remote und vor Ort, aktuell bei BRZ an der Zollanwendung Customs Decision Austria.
-        </p>
+      <p class="hero-animate text-base sm:text-lg md:text-xl text-text-main/85 max-w-xl mt-8 mb-10 leading-relaxed" style="animation-delay: 320ms;" data-key="hero.sub">
+        Ich schaue mir an, wie Sie heute testen, und baue mit Ihrem Team ein Setup, das im Alltag läuft. Hinter LQA Consulting stehe ich, Mario Lirsch, freiberuflicher QA-Engineer in Wien.
+      </p>
 
-        <div class="hero-animate" style="animation-delay: 440ms;">
-          <a href="#contact" class="btn-cta" data-key="hero.cta">Schreiben Sie mir</a>
-        </div>
-      </div>
-
-      <div class="photo-slot hero-animate" style="animation-delay: 200ms;">
-        <Image
-          src={portrait}
-          alt="Porträt von Mario Lirsch"
-          data-alt-key="hero.portraitAlt"
-          width={720}
-          widths={[480, 720, 960]}
-          sizes="(min-width: 768px) 22rem, min(17.5rem, 78vw)"
-          quality={80}
-          format="webp"
-          class="photo-slot-img"
-          priority
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== ABOUT ======== -->
-  <section id="about" class="py-24 md:py-36 px-4 sm:px-6">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="section-title reveal" data-key="about.title">Über mich</h2>
-      <div class="max-w-2xl space-y-8 reveal">
-        <p class="text-lg md:text-xl leading-8 md:leading-9" data-key="about.para1">
-          Eigentlich wollte ich Entwickler werden. In die IT bin ich über meine erste QA-Rolle gekommen und habe dort etwas gefunden, das ich nicht gesucht hatte: Ich schaue Software gern bis ins Detail an. Den Code schreibe ich in der Testautomatisierung.
-        </p>
-        <p class="text-lg md:text-xl leading-8 md:leading-9" data-key="about.para2">
-          Ich freue mich über einen kniffligen Edge Case, den andere übersehen hätten. Und ich höre nicht auf, bevor klar ist, warum etwas fehlschlägt. Danach soll das Team wissen, was zu tun ist, ohne dass ich noch eine Runde erklären muss.
-        </p>
-        <p class="text-base leading-7 text-text-main/65 pt-4" data-key="about.note">
-          ISTQB-zertifizierter Test Analyst, Foundation und Advanced. Ich arbeite remote und vor Ort.
-        </p>
+      <div class="hero-animate" style="animation-delay: 440ms;">
+        <a href="#contact" class="btn-cta" data-key="hero.cta">Schreiben Sie mir</a>
       </div>
     </div>
   </section>
@@ -363,20 +418,67 @@ function yearSpan(period: string) {
       <h2 class="section-title reveal" data-key="services.title">Leistungen</h2>
       <div class="service-grid">
         <div class="service-block reveal">
-          <h3 data-key="services.card1.title">Testanalyse und Teststrategie</h3>
-          <p data-key="services.card1.desc">
-            So läuft es bei BRZ. Customs Decision Austria hängt an EU-Systemen, die Vorgaben ändern sich. Ich lese sie, lege den Testumfang fest und stimme die Testphasen mit dem Testmanager ab.
+          <h3 data-key="services.strategy.title">Teststrategie</h3>
+          <p data-key="services.strategy.desc">
+            Ich sehe mir an, wie bei Ihnen getestet wird: was abgedeckt ist, was fehlt und wo Zeit verloren geht. Daraus entstehen eine Teststrategie mit klarem Testumfang und eine Roadmap, was in welcher Reihenfolge kommt. Sie wissen danach, wo Sie anfangen.
           </p>
-          <a href="#project-brz" class="underline" data-key="services.card1.link">Das BRZ-Projekt</a>
         </div>
         <div class="service-block reveal">
-          <h3 data-key="services.card2.title">Testautomatisierung</h3>
-          <p data-key="services.card2.desc">
-            So war es bei REWE. Die Artikelverwaltung wechselte von JSF auf Angular, und ich habe die Automatisierung mit Cypress und Cucumber neu aufgebaut: von null auf rund 200 Testfälle, neue Features jeweils gleich mit.
+          <h3 data-key="services.automation.title">Testautomatisierung aufbauen</h3>
+          <p data-key="services.automation.desc">
+            Ich baue automatisierte Tests mit Cypress oder Selenium auf, für die Oberfläche und für APIs. Die Tests laufen in Ihrer CI-Pipeline, zum Beispiel in Jenkins, bei jedem Build mit. Am Ende haben Sie eine Testsuite, die Ihr Team versteht und erweitern kann.
           </p>
-          <a href="#project-rewe" class="underline" data-key="services.card2.link">Das REWE-Projekt</a>
+        </div>
+        <div class="service-block reveal">
+          <h3 data-key="services.interim.title">Testkoordination und QA auf Zeit</h3>
+          <p data-key="services.interim.desc">
+            Wenn Ihrem Team Testkapazität fehlt, arbeite ich für eine vereinbarte Zeit mit, remote oder vor Ort. Ich plane die Testphasen, stimme mich mit Entwicklung und Fachbereich ab und teste selbst. So bleiben die Tests nicht liegen, wenn es eng wird.
+          </p>
+        </div>
+        <div class="service-block reveal">
+          <h3 data-key="services.coaching.title">Coaching für Ihr Team</h3>
+          <p data-key="services.coaching.desc">
+            Ich zeige Ihrem Team, wie die Tests aufgebaut sind, wie man neue schreibt und wie man Fehler analysiert. Das passiert an Ihrem eigenen Projekt, nicht an Beispielen. Wenn ich gehe, kann Ihr Team selbst weitermachen.
+          </p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ======== PROCESS ======== -->
+  <section id="process" class="py-24 md:py-36 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="section-title reveal" data-key="process.title">So läuft ein Projekt</h2>
+      <ol class="steps reveal">
+        <li class="step">
+          <span class="step-num" aria-hidden="true">1</span>
+          <div>
+            <h3 data-key="process.call.title">Erstgespräch.</h3>
+            <p data-key="process.call.text">Sie erzählen mir, worum es geht, und ich sage Ihnen offen, ob und wie ich helfen kann.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">2</span>
+          <div>
+            <h3 data-key="process.analysis.title">Analyse.</h3>
+            <p data-key="process.analysis.text">Ich sehe mir Anwendung, Tests und Abläufe an und schlage einen konkreten Plan vor.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">3</span>
+          <div>
+            <h3 data-key="process.build.title">Umsetzung.</h3>
+            <p data-key="process.build.text">Ich setze den Plan mit Ihrem Team um, in kleinen Schritten, die Sie jederzeit sehen.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">4</span>
+          <div>
+            <h3 data-key="process.handover.title">Übergabe.</h3>
+            <p data-key="process.handover.text">Ich dokumentiere das Setup und arbeite Ihr Team ein, damit es ohne mich weitergeht.</p>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -403,7 +505,10 @@ function yearSpan(period: string) {
                 <span data-show-lang="de">{project.industryDe}</span>
                 <span data-show-lang="en" class="hidden">{project.industryEn}</span>
               </p>
-              <h3 class="timeline-company">{project.company}</h3>
+              <h3 class="timeline-company">
+                <span data-show-lang="de">{project.companyDe}</span>
+                <span data-show-lang="en" class="hidden">{project.companyEn}</span>
+              </h3>
               <p class="timeline-text">
                 <span data-show-lang="de">{project.textDe}</span>
                 <span data-show-lang="en" class="hidden">{project.textEn}</span>
@@ -430,12 +535,55 @@ function yearSpan(period: string) {
     </div>
   </section>
 
+  <!-- ======== ABOUT ======== -->
+  <section id="about" class="py-24 md:py-36 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="section-title reveal" data-key="about.title">Über mich</h2>
+      <div class="about-layout">
+        <div class="about-copy reveal">
+          <p class="text-lg md:text-xl leading-8 md:leading-9" data-key="about.para1">
+            Eigentlich wollte ich Entwickler werden. In die IT bin ich über meine erste QA-Rolle gekommen und dabei geblieben, weil ich Software gern bis ins Detail anschaue. Den Code schreibe ich heute in der Testautomatisierung.
+          </p>
+          <p class="text-lg md:text-xl leading-8 md:leading-9" data-key="about.para2">
+            Ich höre nicht auf, bevor klar ist, warum etwas fehlschlägt. Danach soll das Team wissen, was zu tun ist, ohne dass ich noch eine Runde erklären muss.
+          </p>
+          <p class="text-lg md:text-xl leading-8 md:leading-9" data-key="about.para3">
+            Seit 2019 teste ich in Banken, im Handel und im öffentlichen Sektor. Aktuell arbeite ich beim BRZ an der Zollanwendung Customs Decision Austria. Ich arbeite remote und vor Ort.
+          </p>
+          <div class="about-certs-block">
+            <p class="about-kicker" data-key="about.certs">Zertifikate</p>
+            <ul class="about-certs">
+              <li data-key="about.cert1">ISTQB Certified Tester Foundation Level (April 2019)</li>
+              <li data-key="about.cert2">ISTQB Advanced Level Test Analyst (Dezember 2024)</li>
+            </ul>
+          </div>
+          <p class="text-lg leading-8" data-key="about.network">
+            Bei größeren Projekten stelle ich ein Team aus erfahrenen QA-Freelancern aus meinem Netzwerk zusammen.
+          </p>
+        </div>
+        <div class="photo-slot reveal">
+          <Image
+            src={portrait}
+            alt="Porträt von Mario Lirsch"
+            data-alt-key="about.portraitAlt"
+            width={640}
+            widths={[400, 640, 880]}
+            sizes="(min-width: 768px) 20rem, min(17.5rem, 78vw)"
+            quality={80}
+            format="webp"
+            class="photo-slot-img"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ======== CONTACT ======== -->
   <section id="contact" class="py-24 md:py-36 px-4 sm:px-6">
     <div class="max-w-6xl mx-auto">
       <div class="reveal max-w-xl">
         <h2 class="section-title" data-key="contact.title">Kontakt</h2>
-        <p class="text-lg text-text-main/75 mb-12 leading-relaxed" data-key="contact.sub">Wenn Sie Unterstützung im Testen brauchen, schreiben Sie mir. Es reichen ein paar Sätze, worum es geht.</p>
+        <p class="text-lg text-text-main/75 mb-12 leading-relaxed" data-key="contact.sub">Schreiben Sie mir kurz, worum es geht. Ich melde mich bei Ihnen.</p>
       </div>
 
       <form
@@ -454,8 +602,18 @@ function yearSpan(period: string) {
           <input id="contact-email" type="email" name="email" class="form-input" autocomplete="email" maxlength="254" placeholder="max@example.com" required />
         </div>
         <div class="contact-field">
+          <label for="contact-topic" data-key="contact.topic">Worum geht es?</label>
+          <select id="contact-topic" name="topic" class="form-input" required>
+            <option value="" data-key="contact.topicPlaceholder">Bitte wählen</option>
+            <option value="strategy" data-key="contact.topicStrategy">Teststrategie</option>
+            <option value="automation" data-key="contact.topicAutomation">Testautomatisierung</option>
+            <option value="team" data-key="contact.topicTeam">Unterstützung im Team</option>
+            <option value="other" data-key="contact.topicOther">Sonstiges</option>
+          </select>
+        </div>
+        <div class="contact-field">
           <label for="contact-message" data-key="contact.message">Nachricht</label>
-          <textarea id="contact-message" name="message" rows="6" class="form-input resize-none" maxlength="5000" placeholder="Worum geht es?" required data-placeholder-de="Worum geht es?" data-placeholder-en="What is it about?"></textarea>
+          <textarea id="contact-message" name="message" rows="6" class="form-input resize-none" maxlength="5000" placeholder="Ein paar Sätze reichen." required data-placeholder-de="Ein paar Sätze reichen." data-placeholder-en="A few sentences are enough."></textarea>
         </div>
         <div class="contact-hp" aria-hidden="true">
           <label for="contact-hp">Company</label>
@@ -567,11 +725,11 @@ function yearSpan(period: string) {
     // Update meta
     const metaDesc = document.querySelector('meta[name="description"]');
     if (lang === 'en' && metaDesc) {
-      metaDesc.content = 'Mario Lirsch, freelance QA engineer. Test analysis and test automation, currently at BRZ on Customs Decision Austria.';
-      document.title = 'Mario Lirsch – Freelance QA Engineer | LQA Consulting';
+      metaDesc.content = 'Test strategy, test automation, and hands-on QA for companies, from the first analysis to a setup that runs. Mario Lirsch, QA engineer in Vienna.';
+      document.title = 'LQA Consulting – Test strategy and test automation | Mario Lirsch';
     } else if (metaDesc) {
-      metaDesc.content = 'Mario Lirsch, freiberuflicher QA-Engineer. Testanalyse und Testautomatisierung, aktuell bei BRZ an Customs Decision Austria.';
-      document.title = 'Mario Lirsch – Freelance QA Engineer | LQA Consulting';
+      metaDesc.content = 'Teststrategie, Testautomatisierung und QA im Team für Unternehmen. Von der Analyse bis zum laufenden Setup. Mario Lirsch, QA-Engineer in Wien.';
+      document.title = 'LQA Consulting – Teststrategie und Testautomatisierung | Mario Lirsch';
     }
   }
 
@@ -609,7 +767,7 @@ function yearSpan(period: string) {
   document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
 
   // ---- ScrollSpy — highlight active nav link ----
-  const spySections = ['about', 'services', 'projects', 'stack', 'contact'];
+  const spySections = ['services', 'process', 'projects', 'about', 'contact'];
   const navLinks = document.querySelectorAll('.nav-link');
   function updateActiveNav() {
     const scrollY = window.scrollY + 120;
@@ -660,6 +818,7 @@ function yearSpan(period: string) {
       const body = {
         name: contactForm.elements.name.value,
         email: contactForm.elements.email.value,
+        topic: contactForm.elements.topic.value,
         message: contactForm.elements.message.value,
         consent: contactForm.elements.consent.checked,
         hp_field: contactForm.elements.hp_field.value,
