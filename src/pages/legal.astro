@@ -27,11 +27,11 @@ const year = new Date().getFullYear();
       <a href="/" class="text-sm font-semibold tracking-tight text-text-main leading-none">LQA</a>
 
       <!-- Nav links + lang switcher (desktop) -->
-      <div class="hidden md:flex items-center gap-8">
-        <a href="/#about" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.about">Über mich</a>
+      <div class="hidden md:flex items-center gap-5 lg:gap-8">
         <a href="/#services" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.services">Leistungen</a>
+        <a href="/#process" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.process">Ablauf</a>
         <a href="/#projects" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.projects">Projekte</a>
-        <a href="/#stack" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.stack">Stack</a>
+        <a href="/#about" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.about">Über mich</a>
         <a href="/#contact" class="text-sm text-text-main/70 hover:text-green-accent transition-colors" data-key="nav.contact">Kontakt</a>
         <!-- Talent Network temporarily disabled — re-enable by uncommenting and restoring src/pages/talent.astro from src/pages/_disabled/
         <a href="/talent" class="text-sm text-green-accent/70 hover:text-green-accent transition-colors">Talent Network</a>
@@ -58,10 +58,10 @@ const year = new Date().getFullYear();
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-white/10">
       <div class="max-w-6xl mx-auto flex flex-col gap-4 pt-4 px-4">
-        <a href="/#about" class="text-sm text-text-main/70" data-key="nav.about" onclick="closeMobileMenu()">Über mich</a>
         <a href="/#services" class="text-sm text-text-main/70" data-key="nav.services" onclick="closeMobileMenu()">Leistungen</a>
+        <a href="/#process" class="text-sm text-text-main/70" data-key="nav.process" onclick="closeMobileMenu()">Ablauf</a>
         <a href="/#projects" class="text-sm text-text-main/70" data-key="nav.projects" onclick="closeMobileMenu()">Projekte</a>
-        <a href="/#stack" class="text-sm text-text-main/70" data-key="nav.stack" onclick="closeMobileMenu()">Stack</a>
+        <a href="/#about" class="text-sm text-text-main/70" data-key="nav.about" onclick="closeMobileMenu()">Über mich</a>
         <a href="/#contact" class="text-sm text-text-main/70" data-key="nav.contact" onclick="closeMobileMenu()">Kontakt</a>
         <!-- Talent Network temporarily disabled — see notice above
         <a href="/talent" class="text-sm text-green-accent/70" onclick="closeMobileMenu()">Talent Network</a>
@@ -185,8 +185,8 @@ const year = new Date().getFullYear();
 <!-- ======== SCRIPTS ======== -->
 <script>
   const translations = {
-    de: { nav: { about: 'Über mich', services: 'Leistungen', projects: 'Projekte', stack: 'Stack', contact: 'Kontakt' } },
-    en: { nav: { about: 'About', services: 'Services', projects: 'Projects', stack: 'Stack', contact: 'Contact' } },
+    de: { nav: { services: 'Leistungen', process: 'Ablauf', projects: 'Projekte', about: 'Über mich', contact: 'Kontakt' } },
+    en: { nav: { services: 'Services', process: 'How it works', projects: 'Projects', about: 'About', contact: 'Contact' } },
   };
   let currentLang = 'de';
 

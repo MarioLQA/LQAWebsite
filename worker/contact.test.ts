@@ -9,6 +9,7 @@ function validBody(overrides: Record<string, unknown> = {}) {
   return {
     name: "Ada Lovelace",
     email: "ada@example.com",
+    topic: "strategy",
     message: "Ein kurzer Test.",
     consent: true,
     hp_field: "",
@@ -41,6 +42,7 @@ test("builds a message for Mario with name, email, message, and consent", () => 
   assert.equal(result.email.subject, "Kontakt: Ada Lovelace");
   assert.match(result.email.text, /Name: Ada Lovelace/);
   assert.match(result.email.text, /E-Mail: ada@example.com/);
+  assert.match(result.email.text, /Worum geht es\?: Teststrategie/);
   assert.match(result.email.text, /Einwilligung: ja/);
   assert.match(result.email.text, /Ein kurzer Test\./);
   assert.equal(result.email.subject.includes("\n"), false);
@@ -53,6 +55,8 @@ test("rejects a missing consent, a bad email, and the honeypot", () => {
   assert.equal(buildContactEmail(validBody({ email: "ada@example.com\nBcc: x" })).ok, false);
   assert.equal(buildContactEmail(validBody({ hp_field: "spam" })).ok, false);
   assert.equal(buildContactEmail(validBody({ message: "   " })).ok, false);
+  assert.equal(buildContactEmail(validBody({ topic: "" })).ok, false);
+  assert.equal(buildContactEmail(validBody({ topic: "Teststrategie" })).ok, false);
 });
 
 test("POST /api/contact sends the email and does not claim success without a send", async () => {
@@ -176,6 +180,7 @@ test("a browser form post without JavaScript gets an honest page", async () => {
       body: new URLSearchParams({
         name: "Ada Lovelace",
         email: "ada@example.com",
+        topic: "automation",
         message: "Hallo",
         consent: "yes",
       }).toString(),
@@ -194,6 +199,7 @@ test("a browser form post without JavaScript gets an honest page", async () => {
       body: new URLSearchParams({
         name: "Ada Lovelace",
         email: "ada@example.com",
+        topic: "automation",
         message: "Hallo",
         consent: "yes",
       }).toString(),
