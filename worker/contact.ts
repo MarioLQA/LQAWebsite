@@ -8,9 +8,17 @@ const MESSAGE_MAX = 5000;
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+const TOPICS: Record<string, string> = {
+  strategy: "Teststrategie",
+  automation: "Testautomatisierung",
+  team: "Unterstützung im Team",
+  other: "Sonstiges",
+};
+
 export type ContactInput = {
   name?: unknown;
   email?: unknown;
+  topic?: unknown;
   message?: unknown;
   consent?: unknown;
   hp_field?: unknown;
@@ -48,9 +56,12 @@ export function buildContactEmail(input: ContactInput): ContactResult {
 
   const name = singleLine(text(input.name));
   const email = text(input.email);
+  const topic = text(input.topic);
   const message = text(input.message);
+  const topicLabel = TOPICS[topic];
 
   if (!consentGiven(input.consent)) return { ok: false, error: "validation" };
+  if (!topicLabel) return { ok: false, error: "validation" };
   if (!name || name.length > NAME_MAX) return { ok: false, error: "validation" };
   if (
     !email ||
@@ -69,7 +80,7 @@ export function buildContactEmail(input: ContactInput): ContactResult {
       from: { email: SENDER_EMAIL, name: SENDER_NAME },
       replyTo: email,
       subject: `Kontakt: ${name}`.slice(0, 180),
-      text: [`Name: ${name}`, `E-Mail: ${email}`, "Einwilligung: ja", "", message].join("\n"),
+      text: [`Name: ${name}`, `E-Mail: ${email}`, `Worum geht es?: ${topicLabel}`, "Einwilligung: ja", "", message].join("\n"),
     },
   };
 }

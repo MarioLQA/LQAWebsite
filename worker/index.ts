@@ -34,8 +34,8 @@ const PAGES: Record<Exclude<FailureCode, "validation"> | "sent" | "invalid", { t
   },
   invalid: {
     title: "Angaben unvollständig",
-    de: "Bitte Name, E-Mail und Nachricht ausfüllen und die Datenschutzerklärung bestätigen.",
-    en: "Please fill in your name, email, and message, and confirm the privacy policy.",
+    de: "Bitte Name, E-Mail, Anliegen und Nachricht ausfüllen und die Datenschutzerklärung bestätigen.",
+    en: "Please fill in your name, email, what it's about, and your message, and confirm the privacy policy.",
     status: 400,
   },
   failed: {
@@ -126,6 +126,7 @@ async function readInput(request: Request): Promise<ContactInput | "too_large" |
     return {
       name: form.get("name") ?? undefined,
       email: form.get("email") ?? undefined,
+      topic: form.get("topic") ?? undefined,
       message: form.get("message") ?? undefined,
       consent: form.get("consent") ?? undefined,
       hp_field: form.get("hp_field") ?? undefined,
